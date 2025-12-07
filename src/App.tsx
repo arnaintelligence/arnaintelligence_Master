@@ -4,6 +4,14 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Services from "./pages/Services";
+import LearningIntelligence from "./pages/services/LearningIntelligence";
+import LearnTechAI from "./pages/services/LearnTechAI";
+import ExperienceDesign from "./pages/services/ExperienceDesign";
+import IntelligenceEngine from "./pages/IntelligenceEngine";
+import CaseStudies from "./pages/CaseStudies";
+import Insights from "./pages/Insights";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -16,7 +24,14 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/learning-intelligence" element={<LearningIntelligence />} />
+          <Route path="/services/learntech-ai" element={<LearnTechAI />} />
+          <Route path="/services/experience-design" element={<ExperienceDesign />} />
+          <Route path="/intelligence-engine" element={<IntelligenceEngine />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/insights" element={<Insights />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
