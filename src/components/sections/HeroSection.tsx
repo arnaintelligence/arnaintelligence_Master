@@ -13,14 +13,14 @@ export function HeroSection() {
           alt="AI neural network visualization"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-secondary/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/85 to-secondary/70" />
       </div>
 
       {/* Content */}
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="max-w-3xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary mb-6 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 text-primary mb-6 animate-fade-in">
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-medium">AI-Era L&D Starts Here</span>
           </div>
@@ -33,7 +33,7 @@ export function HeroSection() {
           </h1>
 
           {/* Tagline */}
-          <p className="text-xl sm:text-2xl text-secondary-foreground/80 font-serif italic mb-4 animate-fade-in animation-delay-200">
+          <p className="text-xl sm:text-2xl text-secondary-foreground/90 font-medium mb-4 animate-fade-in animation-delay-200">
             Where Learning Meets Intelligence.
           </p>
 
@@ -52,7 +52,7 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="bg-transparent border-secondary-foreground/20 text-secondary-foreground hover:bg-secondary-foreground/10">
+            <Button asChild variant="outline" size="lg" className="bg-transparent border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10 hover:text-secondary-foreground">
               <Link to="/intelligence-engine">
                 Discover ALIS Engine
               </Link>
