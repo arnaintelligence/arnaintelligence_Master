@@ -33,13 +33,13 @@ export function Header() {
   const isActive = (href: string) => location.pathname === href;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-secondary border-b border-secondary-foreground/10">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <span className="text-xl font-bold text-primary">ALIS</span>
-            <span className="hidden sm:inline text-sm text-muted-foreground">
+            <span className="hidden sm:inline text-sm text-secondary-foreground/70">
               Learning Intelligence Studio
             </span>
           </Link>
@@ -53,22 +53,22 @@ export function Header() {
                     <NavigationMenuItem key={link.name}>
                       <NavigationMenuTrigger
                         className={cn(
-                          "bg-transparent hover:bg-accent/50",
+                          "bg-transparent text-secondary-foreground hover:bg-secondary-foreground/10 hover:text-secondary-foreground",
                           isActive(link.href) && "text-primary"
                         )}
                       >
                         {link.name}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        <ul className="grid w-[280px] gap-1 p-2">
+                        <ul className="grid w-[280px] gap-1 p-2 bg-background">
                           {link.children.map((child) => (
                             <li key={child.name}>
                               <NavigationMenuLink asChild>
                                 <Link
                                   to={child.href}
                                   className={cn(
-                                    "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                                    isActive(child.href) && "bg-accent text-primary"
+                                    "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted/10 hover:text-foreground focus:bg-muted/10 focus:text-foreground",
+                                    isActive(child.href) && "bg-primary/10 text-primary"
                                   )}
                                 >
                                   <div className="text-sm font-medium leading-none">
@@ -86,7 +86,7 @@ export function Header() {
                       <Link
                         to={link.href}
                         className={cn(
-                          "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none",
+                          "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-secondary-foreground transition-colors hover:bg-secondary-foreground/10 hover:text-secondary-foreground focus:bg-secondary-foreground/10 focus:text-secondary-foreground focus:outline-none",
                           isActive(link.href) && "text-primary"
                         )}
                       >
@@ -102,7 +102,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="lg:hidden rounded-md p-2 text-foreground hover:bg-accent"
+            className="lg:hidden rounded-md p-2 text-secondary-foreground hover:bg-secondary-foreground/10"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -117,8 +117,8 @@ export function Header() {
                 <Link
                   to={link.href}
                   className={cn(
-                    "block py-2 px-3 rounded-md text-base font-medium transition-colors hover:bg-accent",
-                    isActive(link.href) && "text-primary bg-accent"
+                    "block py-2 px-3 rounded-md text-base font-medium text-secondary-foreground transition-colors hover:bg-secondary-foreground/10",
+                    isActive(link.href) && "text-primary bg-secondary-foreground/10"
                   )}
                   onClick={() => !link.children && setMobileMenuOpen(false)}
                 >
@@ -131,8 +131,8 @@ export function Header() {
                         key={child.name}
                         to={child.href}
                         className={cn(
-                          "block py-2 px-3 rounded-md text-sm transition-colors hover:bg-accent",
-                          isActive(child.href) && "text-primary bg-accent"
+                          "block py-2 px-3 rounded-md text-sm text-secondary-foreground/80 transition-colors hover:bg-secondary-foreground/10",
+                          isActive(child.href) && "text-primary bg-secondary-foreground/10"
                         )}
                         onClick={() => setMobileMenuOpen(false)}
                       >

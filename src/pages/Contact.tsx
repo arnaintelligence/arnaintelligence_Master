@@ -180,8 +180,8 @@ const Contact = () => {
 
               {/* Taglines */}
               <div className="mt-12 p-6 rounded-xl bg-card border border-border">
-                <p className="text-lg font-serif italic text-card-foreground">
-                  "Smart Learning. Beautiful Design."
+              <p className="text-lg font-medium text-card-foreground">
+                "Smart Learning. Beautiful Design."
                 </p>
                 <p className="mt-4 text-sm text-muted-foreground">
                   Intelligence for the Future of Learning
