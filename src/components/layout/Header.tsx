@@ -42,7 +42,7 @@ export function Header() {
             <img 
               src={alisLogo} 
               alt="ALIS - Learning Intelligence Studio" 
-              className="h-10 sm:h-12 w-auto object-contain"
+              className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
             />
           </Link>
 
