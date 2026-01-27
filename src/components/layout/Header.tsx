@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import alisLogo from "@/assets/alis-logo.png";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -37,11 +38,12 @@ export function Header() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-primary">ALIS</span>
-            <span className="hidden sm:inline text-sm text-secondary-foreground/70">
-              Learning Intelligence Studio
-            </span>
+          <Link to="/" className="flex items-center">
+            <img 
+              src={alisLogo} 
+              alt="ALIS - Learning Intelligence Studio" 
+              className="h-10 sm:h-12 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
