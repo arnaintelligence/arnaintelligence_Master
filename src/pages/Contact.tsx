@@ -160,7 +160,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
                     <p className="text-muted-foreground">
-                      admin@alis-global.com
+                      hello@alis.studio
                     </p>
                   </div>
                 </div>
