@@ -11,6 +11,11 @@ export function HeroSection() {
       {/* Content */}
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="max-w-3xl">
+          {/* Studio Title */}
+          <p className="text-sm sm:text-base font-semibold tracking-widest uppercase text-primary mb-4 animate-fade-in">
+            Arna's Learning Intelligence Studio
+          </p>
+
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 text-primary mb-6 animate-fade-in">
             <Sparkles className="w-4 h-4" />
