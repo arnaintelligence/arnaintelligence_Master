@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import alisLogo from "@/assets/alis-logo.png";
+import arnaLogo from "@/assets/arna-logo.png";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,16 +13,16 @@ import {
 } from "@/components/ui/navigation-menu";
 
 const services = [
-  { name: "Learning Intelligence", href: "/services/learning-intelligence" },
-  { name: "LearnTech & AI Systems", href: "/services/learntech-ai" },
-  { name: "Experience Design", href: "/services/experience-design" },
+  { name: "Learning Intelligence (LIaaS)", href: "/services/learning-intelligence" },
+  { name: "LearnTech (LTaaS)", href: "/services/learntech-ai" },
+  { name: "Design (DaaS)", href: "/services/experience-design" },
 ];
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services", children: services },
-  { name: "ALIS Intelligence Engine", href: "/intelligence-engine" },
-  { name: "Case Studies", href: "/case-studies" },
+  { name: "Framework", href: "/intelligence-engine" },
+  { name: "Products", href: "/products" },
   { name: "Insights", href: "/insights" },
   { name: "Contact", href: "/contact" },
 ];
@@ -40,9 +40,9 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src={alisLogo} 
-              alt="ALIS - Learning Intelligence Studio" 
-              className="h-12 sm:h-12 lg:h-18 w-auto object-contain"
+              src={arnaLogo} 
+              alt="Arna Intelligence - Learning Intelligence Studio" 
+              className="h-10 sm:h-10 lg:h-12 w-auto object-contain"
             />
           </Link>
 

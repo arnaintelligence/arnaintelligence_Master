@@ -1,25 +1,57 @@
-import { Brain, Palette, Cpu, BarChart3 } from "lucide-react";
+import { BookOpen, Palette, Cpu, BarChart3 } from "lucide-react";
 
-const capabilities = [
+const layers = [
   {
-    icon: Brain,
-    title: "Learning Experience Design",
-    description: "AI-assisted LNA, instructional design, and personalized learning paths",
-  },
-  {
-    icon: Cpu,
-    title: "LearnTech & AI Systems",
-    description: "AI learning assistants, content generators, and LMS automation",
+    icon: BookOpen,
+    number: "1",
+    title: "Pedagogy Layer",
+    subtitle: "Learning Foundation",
+    description: "Learning science, instructional design, and cognitive frameworks that define how learning is structured and assessed.",
+    capabilities: [
+      "Learning science-driven frameworks and blueprints",
+      "Scenario-based and simulation-based learning models",
+      "Adaptive assessment and feedback design",
+      "Structured curriculum, content, and alignment models",
+    ],
   },
   {
     icon: Palette,
-    title: "Experience Design",
-    description: "UX/UI for learning systems, visual design, and communication journeys",
+    number: "2",
+    title: "Experience & Design Layer",
+    subtitle: "Learning Adoption",
+    description: "Innovative design ensures clarity, accessibility, motivation and emotional connection so learning is adopted and sustained.",
+    capabilities: [
+      "Learning Experience Design (LXD)",
+      "UX/UI for learning platforms",
+      "UX writing & learning microcopy",
+      "Visual & motion design",
+    ],
+  },
+  {
+    icon: Cpu,
+    number: "3",
+    title: "AI Systems Layer",
+    subtitle: "Acceleration & Scale",
+    description: "AI reduces turnaround time, improves consistency and scalability, while preserving the integrity of the learning model.",
+    capabilities: [
+      "AI-augmented workflow automation",
+      "Learning assistants & chatbots",
+      "Knowledge discovery & content automation",
+      "AI-powered simulation & interaction engines",
+    ],
   },
   {
     icon: BarChart3,
-    title: "Learning Analytics",
-    description: "Skill gap predictions, adaptive content engines, and insights dashboards",
+    number: "4",
+    title: "Analytics & Intelligence Layer",
+    subtitle: "Measurement & ROI",
+    description: "Data and analytics transform learning into measurable impact that drives continuous improvement across workforce and business performance.",
+    capabilities: [
+      "Skill gap & performance metrics",
+      "Engagement & adoption dashboards",
+      "Learning ROI and value-realization frameworks",
+      "Data-driven decision support",
+    ],
   },
 ];
 
@@ -30,34 +62,46 @@ export function OverviewSection() {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-wider">
-            What We Do
+            Our Framework
           </span>
           <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-foreground">
-            An AI-Powered Learning Design & Enablement Studio
+            The Learning Intelligence Model
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            ALIS combines LXD, LearnTech, UX, communication design, and AI automation 
-            into one integrated intelligence system.
+            We organize our work into four layers, connected by a Cross-Intelligence 
+            Engine that turns individual projects into a coherent learning ecosystem.
           </p>
         </div>
 
-        {/* Capability Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {capabilities.map((capability, index) => (
+        {/* Layer Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {layers.map((layer) => (
             <div
-              key={capability.title}
-              className="group p-6 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
-              style={{ animationDelay: `${index * 100}ms` }}
+              key={layer.title}
+              className="group p-8 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <capability.icon className="w-6 h-6 text-primary" />
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                  <layer.icon className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-card-foreground">
+                    {layer.title}
+                  </h3>
+                  <p className="text-sm font-medium text-primary">{layer.subtitle}</p>
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-card-foreground mb-2">
-                {capability.title}
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                {capability.description}
+              <p className="text-muted-foreground mb-4">
+                {layer.description}
               </p>
+              <ul className="space-y-2">
+                {layer.capabilities.map((cap) => (
+                  <li key={cap} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                    {cap}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

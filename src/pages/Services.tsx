@@ -1,56 +1,45 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Brain, Cpu, Palette } from "lucide-react";
+import { ArrowRight, Layers, Server, PenTool } from "lucide-react";
 
 const practiceAreas = [
   {
-    icon: Brain,
-    title: "Learning Intelligence",
+    icon: Layers,
+    title: "Learning Intelligence (LIaaS)",
     tagline: "AI-powered learning design and strategy",
-    description:
-      "Transform your learning initiatives with AI-assisted needs analysis, personalized learning paths, and adaptive content engines.",
+    description: "We turn business goals into high-impact learning ecosystems, powered by AI and driven by cognitive insight.",
     href: "/services/learning-intelligence",
     features: [
-      "AI-assisted Learning Needs Analysis",
-      "LXD, instructional design, storyboarding",
-      "Multi-format content: eLearning, VILT, microlearning",
-      "Learning analytics & skill gap predictions",
-      "Personalized learning paths",
-      "Adaptive content engines",
+      "AI-driven learning and gap analysis",
+      "Instructional design, blueprinting, and storyboarding",
+      "Adaptive content and assessment development",
+      "Learning analytics with continuous optimization",
     ],
   },
   {
-    icon: Cpu,
-    title: "LearnTech & AI Systems",
-    tagline: "Intelligent technology for modern learning",
-    description:
-      "Build and deploy AI-powered learning infrastructure that scales with your organization and adapts to your learners.",
+    icon: Server,
+    title: "LearnTech (LTaaS)",
+    tagline: "Smart technology for modern learning",
+    description: "Smart technology infrastructure for modern learning ecosystems.",
     href: "/services/learntech-ai",
     features: [
-      "AI learning assistants (ALIS Assist™)",
-      "AI content generators",
-      "LMS setup and automation",
-      "Chatbot trainers & simulations",
-      "Learning data pipelines",
-      "Analytics-driven recommendations",
-      "Conversation design & scenario builders",
+      "AI learning assistants for employees, managers, and professionals",
+      "LMS & LXP integration and automation",
+      "Chatbot, simulations, and immersive practice environments",
+      "Learning data pipelines, dashboards, and performance reporting",
     ],
   },
   {
-    icon: Palette,
-    title: "Experience Design & Communication Studio",
-    tagline: "Beautiful design that enhances learning",
-    description:
-      "Create learning experiences that are not just effective but delightful. From UX to visual design, we make learning beautiful.",
+    icon: PenTool,
+    title: "Design (DaaS)",
+    tagline: "Human-centered design for learning",
+    description: "Experience-first creative support for learning and enablement teams, powered by human-centered design that transforms learning into engaging and accessible experiences.",
     href: "/services/experience-design",
     features: [
-      "UX/UI for learning systems",
-      "UX writing & microcopy",
-      "Visual + motion design",
-      "Communication journeys",
-      "L&D branding systems",
-      "AI-automated content variations",
+      "UX/UI design for engaging learning systems",
+      "Elevated visual and interaction design for learning experiences",
+      "Brand positioning, narratives, and content communication",
     ],
   },
 ];
@@ -58,7 +47,6 @@ const practiceAreas = [
 const Services = () => {
   return (
     <Layout>
-      {/* Hero */}
       <section className="py-20 lg:py-28 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -66,17 +54,16 @@ const Services = () => {
               Our Services
             </span>
             <h1 className="mt-4 text-4xl sm:text-5xl font-bold text-secondary-foreground">
-              Practice Tracks
+              Service Lines
             </h1>
             <p className="mt-6 text-xl text-secondary-foreground/70">
-              Three integrated practice areas that work together to deliver 
-              comprehensive learning solutions for the AI era.
+              Built for flexibility. Engineered for impact. Engage them individually 
+              or combine them to drive greater outcomes.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Practice Areas */}
       <section className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-16">
@@ -102,25 +89,18 @@ const Services = () => {
                   </p>
                   <Button asChild className="group">
                     <Link to={area.href}>
-                      Explore {area.title}
+                      Learn More
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </Button>
                 </div>
-                <div
-                  className={`bg-card border border-border rounded-2xl p-8 ${
-                    index % 2 === 1 ? "lg:order-1" : ""
-                  }`}
-                >
+                <div className={`bg-card border border-border rounded-2xl p-8 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
                   <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">
-                    Service Catalog
+                    Key Capabilities
                   </h3>
                   <ul className="space-y-3">
                     {area.features.map((feature) => (
-                      <li
-                        key={feature}
-                        className="flex items-start gap-3 text-card-foreground"
-                      >
+                      <li key={feature} className="flex items-start gap-3 text-card-foreground">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
                         <span>{feature}</span>
                       </li>

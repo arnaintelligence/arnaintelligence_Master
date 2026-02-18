@@ -5,22 +5,36 @@ const models = [
     icon: Layers,
     acronym: "LIaaS",
     name: "Learning Intelligence as a Service",
-    description:
-      "On-demand access to AI-powered learning design expertise. From needs analysis to personalized learning path creation, get the intelligence you need without building an in-house team.",
+    description: "We turn business goals into high-impact learning ecosystems, powered by AI and driven by cognitive insight.",
+    features: [
+      "AI-driven learning and gap analysis",
+      "Instructional design, blueprinting, and storyboarding",
+      "Adaptive content and assessment development",
+      "Learning analytics with continuous optimization",
+    ],
   },
   {
     icon: Server,
     acronym: "LTaaS",
     name: "LearnTech as a Service",
-    description:
-      "Full-stack learning technology solutions including LMS setup, AI assistant deployment, content generation pipelines, and analytics infrastructure — all managed for you.",
+    description: "Smart technology infrastructure for modern learning ecosystems.",
+    features: [
+      "AI learning assistants for employees, managers, and professionals",
+      "LMS & LXP integration and automation",
+      "Chatbot, simulations, and immersive practice environments",
+      "Learning data pipelines, dashboards, and performance reporting",
+    ],
   },
   {
     icon: PenTool,
     acronym: "DaaS",
     name: "Design as a Service",
-    description:
-      "Continuous UX/UI design support for your learning platforms. Visual design, motion graphics, communication journeys, and L&D branding — scaled to your needs.",
+    description: "Experience-first creative support for learning and enablement teams, powered by human-centered design.",
+    features: [
+      "UX/UI design for engaging learning systems",
+      "Elevated visual and interaction design for learning experiences",
+      "Brand positioning, narratives, and content communication",
+    ],
   },
 ];
 
@@ -34,21 +48,21 @@ export function OperationalModelSection() {
             How We Work
           </span>
           <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-foreground">
-            Flexible Operational Models
+            Our Service Lines
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Choose the engagement model that fits your organization's needs and scale.
+            Built for flexibility. Engineered for impact. Engage them individually 
+            or combine them to drive greater outcomes.
           </p>
         </div>
 
         {/* Model Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {models.map((model, index) => (
+          {models.map((model) => (
             <div
               key={model.acronym}
               className="relative p-8 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all group overflow-hidden"
             >
-              {/* Background Decoration */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors" />
               
               <div className="relative z-10">
@@ -62,9 +76,17 @@ export function OperationalModelSection() {
                 <h3 className="text-lg font-semibold text-card-foreground mb-4">
                   {model.name}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground mb-4">
                   {model.description}
                 </p>
+                <ul className="space-y-2">
+                  {model.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
