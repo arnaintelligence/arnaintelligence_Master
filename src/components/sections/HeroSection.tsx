@@ -12,7 +12,7 @@ export function HeroSection() {
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="max-w-3xl">
           {/* Studio Title */}
-          <p className="text-sm sm:text-base font-semibold tracking-widest uppercase text-primary mb-4 animate-fade-in">
+          <p className="text-sm sm:text-base font-semibold tracking-widest uppercase mb-4 animate-fade-in" style={{ color: "#0D9488" }}>
             Arna's Learning Intelligence Studio
           </p>
 
