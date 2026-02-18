@@ -45,7 +45,7 @@ export function CrossIntelligenceSection() {
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold" style={{ color: "hsl(210, 40%, 98%)" }}>
             The Cross-Intelligence Engine
           </h2>
-          <p className="mt-6 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: "hsl(215, 16%, 60%)" }}>
+          <p className="mt-6 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: "hsl(215, 20%, 75%)" }}>
             An integrated operating model connecting pedagogy, design, AI systems, and analytics into a continuously optimizing learning ecosystem.
           </p>
         </div>
