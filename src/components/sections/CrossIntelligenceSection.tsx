@@ -113,53 +113,53 @@ export function CrossIntelligenceSection() {
 
             {/* Quadrant Labels - positioned absolutely */}
             {/* Top: Pedagogy */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 text-center" style={{ width: "200px" }}>
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg mb-2" style={{ background: "hsla(175, 84%, 40%, 0.1)", border: "1px solid hsla(175, 84%, 40%, 0.2)" }}>
-                <BookOpen className="w-5 h-5" style={{ color: "hsl(175, 84%, 45%)" }} />
+            <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ width: "200px", top: "-80px" }}>
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg mb-2" style={{ background: "hsla(175, 84%, 40%, 0.1)", border: "1px solid hsla(175, 84%, 40%, 0.2)" }}>
+                <BookOpen className="w-6 h-6" style={{ color: "hsl(175, 84%, 45%)" }} />
               </div>
               <h3 className="text-sm font-semibold mb-1" style={{ color: "hsl(210, 40%, 98%)" }}>Pedagogy</h3>
               <div className="space-y-0.5">
                 {["Learning Science", "Simulations", "Adaptive Assessment"].map(t => (
-                  <p key={t} className="text-xs" style={{ color: "hsl(215, 16%, 55%)" }}>{t}</p>
+                  <p key={t} className="text-xs" style={{ color: "hsl(215, 20%, 75%)" }}>{t}</p>
                 ))}
               </div>
             </div>
 
             {/* Right: AI Systems */}
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 text-center" style={{ width: "180px" }}>
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg mb-2" style={{ background: "hsla(175, 84%, 40%, 0.1)", border: "1px solid hsla(175, 84%, 40%, 0.2)" }}>
-                <Brain className="w-5 h-5" style={{ color: "hsl(175, 84%, 45%)" }} />
+            <div className="absolute top-1/2 -translate-y-1/2 text-center" style={{ width: "180px", right: "-100px" }}>
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg mb-2" style={{ background: "hsla(175, 84%, 40%, 0.1)", border: "1px solid hsla(175, 84%, 40%, 0.2)" }}>
+                <Brain className="w-6 h-6" style={{ color: "hsl(175, 84%, 45%)" }} />
               </div>
               <h3 className="text-sm font-semibold mb-1" style={{ color: "hsl(210, 40%, 98%)" }}>AI Systems</h3>
               <div className="space-y-0.5">
                 {["AI Assistants", "Automation", "Simulation Engines"].map(t => (
-                  <p key={t} className="text-xs" style={{ color: "hsl(215, 16%, 55%)" }}>{t}</p>
+                  <p key={t} className="text-xs" style={{ color: "hsl(215, 20%, 75%)" }}>{t}</p>
                 ))}
               </div>
             </div>
 
             {/* Bottom: Analytics */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 text-center" style={{ width: "200px" }}>
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg mb-2" style={{ background: "hsla(175, 84%, 40%, 0.1)", border: "1px solid hsla(175, 84%, 40%, 0.2)" }}>
-                <BarChart3 className="w-5 h-5" style={{ color: "hsl(175, 84%, 45%)" }} />
+            <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ width: "200px", bottom: "-80px" }}>
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg mb-2" style={{ background: "hsla(175, 84%, 40%, 0.1)", border: "1px solid hsla(175, 84%, 40%, 0.2)" }}>
+                <BarChart3 className="w-6 h-6" style={{ color: "hsl(175, 84%, 45%)" }} />
               </div>
               <h3 className="text-sm font-semibold mb-1" style={{ color: "hsl(210, 40%, 98%)" }}>Analytics</h3>
               <div className="space-y-0.5">
                 {["Skill Metrics", "Adoption Dashboards", "ROI Frameworks"].map(t => (
-                  <p key={t} className="text-xs" style={{ color: "hsl(215, 16%, 55%)" }}>{t}</p>
+                  <p key={t} className="text-xs" style={{ color: "hsl(215, 20%, 75%)" }}>{t}</p>
                 ))}
               </div>
             </div>
 
             {/* Left: Experience & Design */}
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 text-center" style={{ width: "180px" }}>
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg mb-2" style={{ background: "hsla(175, 84%, 40%, 0.1)", border: "1px solid hsla(175, 84%, 40%, 0.2)" }}>
-                <Palette className="w-5 h-5" style={{ color: "hsl(175, 84%, 45%)" }} />
+            <div className="absolute top-1/2 -translate-y-1/2 text-center" style={{ width: "180px", left: "-100px" }}>
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg mb-2" style={{ background: "hsla(175, 84%, 40%, 0.1)", border: "1px solid hsla(175, 84%, 40%, 0.2)" }}>
+                <Palette className="w-6 h-6" style={{ color: "hsl(175, 84%, 45%)" }} />
               </div>
               <h3 className="text-sm font-semibold mb-1" style={{ color: "hsl(210, 40%, 98%)" }}>Experience & Design</h3>
               <div className="space-y-0.5">
                 {["Learning Experience Design", "UX/UI", "Visual & Motion Design"].map(t => (
-                  <p key={t} className="text-xs" style={{ color: "hsl(215, 16%, 55%)" }}>{t}</p>
+                  <p key={t} className="text-xs" style={{ color: "hsl(215, 20%, 75%)" }}>{t}</p>
                 ))}
               </div>
             </div>
