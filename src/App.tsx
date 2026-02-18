@@ -9,7 +9,7 @@ import LearningIntelligence from "./pages/services/LearningIntelligence";
 import LearnTechAI from "./pages/services/LearnTechAI";
 import ExperienceDesign from "./pages/services/ExperienceDesign";
 import IntelligenceEngine from "./pages/IntelligenceEngine";
-import CaseStudies from "./pages/CaseStudies";
+import Products from "./pages/Products";
 import Insights from "./pages/Insights";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -29,7 +29,7 @@ const App = () => (
           <Route path="/services/learntech-ai" element={<LearnTechAI />} />
           <Route path="/services/experience-design" element={<ExperienceDesign />} />
           <Route path="/intelligence-engine" element={<IntelligenceEngine />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
