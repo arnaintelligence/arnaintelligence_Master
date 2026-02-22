@@ -42,7 +42,7 @@ export function Header() {
             <img 
               src={arnaLogo} 
               alt="Arna Intelligence - Learning Intelligence Studio" 
-              className="h-10 sm:h-10 lg:h-12 w-auto object-contain"
+              className="h-10 sm:h-10 lg:h-12 w-auto object-contain mix-blend-lighten"
             />
           </Link>
 
