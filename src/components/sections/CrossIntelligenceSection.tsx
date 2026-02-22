@@ -39,10 +39,10 @@ export function CrossIntelligenceSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
-          <span className="text-sm font-medium uppercase tracking-wider" style={{ color: "hsl(175, 84%, 45%)" }}>
+          <span className="text-4xl sm:text-5xl font-bold" style={{ color: "hsl(175, 84%, 45%)" }}>
             Our USP
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold" style={{ color: "hsl(210, 40%, 98%)" }}>
+          <h2 className="mt-4 text-2xl sm:text-3xl font-semibold" style={{ color: "hsl(210, 40%, 98%)" }}>
             The Cross-Intelligence Engine
           </h2>
           <p className="mt-6 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: "hsl(215, 20%, 75%)" }}>

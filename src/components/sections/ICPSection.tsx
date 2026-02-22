@@ -28,10 +28,10 @@ export function ICPSection() {
     <section className="py-20 lg:py-28 bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="text-sm font-medium text-primary uppercase tracking-wider">
+          <span className="text-4xl sm:text-5xl font-bold text-primary">
             Outcomes
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-bold">
+          <h2 className="mt-4 text-2xl sm:text-3xl font-semibold">
             Our Approach Helps Organizations
           </h2>
         </div>
