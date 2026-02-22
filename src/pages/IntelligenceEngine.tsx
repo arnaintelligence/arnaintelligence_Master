@@ -64,7 +64,7 @@ const IntelligenceEngine = () => {
             <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               Our Framework
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary-foreground mb-6">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-secondary-foreground mb-6">
               The Learning Intelligence Model
             </h1>
             <p className="text-xl text-secondary-foreground/70">

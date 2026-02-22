@@ -13,7 +13,7 @@ export function HeroSection() {
         <div className="max-w-3xl">
           {/* Studio Title */}
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-secondary-foreground mb-4 animate-fade-in">
-            Arna's Learning Intelligence Studio
+            Arnas Learning Intelligence Studio
           </h2>
 
           {/* Badge */}
