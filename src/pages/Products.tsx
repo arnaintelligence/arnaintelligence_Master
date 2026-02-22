@@ -11,7 +11,7 @@ const Products = () => {
             <span className="text-sm font-medium text-primary uppercase tracking-wider">
               Products & Platforms
             </span>
-            <h1 className="mt-4 text-4xl sm:text-5xl font-bold text-secondary-foreground">
+            <h1 className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-bold text-secondary-foreground">
               Proprietary Tools Built for Scale
             </h1>
             <p className="mt-6 text-xl text-secondary-foreground/70">
