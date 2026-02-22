@@ -26,7 +26,7 @@ export function Footer() {
               <img 
                 src={arnaLogo} 
                 alt="Arna Intelligence" 
-                className="h-10 w-auto object-contain mix-blend-lighten"
+                className="h-10 w-auto object-contain"
               />
             </Link>
             <p className="mt-4 text-sm opacity-80 max-w-md">
