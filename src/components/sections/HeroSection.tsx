@@ -4,22 +4,17 @@ import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-secondary">
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-secondary">
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary to-primary/10" />
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="max-w-3xl">
-          {/* Studio Title */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-secondary-foreground mb-4 animate-fade-in">
-            Arnas Learning Intelligence Studio
-          </h2>
-
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 text-primary mb-6 animate-fade-in">
             <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">Where Learning Meets Intelligence</span>
+            <span className="text-sm font-medium">Arnas Learning Intelligence Studio</span>
           </div>
 
           {/* Main Heading */}
@@ -29,10 +24,9 @@ export function HeroSection() {
           </h1>
 
           {/* Description */}
-          <p className="text-lg sm:text-xl text-secondary-foreground/80 mb-8 max-w-2xl animate-fade-in animation-delay-200">
-            Grounded in learning science. Accelerated by AI systems. Humanized through 
-            experience design. Proven through analytics. Creating connected learning 
-            ecosystems that deliver measurable business outcomes.
+          <p className="text-lg text-secondary-foreground/80 mb-8 max-w-2xl animate-fade-in animation-delay-200">
+            Grounded in learning science. Accelerated by AI. Humanized through 
+            design. Proven through analytics.
           </p>
 
           {/* CTA Buttons */}
@@ -52,8 +46,8 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 }

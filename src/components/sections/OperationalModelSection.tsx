@@ -1,4 +1,9 @@
-import { Layers, Server, PenTool } from "lucide-react";
+import { useState } from "react";
+import { Layers, Server, PenTool, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const models = [
   {
@@ -6,6 +11,7 @@ const models = [
     acronym: "LIaaS",
     name: "Learning Intelligence as a Service",
     description: "We turn business goals into high-impact learning ecosystems, powered by AI and driven by cognitive insight.",
+    href: "/services/learning-intelligence",
     features: [
       "AI-driven learning and gap analysis",
       "Instructional design, blueprinting, and storyboarding",
@@ -18,6 +24,7 @@ const models = [
     acronym: "LTaaS",
     name: "LearnTech as a Service",
     description: "Smart technology infrastructure for modern learning ecosystems.",
+    href: "/services/learntech-ai",
     features: [
       "AI learning assistants for employees, managers, and professionals",
       "LMS & LXP integration and automation",
@@ -30,6 +37,7 @@ const models = [
     acronym: "DaaS",
     name: "Design as a Service",
     description: "Experience-first creative support for learning and enablement teams, powered by human-centered design.",
+    href: "/services/experience-design",
     features: [
       "UX/UI design for engaging learning systems",
       "Elevated visual and interaction design for learning experiences",
@@ -39,57 +47,85 @@ const models = [
 ];
 
 export function OperationalModelSection() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
   return (
-    <section className="py-20 lg:py-28 bg-background">
+    <section id="services" className="py-16 lg:py-24 bg-card/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="text-4xl sm:text-5xl font-bold text-primary">
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <span className="text-sm font-medium text-primary uppercase tracking-wider">
             How We Work
           </span>
-          <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-foreground">
+          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">
             Our Service Lines
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground">
-            Built for flexibility. Engineered for impact. Engage them individually 
-            or combine them to drive greater outcomes.
+          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
+            Built for flexibility. Engineered for impact.
           </p>
         </div>
 
-        {/* Model Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {models.map((model) => (
-            <div
-              key={model.acronym}
-              className="relative p-8 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all group overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors" />
-              
-              <div className="relative z-10">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <model.icon className="w-7 h-7 text-primary" />
+        {/* 3-Column Cards with expand */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {models.map((model, index) => {
+            const isExpanded = expandedIndex === index;
+            return (
+              <div
+                key={model.acronym}
+                className="relative rounded-2xl bg-background border border-border hover:border-primary/30 transition-all group overflow-hidden"
+              >
+                {/* Compact view */}
+                <div className="p-6">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <model.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="text-2xl font-bold text-primary mb-1">
+                    {model.acronym}
+                  </div>
+                  <h3 className="text-sm font-semibold text-foreground mb-2">
+                    {model.name}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {model.description}
+                  </p>
+
+                  <button
+                    onClick={() => setExpandedIndex(isExpanded ? null : index)}
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:text-primary/80 transition-colors"
+                  >
+                    {isExpanded ? "Hide" : "View"} capabilities
+                    <ChevronDown className={cn(
+                      "w-3.5 h-3.5 transition-transform duration-300",
+                      isExpanded && "rotate-180"
+                    )} />
+                  </button>
                 </div>
-                
-                <div className="text-3xl font-bold text-primary mb-2">
-                  {model.acronym}
+
+                {/* Expandable features */}
+                <div className={cn(
+                  "overflow-hidden transition-all duration-300 ease-in-out",
+                  isExpanded ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+                )}>
+                  <div className="px-6 pb-6 pt-2 border-t border-border">
+                    <ul className="space-y-2 mb-4">
+                      {model.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <Button asChild size="sm" variant="outline" className="w-full group/btn">
+                      <Link to={model.href}>
+                        Learn More
+                        <ArrowRight className="ml-1 w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-card-foreground mb-4">
-                  {model.name}
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  {model.description}
-                </p>
-                <ul className="space-y-2">
-                  {model.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
