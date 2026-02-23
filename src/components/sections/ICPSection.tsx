@@ -29,10 +29,10 @@ export function ICPSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">
+            <span className="text-4xl sm:text-5xl font-bold text-primary">
               Outcomes
             </span>
-            <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">
+            <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-foreground">
               Our Approach Helps Organizations
             </h2>
           </div>

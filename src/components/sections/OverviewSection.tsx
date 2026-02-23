@@ -66,10 +66,10 @@ export function OverviewSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="text-sm font-medium text-primary uppercase tracking-wider">
+          <span className="text-4xl sm:text-5xl font-bold text-primary">
             Our Framework
           </span>
-          <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">
+          <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-foreground">
             The Learning Intelligence Model
           </h2>
           <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
