@@ -8,13 +8,13 @@ const outcomes = [
   },
   {
     icon: TrendingUp,
-    title: "Improve Learning Adoption",
-    description: "Higher engagement and sustained learning performance",
+    title: "Improve Adoption",
+    description: "Higher engagement and sustained performance",
   },
   {
     icon: BarChart3,
     title: "Demonstrate ROI",
-    description: "Clear metrics connecting learning to business impact",
+    description: "Metrics connecting learning to business impact",
   },
   {
     icon: Rocket,
@@ -25,30 +25,32 @@ const outcomes = [
 
 export function ICPSection() {
   return (
-    <section className="py-20 lg:py-28 bg-card">
+    <section id="outcomes" className="py-16 lg:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="text-4xl sm:text-5xl font-bold text-primary">
-            Outcomes
-          </span>
-          <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-foreground">
-            Our Approach Helps Organizations
-          </h2>
-        </div>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-sm font-medium text-primary uppercase tracking-wider">
+              Outcomes
+            </span>
+            <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-foreground">
+              Our Approach Helps Organizations
+            </h2>
+          </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {outcomes.map((outcome) => (
-            <div
-              key={outcome.title}
-              className="p-6 rounded-xl bg-background border border-border hover:border-primary/30 hover:shadow-md transition-all text-center"
-            >
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                <outcome.icon className="w-6 h-6 text-primary" />
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {outcomes.map((outcome) => (
+              <div
+                key={outcome.title}
+                className="group p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-md transition-all text-center"
+              >
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                  <outcome.icon className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="text-sm font-semibold mb-1 text-foreground">{outcome.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{outcome.description}</p>
               </div>
-              <h3 className="text-base font-semibold mb-2 text-foreground">{outcome.title}</h3>
-              <p className="text-sm text-muted-foreground">{outcome.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

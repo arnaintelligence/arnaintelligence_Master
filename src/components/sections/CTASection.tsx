@@ -4,14 +4,13 @@ import { Button } from "@/components/ui/button";
 
 export function CTASection() {
   return (
-    <section className="py-20 lg:py-28 bg-background border-t border-border">
+    <section className="py-16 lg:py-20 bg-background border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
           Ready to Build Learning Intelligently?
         </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-          From learning needs to learning intelligence — let Arna help you build 
-          adaptive, beautiful, and future-ready learning experiences.
+        <p className="text-muted-foreground max-w-lg mx-auto mb-6">
+          Let Arna help you build adaptive, future-ready learning experiences.
         </p>
         <Button asChild size="lg" className="group">
           <Link to="/contact">
