@@ -17,11 +17,10 @@ export function HeroSection() {
       {/* Content */}
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="max-w-3xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 text-primary mb-6 animate-fade-in">
-            <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-medium">Arnas Learning Intelligence Studio</span>
-          </div>
+          {/* Company Name */}
+          <p className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-4 animate-fade-in">
+            Arnas Learning Intelligence Studio
+          </p>
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-6 animate-fade-in animation-delay-100">
