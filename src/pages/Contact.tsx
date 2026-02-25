@@ -156,7 +156,7 @@ const Contact = () => {
                   "Where Learning Meets Intelligence."
                 </p>
                 <p className="mt-4 text-sm text-muted-foreground">
-                  Arnas Learning Intelligence Studio
+                  Arnas Learning Intelligence Studio Pvt. Ltd.
                 </p>
               </div>
             </div>
