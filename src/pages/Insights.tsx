@@ -40,19 +40,18 @@ const Insights = () => {
               instructional design trends, and LearnTech innovations. 
               Subscribe to be notified when we publish.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="group">
-                <Link to="/contact">
-                  Subscribe for Updates
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+            <div className="relative flex flex-col sm:flex-row gap-4 justify-center opacity-40 pointer-events-none select-none">
+              <Button size="lg" className="group" disabled>
+                Subscribe for Updates
+                <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link to="/intelligence-engine">
-                  Learn About ALIS Engine
-                </Link>
+              <Button variant="outline" size="lg" disabled>
+                Learn About ALIS Engine
               </Button>
             </div>
+            <span className="mt-4 inline-block text-xs font-medium uppercase tracking-wider text-muted-foreground/70 bg-muted px-3 py-1 rounded-full">
+              Coming Soon
+            </span>
           </div>
         </div>
       </section>
