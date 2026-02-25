@@ -1,25 +1,29 @@
-import { BookOpen, Brain, BarChart3, Palette } from "lucide-react";
+import { BookOpen, Brain, BarChart3, Palette, ArrowRight, Zap } from "lucide-react";
 
-const quadrants = [
+const stages = [
   {
     label: "Pedagogy",
     icon: BookOpen,
     subtexts: ["Learning Science", "Simulations", "Adaptive Assessment"],
-  },
-  {
-    label: "AI Systems",
-    icon: Brain,
-    subtexts: ["AI Assistants", "Automation", "Simulation Engines"],
-  },
-  {
-    label: "Analytics",
-    icon: BarChart3,
-    subtexts: ["Skill Metrics", "Adoption Dashboards", "ROI Frameworks"],
+    step: "01",
   },
   {
     label: "Experience & Design",
     icon: Palette,
     subtexts: ["Learning Experience Design", "UX/UI", "Visual & Motion Design"],
+    step: "02",
+  },
+  {
+    label: "AI Systems",
+    icon: Brain,
+    subtexts: ["AI Assistants", "Automation", "Simulation Engines"],
+    step: "03",
+  },
+  {
+    label: "Analytics",
+    icon: BarChart3,
+    subtexts: ["Skill Metrics", "Adoption Dashboards", "ROI Frameworks"],
+    step: "04",
   },
 ];
 
@@ -40,142 +44,151 @@ export function CrossIntelligenceSection() {
           </p>
         </div>
 
-        {/* Desktop Diagram */}
-        <div className="hidden md:block relative max-w-3xl mx-auto">
-          <div className="relative" style={{ paddingBottom: "100%" }}>
-            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 600 600" fill="none">
+        {/* Desktop: Layered Loop Diagram */}
+        <div className="hidden lg:block max-w-5xl mx-auto">
+          {/* Loop flow */}
+          <div className="relative">
+            {/* Top row: stages 1 & 2 */}
+            <div className="grid grid-cols-2 gap-8 mb-6">
+              {stages.slice(0, 2).map((stage, i) => (
+                <StageCard key={stage.label} stage={stage} index={i} />
+              ))}
+            </div>
+
+            {/* Center engine badge */}
+            <div className="flex items-center justify-center my-4">
+              <div className="relative flex items-center gap-4">
+                {/* Left arrow into center */}
+                <div className="hidden sm:flex items-center gap-1 text-primary/30">
+                  <div className="w-16 h-px bg-primary/20" />
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+
+                <div className="flex items-center gap-3 px-6 py-3 rounded-full border-2 border-primary/20 bg-primary/5">
+                  <Zap className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-bold tracking-wide text-primary uppercase">
+                    Continuous Optimization Loop
+                  </span>
+                  <Zap className="w-5 h-5 text-primary" />
+                </div>
+
+                {/* Right arrow out of center */}
+                <div className="hidden sm:flex items-center gap-1 text-primary/30">
+                  <ArrowRight className="w-4 h-4" />
+                  <div className="w-16 h-px bg-primary/20" />
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom row: stages 3 & 4 */}
+            <div className="grid grid-cols-2 gap-8 mt-6">
+              {stages.slice(2, 4).map((stage, i) => (
+                <StageCard key={stage.label} stage={stage} index={i + 2} />
+              ))}
+            </div>
+
+            {/* Loop arrows connecting cards */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
               <defs>
-                <linearGradient id="loopGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="hsl(175, 84%, 32%)" />
-                  <stop offset="60%" stopColor="hsl(175, 84%, 40%)" />
-                  <stop offset="100%" stopColor="hsl(38, 80%, 55%)" />
-                </linearGradient>
-                <filter id="centerGlow">
-                  <feGaussianBlur stdDeviation="8" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-                <marker id="arrowHead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-                  <path d="M0,0 L8,3 L0,6" fill="hsl(175, 84%, 32%)" opacity="0.6" />
+                <marker id="loopArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                  <path d="M0,0 L8,3 L0,6" fill="hsl(175, 84%, 32%)" opacity="0.3" />
                 </marker>
               </defs>
-
-              {/* Outer circular loop */}
-              <circle cx="300" cy="300" r="195" stroke="url(#loopGrad)" strokeWidth="2" opacity="0.2" />
-              
-              {/* Clockwise directional arcs */}
-              <path d="M 300 105 A 195 195 0 0 1 495 300" stroke="url(#loopGrad)" strokeWidth="2.5" opacity="0.4" fill="none" markerEnd="url(#arrowHead)" />
-              <path d="M 495 300 A 195 195 0 0 1 300 495" stroke="url(#loopGrad)" strokeWidth="2.5" opacity="0.4" fill="none" markerEnd="url(#arrowHead)" />
-              <path d="M 300 495 A 195 195 0 0 1 105 300" stroke="url(#loopGrad)" strokeWidth="2.5" opacity="0.4" fill="none" markerEnd="url(#arrowHead)" />
-              <path d="M 105 300 A 195 195 0 0 1 300 105" stroke="url(#loopGrad)" strokeWidth="2.5" opacity="0.4" fill="none" markerEnd="url(#arrowHead)" />
-
-              {/* Pulse lines from center to each quadrant */}
-              <line x1="300" y1="300" x2="300" y2="140" stroke="hsl(175, 84%, 32%)" strokeWidth="1" opacity="0.12" strokeDasharray="4 6" />
-              <line x1="300" y1="300" x2="460" y2="300" stroke="hsl(175, 84%, 32%)" strokeWidth="1" opacity="0.12" strokeDasharray="4 6" />
-              <line x1="300" y1="300" x2="300" y2="460" stroke="hsl(175, 84%, 32%)" strokeWidth="1" opacity="0.12" strokeDasharray="4 6" />
-              <line x1="300" y1="300" x2="140" y2="300" stroke="hsl(175, 84%, 32%)" strokeWidth="1" opacity="0.12" strokeDasharray="4 6" />
-
-              {/* Center circle - light background */}
-              <circle cx="300" cy="300" r="60" fill="hsl(210, 40%, 98%)" stroke="hsl(175, 84%, 32%)" strokeWidth="2" filter="url(#centerGlow)" opacity="0.95" />
-              <circle cx="300" cy="300" r="60" fill="none" stroke="hsl(175, 84%, 32%)" strokeWidth="1" opacity="0.2">
-                <animate attributeName="r" values="60;68;60" dur="3s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="0.2;0.08;0.2" dur="3s" repeatCount="indefinite" />
-              </circle>
-
-              {/* Center text */}
-              <text x="300" y="293" textAnchor="middle" fill="hsl(175, 84%, 32%)" fontSize="11" fontWeight="700" fontFamily="Poppins, sans-serif" letterSpacing="0.5">Cross</text>
-              <text x="300" y="310" textAnchor="middle" fill="hsl(175, 84%, 32%)" fontSize="11" fontWeight="700" fontFamily="Poppins, sans-serif" letterSpacing="0.5">Intelligence</text>
-              <text x="300" y="327" textAnchor="middle" fill="hsl(175, 84%, 32%)" fontSize="10" fontWeight="500" fontFamily="Poppins, sans-serif" opacity="0.8">Engine</text>
+              {/* Top-left to top-right */}
+              <line x1="50%" y1="18%" x2="50%" y2="18%" stroke="hsl(175, 84%, 32%)" strokeWidth="1.5" opacity="0.15" markerEnd="url(#loopArrow)" />
             </svg>
+          </div>
 
-            {/* Quadrant Labels */}
-            {/* Top: Pedagogy */}
-            <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ width: "200px", top: "-80px" }}>
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg mb-2 bg-primary/10 border border-primary/20">
-                <BookOpen className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-sm font-semibold mb-1 text-foreground">Pedagogy</h3>
-              <div className="space-y-0.5">
-                {["Learning Science", "Simulations", "Adaptive Assessment"].map(t => (
-                  <p key={t} className="text-xs text-muted-foreground">{t}</p>
-                ))}
-              </div>
-            </div>
-
-            {/* Right: AI Systems */}
-            <div className="absolute top-1/2 -translate-y-1/2 text-center" style={{ width: "180px", right: "-100px" }}>
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg mb-2 bg-primary/10 border border-primary/20">
-                <Brain className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-sm font-semibold mb-1 text-foreground">AI Systems</h3>
-              <div className="space-y-0.5">
-                {["AI Assistants", "Automation", "Simulation Engines"].map(t => (
-                  <p key={t} className="text-xs text-muted-foreground">{t}</p>
-                ))}
-              </div>
-            </div>
-
-            {/* Bottom: Analytics */}
-            <div className="absolute left-1/2 -translate-x-1/2 text-center" style={{ width: "200px", bottom: "-80px" }}>
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg mb-2 bg-primary/10 border border-primary/20">
-                <BarChart3 className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-sm font-semibold mb-1 text-foreground">Analytics</h3>
-              <div className="space-y-0.5">
-                {["Skill Metrics", "Adoption Dashboards", "ROI Frameworks"].map(t => (
-                  <p key={t} className="text-xs text-muted-foreground">{t}</p>
-                ))}
-              </div>
-            </div>
-
-            {/* Left: Experience & Design */}
-            <div className="absolute top-1/2 -translate-y-1/2 text-center" style={{ width: "180px", left: "-100px" }}>
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg mb-2 bg-primary/10 border border-primary/20">
-                <Palette className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-sm font-semibold mb-1 text-foreground">Experience & Design</h3>
-              <div className="space-y-0.5">
-                {["Learning Experience Design", "UX/UI", "Visual & Motion Design"].map(t => (
-                  <p key={t} className="text-xs text-muted-foreground">{t}</p>
-                ))}
-              </div>
+          {/* Flow arrows between cards */}
+          <div className="flex justify-center mt-8">
+            <div className="flex items-center gap-2 text-muted-foreground/50">
+              <span className="text-xs uppercase tracking-widest font-medium">Pedagogy</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+              <span className="text-xs uppercase tracking-widest font-medium">Experience</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+              <span className="text-xs uppercase tracking-widest font-medium">AI Systems</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+              <span className="text-xs uppercase tracking-widest font-medium">Analytics</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+              <span className="text-xs uppercase tracking-widest font-medium text-primary/60">↻ Repeat</span>
             </div>
           </div>
         </div>
 
-        {/* Mobile Layout */}
-        <div className="md:hidden">
-          {/* Center engine */}
-          <div className="flex justify-center mb-10">
-            <div className="relative w-28 h-28 rounded-full flex items-center justify-center bg-background border-2 border-primary shadow-lg">
-              <div className="text-center">
-                <p className="text-xs font-bold text-primary">Cross</p>
-                <p className="text-xs font-bold text-primary">Intelligence</p>
-                <p className="text-[10px] font-medium text-primary/80">Engine</p>
-              </div>
+        {/* Tablet: 2-col grid */}
+        <div className="hidden md:block lg:hidden max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 gap-6">
+            {stages.map((stage, i) => (
+              <StageCard key={stage.label} stage={stage} index={i} />
+            ))}
+          </div>
+          <div className="flex justify-center mt-8">
+            <div className="flex items-center gap-3 px-5 py-2.5 rounded-full border border-primary/20 bg-primary/5">
+              <Zap className="w-4 h-4 text-primary" />
+              <span className="text-xs font-bold tracking-wide text-primary uppercase">
+                Continuous Optimization Loop
+              </span>
             </div>
           </div>
+        </div>
 
-          {/* Quadrant cards */}
-          <div className="grid grid-cols-2 gap-4">
-            {quadrants.map(({ label, icon: Icon, subtexts }) => (
-              <div key={label} className="rounded-xl p-5 text-center bg-card border border-border">
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg mb-3 bg-primary/10 border border-primary/20">
-                  <Icon className="w-5 h-5 text-primary" />
+        {/* Mobile: stacked cards */}
+        <div className="md:hidden space-y-4">
+          {stages.map((stage, i) => (
+            <div key={stage.label}>
+              <StageCard stage={stage} index={i} />
+              {i < stages.length - 1 && (
+                <div className="flex justify-center my-2">
+                  <ArrowRight className="w-4 h-4 text-primary/30 rotate-90" />
                 </div>
-                <h3 className="text-sm font-semibold mb-2 text-foreground">{label}</h3>
-                <div className="space-y-1">
-                  {subtexts.map(t => (
-                    <p key={t} className="text-xs text-muted-foreground">{t}</p>
-                  ))}
-                </div>
-              </div>
-            ))}
+              )}
+            </div>
+          ))}
+          <div className="flex justify-center mt-6">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5">
+              <Zap className="w-4 h-4 text-primary" />
+              <span className="text-xs font-bold tracking-wide text-primary uppercase">
+                Continuous Loop
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function StageCard({ stage, index }: { stage: typeof stages[number]; index: number }) {
+  return (
+    <div className="group relative rounded-xl p-6 border border-border bg-card hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+      <div className="flex items-start gap-4">
+        {/* Step number + icon */}
+        <div className="flex-shrink-0">
+          <div className="relative">
+            <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+              <stage.icon className="w-6 h-6 text-primary" />
+            </div>
+            <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center">
+              {stage.step}
+            </span>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="flex-1 min-w-0">
+          <h3 className="text-base font-semibold text-foreground mb-2">
+            {stage.label}
+          </h3>
+          <ul className="space-y-1">
+            {stage.subtexts.map((t) => (
+              <li key={t} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="w-1 h-1 rounded-full bg-primary/40 flex-shrink-0" />
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 }
