@@ -81,7 +81,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-secondary-foreground/10">
           <p className="text-sm opacity-60 text-center">
-            © 2025 Arna Intelligence. All rights reserved.
+            © 2026 Arnas Learning Intelligence Studio Pvt. Ltd. All rights reserved.
           </p>
         </div>
       </div>
