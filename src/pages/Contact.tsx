@@ -137,7 +137,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <p className="text-muted-foreground">admin@alis-global.com</p>
+                    <p className="text-muted-foreground">info_arnaintelligence@alis-global.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
