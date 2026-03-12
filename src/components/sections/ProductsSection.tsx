@@ -3,7 +3,7 @@ import { GraduationCap, Bot, Workflow } from "lucide-react";
 const products = [
   {
     icon: GraduationCap,
-    name: "Edu-Setu",
+    name: "Globiculum",
     description: "Curriculum alignment and learning intelligence platform",
   },
   {
