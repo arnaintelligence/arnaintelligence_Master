@@ -18,12 +18,12 @@ export function HeroSection() {
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="max-w-3xl">
           {/* Company Name */}
-          <p className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-4 animate-fade-in">
+          <p className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-relaxed tracking-wide mb-6 animate-fade-in">
             Arnas Learning Intelligence Studio
           </p>
 
           {/* Main Heading */}
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-secondary-foreground leading-tight mb-6 animate-fade-in animation-delay-100">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-secondary-foreground leading-relaxed tracking-wide mb-8 animate-fade-in animation-delay-100">
             We Build Learning{" "}
             <span className="text-primary">Intelligently</span>
           </h1>
