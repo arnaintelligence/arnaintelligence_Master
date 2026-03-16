@@ -49,14 +49,14 @@ const Services = () => {
     <Layout>
       <section className="py-20 lg:py-28 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto text-center">
             <span className="text-sm font-medium text-primary uppercase tracking-wider">
               Our Services
             </span>
-            <h1 className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-bold text-secondary-foreground">
+            <h1 className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-bold text-secondary-foreground leading-tight">
               Service Lines
             </h1>
-            <p className="mt-6 text-xl text-secondary-foreground/70">
+            <p className="mt-6 text-xl text-secondary-foreground/70 leading-relaxed">
               Built for flexibility. Engineered for impact. Engage them individually 
               or combine them to drive greater outcomes.
             </p>
