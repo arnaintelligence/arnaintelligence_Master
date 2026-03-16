@@ -16,26 +16,26 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto text-center">
           {/* Company Name */}
-          <p className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-relaxed tracking-wide mb-6 animate-fade-in">
+          <p className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight tracking-wide mb-6 animate-fade-in">
             Arnas Learning Intelligence Studio
           </p>
 
           {/* Main Heading */}
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-secondary-foreground leading-relaxed tracking-wide mb-8 animate-fade-in animation-delay-100">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-secondary-foreground leading-tight tracking-wide mb-8 animate-fade-in animation-delay-100">
             We Build Learning{" "}
             <span className="text-primary">Intelligently</span>
           </h1>
 
           {/* Description */}
-          <p className="text-lg text-secondary-foreground/80 mb-8 max-w-2xl animate-fade-in animation-delay-200">
+          <p className="text-lg text-secondary-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in animation-delay-200">
             Grounded in learning science. Accelerated by AI. Humanized through 
             design. Proven through analytics.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in animation-delay-300">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-300">
             <Button asChild size="lg" className="group">
               <Link to="/services">
                 Explore Our Services

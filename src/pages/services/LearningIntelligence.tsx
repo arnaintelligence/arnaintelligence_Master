@@ -32,17 +32,17 @@ const LearningIntelligence = () => {
     <Layout>
       <section className="py-20 lg:py-28 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl mx-auto text-center">
             <Link to="/services" className="inline-flex items-center text-sm text-primary hover:underline mb-6">
               ← Back to Services
             </Link>
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
               <Layers className="w-8 h-8 text-primary" />
             </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-secondary-foreground mb-4">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-secondary-foreground leading-tight mb-4">
               Learning Intelligence as a Service (LIaaS)
             </h1>
-            <p className="text-xl text-secondary-foreground/70">
+            <p className="text-xl text-secondary-foreground/70 leading-relaxed">
               We turn business goals into high-impact learning ecosystems, powered by AI and driven by cognitive insight.
             </p>
           </div>
