@@ -163,6 +163,94 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      {/* Contact Us Section */}
+      <section className="py-20 lg:py-28 bg-secondary/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground text-center mb-12">
+            Contact Us
+          </h2>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+            {/* Office Address & Map */}
+            <div>
+              <div className="flex items-start gap-4 mb-8">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Office Address</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Arnas Learning Intelligence Studio Pvt. Ltd.<br />
+                    123 Business Park, Tower A, 5th Floor<br />
+                    Bengaluru, Karnataka 560001<br />
+                    India
+                  </p>
+                </div>
+              </div>
+              <div className="rounded-xl overflow-hidden border border-border h-64">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.84916296526!2d77.49085452812501!3d12.954517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Office Location"
+                />
+              </div>
+            </div>
+
+            {/* Social Media Links */}
+            <div>
+              <h3 className="font-semibold text-foreground mb-6 text-lg">Connect With Us</h3>
+              <div className="space-y-6">
+                <a
+                  href="https://linkedin.com/company/alis-global"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors group"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <Linkedin className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">LinkedIn</p>
+                    <p className="text-sm text-muted-foreground">Follow us for updates & insights</p>
+                  </div>
+                </a>
+                <a
+                  href="https://twitter.com/alis_global"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors group"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <Twitter className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">Twitter / X</p>
+                    <p className="text-sm text-muted-foreground">Join the conversation</p>
+                  </div>
+                </a>
+                <a
+                  href="https://instagram.com/alis_global"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card hover:border-primary/40 transition-colors group"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <Instagram className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">Instagram</p>
+                    <p className="text-sm text-muted-foreground">Behind the scenes & culture</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };
