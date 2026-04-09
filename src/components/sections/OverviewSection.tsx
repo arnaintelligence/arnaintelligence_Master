@@ -79,7 +79,7 @@ export function OverviewSection() {
 
         {/* Step Tabs */}
         <div className="flex justify-center mb-10">
-          <div className="inline-flex bg-card border border-border rounded-xl p-1 gap-1">
+          <div className="inline-flex flex-wrap justify-center bg-card border border-border rounded-xl p-1 gap-1">
             {layers.map((layer, i) => (
               <button
                 key={layer.key}

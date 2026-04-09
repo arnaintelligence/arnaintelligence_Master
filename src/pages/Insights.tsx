@@ -14,10 +14,10 @@ const Insights = () => {
             <span className="text-sm font-medium text-primary uppercase tracking-wider">
               Thought Leadership
             </span>
-            <h1 className="mt-4 text-5xl sm:text-6xl lg:text-7xl font-bold text-secondary-foreground leading-tight">
+            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight">
               Insights
             </h1>
-            <p className="mt-6 text-xl text-secondary-foreground/70 leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-secondary-foreground/70 leading-relaxed">
               Perspectives on the future of learning, AI in L&D, and building 
               intelligent learning ecosystems.
             </p>

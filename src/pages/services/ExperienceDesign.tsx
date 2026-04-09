@@ -34,10 +34,10 @@ const ExperienceDesign = () => {
             <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
               <PenTool className="w-8 h-8 text-primary" />
             </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-secondary-foreground leading-tight mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-4">
               Design as a Service (DaaS)
             </h1>
-            <p className="text-xl text-secondary-foreground/70 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-secondary-foreground/70 leading-relaxed">
               Experience-first creative support for learning and enablement teams, powered by 
               human-centered design that transforms learning into engaging and accessible experiences.
             </p>

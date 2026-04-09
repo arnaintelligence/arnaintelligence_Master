@@ -5,7 +5,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-secondary">
+    <section className="relative min-h-[70vh] sm:min-h-[80vh] lg:min-h-[85vh] flex items-center overflow-hidden bg-secondary">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -18,18 +18,18 @@ export function HeroSection() {
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="max-w-3xl mx-auto text-center">
           {/* Company Name */}
-          <p className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight tracking-wide mb-6 animate-fade-in">
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground leading-tight tracking-wide mb-4 sm:mb-6 animate-fade-in">
             Arnas Learning Intelligence Studio
           </p>
 
           {/* Main Heading */}
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-secondary-foreground leading-tight tracking-wide mb-8 animate-fade-in animation-delay-100">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-secondary-foreground leading-tight tracking-wide mb-6 sm:mb-8 animate-fade-in animation-delay-100">
             We Build Learning{" "}
             <span className="text-primary">Intelligently</span>
           </h1>
 
           {/* Description */}
-          <p className="text-lg text-secondary-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in animation-delay-200">
+          <p className="text-base sm:text-lg text-secondary-foreground/80 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in animation-delay-200 px-2 sm:px-0">
             Grounded in learning science. Accelerated by AI. Humanized through 
             design. Proven through analytics.
           </p>
