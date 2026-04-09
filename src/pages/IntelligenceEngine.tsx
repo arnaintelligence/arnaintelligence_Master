@@ -64,10 +64,10 @@ const IntelligenceEngine = () => {
             <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               Our Framework
             </span>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-secondary-foreground leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-4 sm:mb-6">
               The Learning Intelligence Model
             </h1>
-            <p className="text-xl text-secondary-foreground/70">
+            <p className="text-base sm:text-lg md:text-xl text-secondary-foreground/70">
               We organize our work into four layers, connected by a Cross-Intelligence 
               Engine that turns individual projects into a coherent learning ecosystem.
             </p>
