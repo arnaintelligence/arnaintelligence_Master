@@ -5,6 +5,7 @@ const products = [
     icon: GraduationCap,
     name: "Globiculum",
     description: "Curriculum alignment and learning intelligence platform",
+    link: "/images/globiculum-preview.png",
   },
   {
     icon: Bot,
@@ -39,7 +40,8 @@ export function ProductsSection() {
           {products.map((product) => (
             <div
               key={product.name}
-              className="p-8 rounded-2xl bg-background border border-border hover:border-primary/30 hover:shadow-lg transition-all text-center group"
+              className={`p-8 rounded-2xl bg-background border border-border hover:border-primary/30 hover:shadow-lg transition-all text-center group ${product.link ? 'cursor-pointer' : ''}`}
+              onClick={() => product.link && window.open(product.link, '_blank')}
             >
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
                 <product.icon className="w-8 h-8 text-primary" />
