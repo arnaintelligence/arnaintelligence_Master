@@ -13,6 +13,7 @@ import Products from "./pages/Products";
 import Insights from "./pages/Insights";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import GlobiculumPreview from "./pages/GlobiculumPreview";
 
 const queryClient = new QueryClient();
 
