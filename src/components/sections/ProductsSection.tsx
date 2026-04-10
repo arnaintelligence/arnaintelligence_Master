@@ -6,7 +6,7 @@ const products = [
     icon: GraduationCap,
     name: "Globiculum",
     description: "Curriculum alignment and learning intelligence platform",
-    link: "/globiculum-preview",
+    link: "https://academi-align.lovable.app",
   },
   {
     icon: Bot,
