@@ -13,6 +13,7 @@ import Products from "./pages/Products";
 import Insights from "./pages/Insights";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import GlobiculumPreview from "./pages/GlobiculumPreview";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/products" element={<Products />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/globiculum-preview" element={<GlobiculumPreview />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
