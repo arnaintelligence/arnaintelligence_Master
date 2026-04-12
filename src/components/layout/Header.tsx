@@ -36,13 +36,13 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-secondary border-b border-secondary-foreground/10">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 sm:h-22 lg:h-24 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
               src={arnaLogo} 
               alt="Arna Intelligence - Learning Intelligence Studio" 
-              className="h-10 sm:h-10 lg:h-12 w-auto object-contain"
+              className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
             />
           </Link>
 
