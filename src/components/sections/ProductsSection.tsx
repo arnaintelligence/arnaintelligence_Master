@@ -60,8 +60,6 @@ export function ProductsSection() {
               <a
                 key={product.name}
                 href={'link' in product ? product.link : undefined}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="p-8 rounded-2xl bg-background border border-border hover:border-primary/30 hover:shadow-lg transition-all text-center group cursor-pointer block"
               >
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">

@@ -1,3 +1,5 @@
+import { Layout } from "@/components/layout/Layout";
+
 const images = [
   { src: "/images/globiculum/hero.png", alt: "Globiculum Hero" },
   { src: "/images/globiculum/challenge.png", alt: "The Challenge Families Face" },
@@ -9,31 +11,36 @@ const images = [
 
 const GlobiculumPreview = () => {
   return (
-    <div
-      style={{
-        margin: 0,
-        padding: 0,
-        background: "#ffffff",
-        pointerEvents: "none",
-        userSelect: "none",
-      }}
-    >
-      {images.map((img, i) => (
-        <img
-          key={i}
-          src={img.src}
-          alt={img.alt}
-          loading={i === 0 ? "eager" : "lazy"}
-          draggable={false}
-          style={{
-            width: "100%",
-            height: "auto",
-            display: "block",
-            borderBottom: i < images.length - 1 ? "1px solid rgba(0,0,0,0.06)" : "none",
-          }}
-        />
-      ))}
-    </div>
+    <Layout>
+      <section className="bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-2">
+          <p className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wider text-center">
+            Preview of Globiculum
+          </p>
+        </div>
+        <div
+          className="w-full max-w-5xl mx-auto"
+          style={{ pointerEvents: "none", userSelect: "none" }}
+        >
+          {images.map((img, i) => (
+            <img
+              key={i}
+              src={img.src}
+              alt={img.alt}
+              loading={i === 0 ? "eager" : "lazy"}
+              draggable={false}
+              className="w-full h-auto block"
+              style={{
+                borderBottom:
+                  i < images.length - 1
+                    ? "1px solid rgba(0,0,0,0.06)"
+                    : "none",
+              }}
+            />
+          ))}
+        </div>
+      </section>
+    </Layout>
   );
 };
 
