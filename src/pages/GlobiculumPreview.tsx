@@ -37,7 +37,7 @@ const GlobiculumPreview = () => {
             <img
               src={globiculumLogo}
               alt="Globiculum"
-              className="h-10 sm:h-12 w-auto mx-auto mb-6 object-contain"
+              className="h-14 sm:h-16 lg:h-20 w-auto mx-auto mb-6 object-contain"
             />
 
             {/* Tagline */}
