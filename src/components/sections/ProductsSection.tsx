@@ -1,12 +1,14 @@
 import { GraduationCap, Bot, Workflow } from "lucide-react";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
     icon: GraduationCap,
     name: "Globiculum",
     description: "Curriculum alignment and learning intelligence platform",
-    comingSoon: true,
+    comingSoon: false,
+    href: "/globiculum-preview",
   },
   {
     icon: Bot,
@@ -23,6 +25,8 @@ const products = [
 ];
 
 export function ProductsSection() {
+  const navigate = useNavigate();
+
   return (
     <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,22 +44,45 @@ export function ProductsSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
-{products.map((product) => (
-              <div
-                key={product.name}
-                className="p-8 rounded-2xl bg-background border border-border opacity-70 cursor-not-allowed text-center group"
-                onClick={() => toast("Coming Soon", { description: `${product.name} will be available soon.` })}
-              >
+          {products.map((product) => {
+            const CardContent = (
+              <>
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
                   <product.icon className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2">{product.name}</h3>
                 <p className="text-muted-foreground">{product.description}</p>
-                <span className="inline-block mt-3 text-xs font-medium text-primary/60 uppercase tracking-wider">Coming Soon</span>
-              </div>
-            ))}
+                {product.comingSoon && (
+                  <span className="inline-block mt-3 text-xs font-medium text-primary/60 uppercase tracking-wider">Coming Soon</span>
+                )}
+              </>
+            );
+
+            if (product.comingSoon) {
+              return (
+                <div
+                  key={product.name}
+                  className="p-8 rounded-2xl bg-background border border-border opacity-70 cursor-not-allowed text-center group"
+                  onClick={() => toast("Coming Soon", { description: `${product.name} will be available soon.` })}
+                >
+                  {CardContent}
+                </div>
+              );
+            }
+
+            return (
+              <button
+                key={product.name}
+                className="p-8 rounded-2xl bg-background border border-border text-center group hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer"
+                onClick={() => navigate(product.href!)}
+              >
+                {CardContent}
+              </button>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
+

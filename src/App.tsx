@@ -10,6 +10,7 @@ import LearnTechAI from "./pages/services/LearnTechAI";
 import ExperienceDesign from "./pages/services/ExperienceDesign";
 import IntelligenceEngine from "./pages/IntelligenceEngine";
 import Products from "./pages/Products";
+import GlobiculumPreview from "./pages/GlobiculumPreview";
 import Insights from "./pages/Insights";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/services/experience-design" element={<ExperienceDesign />} />
           <Route path="/intelligence-engine" element={<IntelligenceEngine />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/globiculum-preview" element={<GlobiculumPreview />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/contact" element={<Contact />} />
           
