@@ -149,6 +149,61 @@ const GlobiculumPreview = () => {
           </div>
         </div>
       </section>
+
+      {/* How It Works Section */}
+      <section className="py-16 lg:py-24" style={{ backgroundColor: '#f8fafc' }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#14b8a6' }}>
+              Simple · Fast · Personalised
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#0f172a' }}>
+              From signup to study plan in under 10 minutes
+            </h2>
+            <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#64748b' }}>
+              No lengthy intake forms. No waiting. Just three steps between you and a clear, actionable roadmap.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Step 1 */}
+            <div className="relative p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: '#ffffff', border: '1px solid #e5e7eb' }}>
+              <span className="absolute top-4 right-4 text-5xl font-extrabold select-none" style={{ color: '#cbd5e1', opacity: 0.5 }}>01</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#dbeafe' }}>
+                <MapPin className="w-6 h-6" style={{ color: '#3b82f6' }} />
+              </div>
+              <h3 className="text-lg font-bold mb-2" style={{ color: '#0f172a' }}>Tell us where your child is coming from</h3>
+              <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>
+                Select your child's current grade, country, and curriculum (US Common Core, IB, and more).
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: '#ffffff', border: '1px solid #e5e7eb' }}>
+              <span className="absolute top-4 right-4 text-5xl font-extrabold select-none" style={{ color: '#cbd5e1', opacity: 0.5 }}>02</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#ccfbf1' }}>
+                <Brain className="w-6 h-6" style={{ color: '#14b8a6' }} />
+              </div>
+              <h3 className="text-lg font-bold mb-2" style={{ color: '#0f172a' }}>Our AI maps and bridges the gaps instantly</h3>
+              <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>
+                Globiculum cross-references thousands of syllabus data points to pinpoint exactly which topics your child already knows — and which need attention before they start school in India.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: '#ffffff', border: '1px solid #e5e7eb' }}>
+              <span className="absolute top-4 right-4 text-5xl font-extrabold select-none" style={{ color: '#cbd5e1', opacity: 0.5 }}>03</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#fef3c7' }}>
+                <Route className="w-6 h-6" style={{ color: '#f59e0b' }} />
+              </div>
+              <h3 className="text-lg font-bold mb-2" style={{ color: '#0f172a' }}>Get a personalised learning pathway</h3>
+              <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>
+                Receive a week-by-week study plan with curated resources, milestone check-ins, and progress tracking — tailored to your timeline before the move.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };
