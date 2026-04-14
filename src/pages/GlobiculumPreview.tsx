@@ -55,32 +55,13 @@ const GlobiculumPreview = () => {
 
             {/* Description */}
             <p
-              className="text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-12"
+              className="text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto"
               style={{ color: 'rgba(255,255,255,0.75)' }}
             >
               Seamless academic transitions to India — Globiculum ensures a
               seamless shift with tailored gap analysis and customized learning
               pathways designed for long-term success.
             </p>
-
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-full transition-all hover:brightness-110 hover:scale-[1.02]"
-                style={{ backgroundColor: '#F59E0B', color: '#0F172A' }}
-              >
-                Get Curriculum Gap Analysis Report
-                <ArrowRight className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-full border-2 transition-all hover:bg-white/10"
-                style={{ borderColor: '#F59E0B', color: '#F59E0B', backgroundColor: 'transparent' }}
-              >
-                How It Works
-              </a>
-            </div>
           </div>
         </div>
       </section>
