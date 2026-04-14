@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { ArrowRight, Globe, Shield, Award, Users, Cpu, AlertTriangle, BookOpen, Clock } from "lucide-react";
+import { ArrowRight, Globe, Shield, Award, Users, Cpu, AlertTriangle, BookOpen, Clock, MapPin, Brain, Route } from "lucide-react";
 
 const stats = [
   { icon: Globe, value: "24/7", label: "Expert Support" },
