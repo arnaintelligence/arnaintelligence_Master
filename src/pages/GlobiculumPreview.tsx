@@ -5,13 +5,13 @@ import { ArrowRight } from "lucide-react";
 const GlobiculumPreview = () => {
   return (
     <Layout>
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-secondary">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden" style={{ backgroundColor: '#0F172A' }}>
         {/* Background gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-secondary/95 to-primary/20" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0F172A 0%, #0F172A 60%, #0D9488 200%)' }} />
 
         {/* Decorative circles */}
-        <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-10 w-72 h-72 rounded-full blur-3xl" style={{ backgroundColor: 'rgba(13,148,136,0.1)' }} />
+        <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full blur-3xl" style={{ backgroundColor: 'rgba(245,158,11,0.08)' }} />
 
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="max-w-4xl mx-auto text-center">
