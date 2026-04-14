@@ -1,12 +1,12 @@
 import { Layout } from "@/components/layout/Layout";
 
 const images = [
-  { src: "/images/globiculum/hero.png", alt: "Globiculum Hero" },
-  { src: "/images/globiculum/challenge.png", alt: "The Challenge Families Face" },
-  { src: "/images/globiculum/roadmap.png", alt: "Roadmap" },
-  { src: "/images/globiculum/difference.png", alt: "The Globiculum Difference" },
-  { src: "/images/globiculum/traditional-vs.png", alt: "Traditional vs Globiculum" },
-  { src: "/images/globiculum/report.png", alt: "Transition Readiness Report" },
+  { src: "/images/globiculum/hero.png", alt: "Globiculum Hero", contained: false },
+  { src: "/images/globiculum/challenge.png", alt: "The Challenge Families Face", contained: false },
+  { src: "/images/globiculum/roadmap.png", alt: "Roadmap", contained: false },
+  { src: "/images/globiculum/difference.png", alt: "The Globiculum Difference", contained: false },
+  { src: "/images/globiculum/traditional-vs.png", alt: "Traditional vs Globiculum", contained: false },
+  { src: "/images/globiculum/report.png", alt: "Transition Readiness Report", contained: true },
 ];
 
 const GlobiculumPreview = () => {
@@ -29,7 +29,7 @@ const GlobiculumPreview = () => {
               alt={img.alt}
               loading={i === 0 ? "eager" : "lazy"}
               draggable={false}
-              className="w-full h-auto block"
+              className={`h-auto block mx-auto ${img.contained ? "w-auto max-w-md sm:max-w-lg md:max-w-xl" : "w-full"}`}
               style={{
                 borderBottom:
                   i < images.length - 1
