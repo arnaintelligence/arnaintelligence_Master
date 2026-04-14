@@ -15,30 +15,30 @@ const GlobiculumPreview = () => {
 
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm sm:text-base font-medium text-primary uppercase tracking-widest mb-4 animate-fade-in">
+            <p className="text-sm sm:text-base font-medium uppercase tracking-widest mb-4 animate-fade-in" style={{ color: '#0D9488' }}>
               Don't Let the Move Set Your Child Behind
             </p>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-6 animate-fade-in">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fade-in" style={{ color: '#FFFFFF' }}>
               Bridge Your Child's Education
               <br />
-              <span className="text-secondary-foreground">Between </span>
-              <span className="text-primary">Global Curriculums</span>
+              <span style={{ color: '#FFFFFF' }}>Between </span>
+              <span style={{ color: '#0D9488' }}>Global Curriculums</span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-secondary-foreground/70 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10 animate-fade-in">
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10 animate-fade-in" style={{ color: 'rgba(255,255,255,0.7)' }}>
               Seamless academic transitions to India — Globiculum ensures a seamless shift with tailored gap analysis and customized learning pathways designed for long-term success.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-              <Button size="lg" className="group">
+              <Button size="lg" className="group" style={{ backgroundColor: '#F59E0B', color: '#0F172A' }}>
                 Get Curriculum Gap Analysis Report
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="bg-transparent border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10 hover:text-secondary-foreground"
+                style={{ backgroundColor: 'transparent', borderColor: 'rgba(255,255,255,0.3)', color: '#FFFFFF' }}
               >
                 How It Works
               </Button>
