@@ -37,7 +37,7 @@ const GlobiculumPreview = () => {
             <img
               src={globiculumLogo}
               alt="Globiculum"
-              className="h-14 sm:h-16 lg:h-20 w-auto mx-auto mb-6 object-contain"
+              className="h-12 sm:h-14 lg:h-16 w-auto mx-auto mb-6 object-contain"
             />
 
             {/* Tagline */}
@@ -58,7 +58,7 @@ const GlobiculumPreview = () => {
               Education
               <br />
               <span style={{ color: '#FFFFFF' }}>Between </span>
-              <span style={{ color: '#0D9488' }}>Global Curriculums</span>
+              <span style={{ color: '#0D9488' }}>Global Curricula</span>
             </h1>
 
             {/* Description */}
