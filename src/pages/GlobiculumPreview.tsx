@@ -1,5 +1,13 @@
 import { Layout } from "@/components/layout/Layout";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Globe, Shield, Award, Users, Cpu } from "lucide-react";
+
+const stats = [
+  { icon: Globe, value: "24/7", label: "Expert Support" },
+  { icon: Shield, value: "100%", label: "Secure & Compliant" },
+  { icon: Award, value: "Boards", label: "Excellence" },
+  { icon: Cpu, value: "AI-Powered", label: "Personalized Plans" },
+  { icon: Users, value: "Global", label: "Family Community" },
+];
 
 const GlobiculumPreview = () => {
   return (
@@ -65,6 +73,27 @@ const GlobiculumPreview = () => {
                 How It Works
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 lg:py-20" style={{ backgroundColor: '#f8fafc' }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
+            {stats.map((s) => (
+              <div
+                key={s.label}
+                className="flex items-center gap-4 px-6 py-5 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                style={{ backgroundColor: '#ffffff', border: '1px solid #e5e7eb' }}
+              >
+                <s.icon className="w-8 h-8 flex-shrink-0" style={{ color: '#14b8a6' }} />
+                <div>
+                  <p className="text-lg font-bold" style={{ color: '#0f172a' }}>{s.value}</p>
+                  <p className="text-sm" style={{ color: '#64748b' }}>{s.label}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
