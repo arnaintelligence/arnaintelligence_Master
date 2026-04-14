@@ -1,5 +1,7 @@
+import { useState, useCallback } from "react";
 import { Layout } from "@/components/layout/Layout";
-import { ArrowRight, Globe, Shield, Award, Users, Cpu, AlertTriangle, BookOpen, Clock, MapPin, Brain, Route, X, Check } from "lucide-react";
+import { ArrowRight, Globe, Shield, Award, Users, Cpu, AlertTriangle, BookOpen, Clock, MapPin, Brain, Route, X, Check, Maximize2, ZoomIn, ZoomOut } from "lucide-react";
+import readinessReport from "@/assets/Readiness_Report.jpeg";
 
 const stats = [
   { icon: Globe, value: "24/7", label: "Expert Support" },
@@ -10,6 +12,12 @@ const stats = [
 ];
 
 const GlobiculumPreview = () => {
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [scale, setScale] = useState(1);
+
+  const zoomIn = useCallback(() => setScale((s) => Math.min(s + 0.25, 3)), []);
+  const zoomOut = useCallback(() => setScale((s) => Math.max(s - 0.25, 0.5)), []);
+
   return (
     <Layout>
       <section
@@ -363,6 +371,77 @@ const GlobiculumPreview = () => {
           </div>
         </div>
       </section>
+
+      {/* Sample Transition Readiness Report */}
+      <section className="py-16 lg:py-24" style={{ backgroundColor: '#f8fafc' }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#14b8a6' }}>
+              What You'll Receive
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#0f172a' }}>
+              Sample Transition Readiness Report
+            </h2>
+            <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#64748b' }}>
+              See exactly what you'll receive — a comprehensive, actionable report tailored to your child's academic transition.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div
+              className="relative group rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              style={{ backgroundColor: '#ffffff', border: '1px solid #e5e7eb' }}
+            >
+              <img
+                src={readinessReport}
+                alt="Sample Transition Readiness Report showing subject coverage, critical gaps, bridge timeline, and study recommendations"
+                className="w-full h-auto block"
+              />
+              <button
+                onClick={() => { setIsFullscreen(true); setScale(1); }}
+                className="absolute top-4 right-4 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity"
+                style={{ backgroundColor: 'rgba(15, 23, 42, 0.8)', color: '#ffffff' }}
+                aria-label="View fullscreen"
+              >
+                <Maximize2 className="w-4 h-4" />
+                View Full Report
+              </button>
+            </div>
+            <p className="text-center text-sm mt-4" style={{ color: '#64748b' }}>
+              Click the expand icon to zoom in and explore the full report
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Fullscreen overlay */}
+      {isFullscreen && (
+        <div className="fixed inset-0 z-50 flex flex-col" style={{ backgroundColor: 'rgba(15, 23, 42, 0.95)' }}>
+          <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+            <p className="text-base font-semibold" style={{ color: '#ffffff' }}>Transition Readiness Report</p>
+            <div className="flex items-center gap-2">
+              <button onClick={zoomOut} disabled={scale <= 0.5} className="p-2 rounded-lg transition-colors disabled:opacity-30" style={{ color: '#ffffff', backgroundColor: 'rgba(255,255,255,0.1)' }}>
+                <ZoomOut className="w-5 h-5" />
+              </button>
+              <span className="text-sm min-w-[50px] text-center" style={{ color: '#ffffff' }}>{Math.round(scale * 100)}%</span>
+              <button onClick={zoomIn} disabled={scale >= 3} className="p-2 rounded-lg transition-colors disabled:opacity-30" style={{ color: '#ffffff', backgroundColor: 'rgba(255,255,255,0.1)' }}>
+                <ZoomIn className="w-5 h-5" />
+              </button>
+              <button onClick={() => setIsFullscreen(false)} className="p-2 rounded-lg transition-colors ml-2" style={{ color: '#ffffff', backgroundColor: 'rgba(255,255,255,0.1)' }}>
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+          <div className="flex-1 overflow-auto flex items-start justify-center p-8">
+            <img
+              src={readinessReport}
+              alt="Full Transition Readiness Report"
+              className="max-w-full h-auto transition-transform duration-200"
+              style={{ transform: `scale(${scale})`, transformOrigin: 'top center' }}
+            />
+          </div>
+        </div>
+      )}
     </Layout>
   );
 };
