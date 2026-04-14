@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { ArrowRight, Globe, Shield, Award, Users, Cpu } from "lucide-react";
+import { ArrowRight, Globe, Shield, Award, Users, Cpu, AlertTriangle, BookOpen, Clock } from "lucide-react";
 
 const stats = [
   { icon: Globe, value: "24/7", label: "Expert Support" },
@@ -94,6 +94,58 @@ const GlobiculumPreview = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Challenge Section */}
+      <section className="py-16 lg:py-24" style={{ backgroundColor: '#ffffff' }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#14b8a6' }}>
+              The challenge families face
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#0f172a' }}>
+              Every year, thousands of children land in India academically unprepared.
+            </h2>
+            <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#64748b' }}>
+              The excitement of returning home quickly turns to anxiety when parents realise that CBSE Grade 7 Math is two years ahead of what their child studied in the US — and that no one told them in advance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Card 1 */}
+            <div className="p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: '#ffffff', border: '1px solid #e5e7eb' }}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#fee2e2' }}>
+                <AlertTriangle className="w-6 h-6" style={{ color: '#ef4444' }} />
+              </div>
+              <h3 className="text-lg font-bold mb-2" style={{ color: '#0f172a' }}>Curriculum shock is real</h3>
+              <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>
+                Indian boards cover topics earlier and deeper. Without a plan, your child is thrown into a class where everyone else already knows what they don't.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: '#ffffff', border: '1px solid #e5e7eb' }}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#ccfbf1' }}>
+                <BookOpen className="w-6 h-6" style={{ color: '#14b8a6' }} />
+              </div>
+              <h3 className="text-lg font-bold mb-2" style={{ color: '#0f172a' }}>Generic tutors don't help enough</h3>
+              <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>
+                Most tutors don't know both curricula. They teach rote answers — not how to close specific gaps from a US to Indian curriculum transition.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow" style={{ backgroundColor: '#ffffff', border: '1px solid #e5e7eb' }}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#dbeafe' }}>
+                <Clock className="w-6 h-6" style={{ color: '#3b82f6' }} />
+              </div>
+              <h3 className="text-lg font-bold mb-2" style={{ color: '#0f172a' }}>Every week of delay costs confidence</h3>
+              <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>
+                The longer your child struggles silently, the harder it becomes to catch up. Early intervention is the single biggest predictor of a successful transition.
+              </p>
+            </div>
           </div>
         </div>
       </section>
