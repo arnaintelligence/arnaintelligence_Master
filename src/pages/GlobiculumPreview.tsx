@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { ArrowRight, Globe, Shield, Award, Users, Cpu, AlertTriangle, BookOpen, Clock, MapPin, Brain, Route, X, Check, Maximize2, ZoomIn, ZoomOut } from "lucide-react";
+import globiculumLogo from "@/assets/globiculum-logo-white.png";
 const readinessReport = "/images/Readiness_Report.jpeg";
 
 const stats = [
@@ -32,6 +33,13 @@ const GlobiculumPreview = () => {
 
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
+            {/* Logo */}
+            <img
+              src={globiculumLogo}
+              alt="Globiculum"
+              className="h-10 sm:h-12 w-auto mx-auto mb-6 object-contain"
+            />
+
             {/* Tagline */}
             <p
               className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] mb-8"
