@@ -9,6 +9,7 @@ const stats = [
   { icon: Users, value: "Global", label: "Family Community" },
 ];
 
+const GlobiculumPreview = () => {
   return (
     <Layout>
       <section
