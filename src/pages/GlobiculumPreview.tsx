@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { ArrowRight, Globe, Shield, Award, Users, Cpu, AlertTriangle, BookOpen, Clock, MapPin, Brain, Route, X, Check, Maximize2, ZoomIn, ZoomOut } from "lucide-react";
-import readinessReport from "@/assets/Readiness_Report.jpeg";
+const readinessReport = "/images/Readiness_Report.jpeg";
 
 const stats = [
   { icon: Globe, value: "24/7", label: "Expert Support" },
