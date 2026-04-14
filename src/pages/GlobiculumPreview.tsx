@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Globe, Shield, Award, Users, Cpu } from "lucide-react";
 
 const GlobiculumPreview = () => {
   return (
