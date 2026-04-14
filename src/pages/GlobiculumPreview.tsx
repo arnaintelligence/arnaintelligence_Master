@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { ArrowRight, Globe, Shield, Award, Users, Cpu, AlertTriangle, BookOpen, Clock, MapPin, Brain, Route } from "lucide-react";
+import { ArrowRight, Globe, Shield, Award, Users, Cpu, AlertTriangle, BookOpen, Clock, MapPin, Brain, Route, X, Check } from "lucide-react";
 
 const stats = [
   { icon: Globe, value: "24/7", label: "Expert Support" },
@@ -200,6 +200,165 @@ const GlobiculumPreview = () => {
               <p className="text-sm leading-relaxed" style={{ color: '#64748b' }}>
                 Receive a week-by-week study plan with curated resources, milestone check-ins, and progress tracking — tailored to your timeline before the move.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Globiculum Difference Section */}
+      <section className="py-16 lg:py-24" style={{ backgroundColor: '#ffffff' }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="max-w-4xl mx-auto text-center mb-14">
+            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#14b8a6' }}>
+              The Globiculum Difference
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#0f172a' }}>
+              Your child doesn't have to choose between two worlds.
+            </h2>
+            <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#64748b' }}>
+              Our unique AI-driven approach ensures your child excels in Indian education standards and stays aligned with global academic competitiveness.
+            </p>
+          </div>
+
+          {/* Two Cards with Bridge */}
+          <div className="max-w-6xl mx-auto relative">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+              {/* Indian Curriculum Card */}
+              <div className="rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden" style={{ backgroundColor: '#ffffff', border: '1px solid #e5e7eb' }}>
+                <div className="p-5 flex items-center gap-3" style={{ borderBottom: '1px solid #e5e7eb' }}>
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#0f172a' }}>
+                    <BookOpen className="w-5 h-5" style={{ color: '#ffffff' }} />
+                  </div>
+                  <h3 className="text-lg font-bold" style={{ color: '#0f172a' }}>Build a Strong Academic Core</h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-sm leading-relaxed mb-5" style={{ color: '#64748b' }}>
+                    Master the depth and rigor of Indian education systems. A foundation built for academic excellence and cultural rootedness.
+                  </p>
+                  <div className="space-y-4">
+                    {[
+                      { title: "CBSE & ICSE Excellence", desc: "Deep conceptual mastery, not just exam readiness" },
+                      { title: "Mathematical Rigour", desc: "Advanced computation and analytical reasoning" },
+                      { title: "Cultural & Language Foundation", desc: "Language proficiency and cultural context" },
+                    ].map((item) => (
+                      <div key={item.title} className="flex gap-3">
+                        <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#0f172a' }} />
+                        <div>
+                          <p className="text-sm font-semibold" style={{ color: '#0f172a' }}>{item.title}</p>
+                          <p className="text-xs" style={{ color: '#64748b' }}>{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Global Curriculum Card */}
+              <div className="rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden" style={{ backgroundColor: '#ffffff', border: '1px solid #e5e7eb' }}>
+                <div className="p-5 flex items-center gap-3" style={{ borderBottom: '1px solid #e5e7eb' }}>
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#14b8a6' }}>
+                    <Globe className="w-5 h-5" style={{ color: '#ffffff' }} />
+                  </div>
+                  <h3 className="text-lg font-bold" style={{ color: '#0f172a' }}>Stay Ahead for Global Pathways</h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-sm leading-relaxed mb-5" style={{ color: '#64748b' }}>
+                    Maintain global curriculum flexibility and competitive edge. Equip your child for international admissions and global careers.
+                  </p>
+                  <div className="space-y-4">
+                    {[
+                      { title: "University Entrance Test / AP Preparation", desc: "Strategic readiness for global college admissions success" },
+                      { title: "Critical Thinking & Creativity", desc: "Project-based, inquiry-led learning approaches" },
+                      { title: "Global Competitiveness", desc: "Skills that travel, whichever country they live in next" },
+                    ].map((item) => (
+                      <div key={item.title} className="flex gap-3">
+                        <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#14b8a6' }} />
+                        <div>
+                          <p className="text-sm font-semibold" style={{ color: '#0f172a' }}>{item.title}</p>
+                          <p className="text-xs" style={{ color: '#64748b' }}>{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bridge Icon - centered between cards */}
+            <div className="hidden lg:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+              <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-md" style={{ backgroundColor: '#ffffff', border: '2px solid #e5e7eb' }}>
+                <ArrowRight className="w-6 h-6" style={{ color: '#14b8a6' }} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Traditional vs Globiculum Comparison */}
+      <section className="py-16 lg:py-24" style={{ backgroundColor: '#f8fafc' }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: '#14b8a6' }}>
+              Why Choose Globiculum
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: '#0f172a' }}>
+              Traditional vs. Globiculum
+            </h2>
+            <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#64748b' }}>
+              Traditional approaches treat every child the same. Globiculum starts from where they actually are, not where the textbook assumes.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Traditional Approach */}
+            <div className="rounded-xl shadow-sm overflow-hidden" style={{ backgroundColor: '#ffffff', border: '1px solid #e5e7eb' }}>
+              <div className="p-5 flex items-center gap-3" style={{ backgroundColor: '#fee2e2' }}>
+                <X className="w-5 h-5" style={{ color: '#ef4444' }} />
+                <h3 className="text-lg font-bold" style={{ color: '#0f172a' }}>Traditional Approach</h3>
+              </div>
+              <div className="p-6 space-y-4">
+                {[
+                  "Generic curriculum overview",
+                  "One-size-fits-all approach",
+                  "Manual assessment process",
+                  "Limited follow-up support",
+                  "Static learning materials",
+                  "Rote learning",
+                ].map((desc) => (
+                  <div key={desc} className="flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: '#fee2e2' }}>
+                      <X className="w-3 h-3" style={{ color: '#ef4444' }} />
+                    </div>
+                    <p className="text-sm" style={{ color: '#64748b' }}>{desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Globiculum Advantage */}
+            <div className="rounded-xl shadow-sm overflow-hidden" style={{ backgroundColor: '#ffffff', border: '1px solid #e5e7eb' }}>
+              <div className="p-5 flex items-center gap-3" style={{ backgroundColor: '#ccfbf1' }}>
+                <Check className="w-5 h-5" style={{ color: '#14b8a6' }} />
+                <h3 className="text-lg font-bold" style={{ color: '#0f172a' }}>Globiculum Advantage</h3>
+              </div>
+              <div className="p-6 space-y-4">
+                {[
+                  "Personalized AI-powered gap analysis",
+                  "AI-powered customized pathways",
+                  "Instant digital assessment",
+                  "Continuous progress tracking",
+                  "Dynamic, adaptive resources",
+                  "Pocket friendly",
+                ].map((desc) => (
+                  <div key={desc} className="flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: '#ccfbf1' }}>
+                      <Check className="w-3 h-3" style={{ color: '#14b8a6' }} />
+                    </div>
+                    <p className="text-sm" style={{ color: '#0f172a' }}>{desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
