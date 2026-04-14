@@ -1,7 +1,14 @@
 import { Layout } from "@/components/layout/Layout";
 import { ArrowRight, Globe, Shield, Award, Users, Cpu } from "lucide-react";
 
-const GlobiculumPreview = () => {
+const stats = [
+  { icon: Globe, value: "24/7", label: "Expert Support" },
+  { icon: Shield, value: "100%", label: "Secure & Compliant" },
+  { icon: Award, value: "Boards", label: "Excellence" },
+  { icon: Cpu, value: "AI-Powered", label: "Personalized Plans" },
+  { icon: Users, value: "Global", label: "Family Community" },
+];
+
   return (
     <Layout>
       <section
