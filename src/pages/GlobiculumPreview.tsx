@@ -12,6 +12,12 @@ const stats = [
 ];
 
 const GlobiculumPreview = () => {
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [scale, setScale] = useState(1);
+
+  const zoomIn = useCallback(() => setScale((s) => Math.min(s + 0.25, 3)), []);
+  const zoomOut = useCallback(() => setScale((s) => Math.max(s - 0.25, 0.5)), []);
+
   return (
     <Layout>
       <section
