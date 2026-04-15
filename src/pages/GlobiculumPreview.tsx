@@ -441,7 +441,7 @@ const GlobiculumPreview = () => {
               Traditional vs. Globiculum
             </h2>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
-              Traditional approaches treat every child the same. Globiculum starts from where they actually are, not
+              Traditional approaches treat every child the same. Globiculum starts from where they actually are not
               where the textbook assumes.
             </p>
           </div>
