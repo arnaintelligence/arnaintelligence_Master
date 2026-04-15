@@ -53,7 +53,7 @@ export function ProductsSection() {
                 <h3 className="text-xl font-bold text-foreground mb-2">{product.name}</h3>
                 <p className="text-muted-foreground">{product.description}</p>
                 {product.comingSoon && (
-                  <span className="inline-block mt-4 px-3 py-1 text-xs font-medium bg-amber-100 text-amber-700 rounded-full">Coming Soon</span>
+                  <span className="inline-block mt-4 px-3 py-1 text-sm font-medium bg-amber-100 text-amber-700 rounded-full">Coming Soon</span>
                 )}
               </>
             );
