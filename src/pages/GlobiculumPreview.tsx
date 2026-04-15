@@ -77,11 +77,11 @@ const GlobiculumPreview = () => {
       {/* Stats Section */}
       <section className="py-16 lg:py-20" style={{ backgroundColor: '#f8fafc' }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto place-items-center">
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="flex items-center gap-4 px-6 py-5 rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                className="flex items-center gap-4 px-6 py-5 rounded-xl shadow-sm hover:shadow-md transition-shadow w-full max-w-xs h-24"
                 style={{ backgroundColor: '#ffffff', border: '1px solid #e5e7eb' }}
               >
                 <s.icon className="w-8 h-8 flex-shrink-0" style={{ color: '#14b8a6' }} />
