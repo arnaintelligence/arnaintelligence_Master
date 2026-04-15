@@ -70,6 +70,29 @@ export function ProductsSection() {
               );
             }
 
+            // Globiculum card with styled button
+            if (product.name === "Globiculum") {
+              return (
+                <div
+                  key={product.name}
+                  className="p-8 rounded-2xl bg-background border border-border text-center group hover:border-primary/50 hover:shadow-lg transition-all"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                    <product.icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{product.name}</h3>
+                  <p className="text-muted-foreground mb-6">{product.description}</p>
+                  <button
+                    onClick={() => navigate(product.href!)}
+                    className="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-primary-foreground rounded-full font-medium text-sm hover:bg-primary/90 transition-colors"
+                  >
+                    View Preview
+                  </button>
+                  <p className="mt-3 text-xs text-muted-foreground">Early look at the platform</p>
+                </div>
+              );
+            }
+
             return (
               <button
                 key={product.name}
