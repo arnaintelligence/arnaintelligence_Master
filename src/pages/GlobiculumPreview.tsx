@@ -210,7 +210,7 @@ const GlobiculumPreview = () => {
               From signup to study plan in under 10 minutes
             </h2>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
-              No lengthy intake forms. No waiting. Just three steps between you and a clear, actionable roadmap.
+              No lengthy intake forms. No waiting. Just three steps between you and a clear actionable roadmap.
             </p>
           </div>
 
