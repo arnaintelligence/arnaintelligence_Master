@@ -70,7 +70,7 @@ export function ProductsSection() {
               );
             }
 
-            // Globiculum card - clickable with hover effects
+            // Globiculum card - full teal hover interaction
             if (product.name === "Globiculum") {
               return (
               <a
@@ -78,12 +78,12 @@ export function ProductsSection() {
                 href="/globiculum-preview"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-8 rounded-2xl bg-background border border-border text-center cursor-pointer transition-all duration-300 hover:border-secondary hover:bg-secondary hover:shadow-lg group"
+                className="block p-8 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] text-center cursor-pointer transition-all duration-300 hover:bg-secondary hover:border-secondary hover:shadow-lg hover:scale-[1.02] group"
               >
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 group-hover:bg-white/20 flex items-center justify-center mx-auto mb-6 transition-colors duration-300">
                   <product.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-white transition-colors duration-300">{product.name}</h3>
+                <h3 className="text-xl font-bold text-foreground group-hover:text-white transition-colors duration-300">{product.name}</h3>
                 <p className="text-muted-foreground group-hover:text-white/90 transition-colors duration-300">{product.description}</p>
               </a>
               );
