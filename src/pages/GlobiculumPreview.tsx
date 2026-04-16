@@ -117,22 +117,22 @@ const GlobiculumPreview = () => {
       </section>
 
       {/* Challenge Section */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: "#ffffff" }}>
+      <section className="py-16 md:py-20" style={{ backgroundColor: "#ffffff" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#14b8a6]">
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#14b8a6] mb-3">
               The Challenge Families Face
             </h1>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground mt-3">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground mt-3 mb-4">
               Every year, thousands of children land in India academically unprepared.
             </h2>
-            <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
+            <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: "#64748b" }}>
               The excitement of returning home quickly turns to anxiety when parents realise that CBSE Grade 7 Math is
               two years ahead of what their child studied in the US — and that no one told them in advance.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
             {/* Card 1 */}
             <div
               className="p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
