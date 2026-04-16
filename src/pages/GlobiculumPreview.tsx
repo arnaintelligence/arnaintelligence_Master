@@ -15,7 +15,6 @@ import {
   Route,
   X,
   Check,
-  Maximize2,
   ZoomIn,
   ZoomOut,
 } from "lucide-react";
@@ -540,10 +539,10 @@ const GlobiculumPreview = () => {
                 }}
                 className="absolute top-4 right-4 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity"
                 style={{ backgroundColor: "rgba(15, 23, 42, 0.8)", color: "#ffffff" }}
-                aria-label="View fullscreen"
+                aria-label="Zoom report"
               >
-                <Maximize2 className="w-4 h-4" />
-                View Full Report
+                <ZoomIn className="w-4 h-4" />
+                Zoom Report
               </button>
             </div>
             <p className="text-center text-sm mt-4" style={{ color: "#64748b" }}>
