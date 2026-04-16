@@ -38,7 +38,7 @@ const GlobiculumPreview = () => {
 
   return (
     <Layout>
-<section
+      <section
         className="relative min-h-[75vh] flex items-center overflow-hidden"
         style={{
           background: "linear-gradient(135deg, #0B1120 0%, #0F2027 30%, #0D9488 100%)",
@@ -200,10 +200,10 @@ const GlobiculumPreview = () => {
       <section className="py-16 md:py-20" style={{ backgroundColor: "#f8fafc" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center mb-12">
-            <h1 className="text-2xl md:text-4xl font-bold text-[#14b8a6] mb-3" style={{ color: "#14b8a6" }}>
+            <h1 className="text-3xl md:text-5xl font-bold text-[#14b8a6] mb-3" style={{ color: "#14b8a6" }}>
               Simple · Fast · Personalised
             </h1>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4" style={{ color: "#0f172a" }}>
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4" style={{ color: "#0f172a" }}>
               From signup to study plan in under 10 minutes
             </h2>
             <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: "#64748b" }}>
@@ -212,72 +212,72 @@ const GlobiculumPreview = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
-          {/* Step 1 */}
-          <div
-            className="relative p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
-            style={{ backgroundColor: "#ffffff", border: "1px solid #e5e7eb" }}
-          >
-            <span
-              className="absolute top-3 right-3 text-4xl font-extrabold select-none"
-              style={{ color: "#cbd5e1", opacity: 0.4 }}
-            >
-              01
-            </span>
+            {/* Step 1 */}
             <div
-              className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 mx-auto"
-              style={{ backgroundColor: "#dbeafe" }}
+              className="relative p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
+              style={{ backgroundColor: "#ffffff", border: "1px solid #e5e7eb" }}
             >
-              <MapPin className="w-7 h-7" style={{ color: "#3b82f6" }} />
+              <span
+                className="absolute top-3 right-3 text-4xl font-extrabold select-none"
+                style={{ color: "#cbd5e1", opacity: 0.4 }}
+              >
+                01
+              </span>
+              <div
+                className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 mx-auto"
+                style={{ backgroundColor: "#dbeafe" }}
+              >
+                <MapPin className="w-7 h-7" style={{ color: "#3b82f6" }} />
+              </div>
+              <h3 className="text-lg font-bold" style={{ color: "#0f172a" }}>
+                Tell us where your child is coming from
+              </h3>
             </div>
-            <h3 className="text-lg font-bold" style={{ color: "#0f172a" }}>
-              Tell us where your child is coming from
-            </h3>
-          </div>
 
-          {/* Step 2 */}
-          <div
-            className="relative p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
-            style={{ backgroundColor: "#ffffff", border: "1px solid #e5e7eb" }}
-          >
-            <span
-              className="absolute top-3 right-3 text-4xl font-extrabold select-none"
-              style={{ color: "#cbd5e1", opacity: 0.4 }}
-            >
-              02
-            </span>
+            {/* Step 2 */}
             <div
-              className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 mx-auto"
-              style={{ backgroundColor: "#ccfbf1" }}
+              className="relative p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
+              style={{ backgroundColor: "#ffffff", border: "1px solid #e5e7eb" }}
             >
-              <Brain className="w-7 h-7" style={{ color: "#14b8a6" }} />
+              <span
+                className="absolute top-3 right-3 text-4xl font-extrabold select-none"
+                style={{ color: "#cbd5e1", opacity: 0.4 }}
+              >
+                02
+              </span>
+              <div
+                className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 mx-auto"
+                style={{ backgroundColor: "#ccfbf1" }}
+              >
+                <Brain className="w-7 h-7" style={{ color: "#14b8a6" }} />
+              </div>
+              <h3 className="text-lg font-bold" style={{ color: "#0f172a" }}>
+                Our AI maps and bridges the gaps instantly
+              </h3>
             </div>
-            <h3 className="text-lg font-bold" style={{ color: "#0f172a" }}>
-              Our AI maps and bridges the gaps instantly
-            </h3>
-          </div>
 
-          {/* Step 3 */}
-          <div
-            className="relative p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
-            style={{ backgroundColor: "#ffffff", border: "1px solid #e5e7eb" }}
-          >
-            <span
-              className="absolute top-3 right-3 text-4xl font-extrabold select-none"
-              style={{ color: "#cbd5e1", opacity: 0.4 }}
-            >
-              03
-            </span>
+            {/* Step 3 */}
             <div
-              className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 mx-auto"
-              style={{ backgroundColor: "#fef3c7" }}
+              className="relative p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
+              style={{ backgroundColor: "#ffffff", border: "1px solid #e5e7eb" }}
             >
-              <Route className="w-7 h-7" style={{ color: "#f59e0b" }} />
+              <span
+                className="absolute top-3 right-3 text-4xl font-extrabold select-none"
+                style={{ color: "#cbd5e1", opacity: 0.4 }}
+              >
+                03
+              </span>
+              <div
+                className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 mx-auto"
+                style={{ backgroundColor: "#fef3c7" }}
+              >
+                <Route className="w-7 h-7" style={{ color: "#f59e0b" }} />
+              </div>
+              <h3 className="text-lg font-bold" style={{ color: "#0f172a" }}>
+                Get a personalised learning pathway
+              </h3>
             </div>
-            <h3 className="text-lg font-bold" style={{ color: "#0f172a" }}>
-              Get a personalised learning pathway
-            </h3>
           </div>
-        </div>
         </div>
       </section>
 
