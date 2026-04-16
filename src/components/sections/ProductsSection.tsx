@@ -82,12 +82,14 @@ export function ProductsSection() {
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-2">{product.name}</h3>
                   <p className="text-muted-foreground mb-6">{product.description}</p>
-                  <button
-                    onClick={() => navigate(product.href!)}
+                  <a
+                    href={product.href!}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-6 py-2.5 bg-primary text-primary-foreground rounded-full font-medium text-sm hover:bg-primary/90 transition-colors"
                   >
                     Quick Preview
-                  </button>
+                  </a>
                   <p className="mt-3 text-xs text-muted-foreground">Early look at the platform</p>
                 </div>
               );
