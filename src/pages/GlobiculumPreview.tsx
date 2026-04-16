@@ -39,8 +39,8 @@ const GlobiculumPreview = () => {
 
   return (
     <Layout>
-      <section
-        className="relative min-h-[90vh] flex items-center overflow-hidden"
+<section
+        className="relative min-h-[75vh] flex items-center overflow-hidden"
         style={{
           background: "linear-gradient(135deg, #0B1120 0%, #0F2027 30%, #0D9488 100%)",
         }}
@@ -55,23 +55,23 @@ const GlobiculumPreview = () => {
           style={{ backgroundColor: "#0D9488" }}
         />
 
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="max-w-4xl mx-auto text-center">
             {/* Logo */}
             <img
               src={globiculumLogo}
               alt="Globiculum"
-              className="h-12 sm:h-14 lg:h-16 w-auto mx-auto mb-6 object-contain"
+              className="h-12 sm:h-14 lg:h-16 w-auto mx-auto mb-3 object-contain"
             />
 
             {/* Tagline */}
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] mb-8" style={{ color: "#F59E0B" }}>
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] mb-4" style={{ color: "#F59E0B" }}>
               Don't Let the Move Set Your Child Behind
             </p>
 
             {/* Main Heading */}
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-8"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] mb-5"
               style={{ color: "#FFFFFF" }}
             >
               Bridge Your Child's
@@ -84,7 +84,7 @@ const GlobiculumPreview = () => {
 
             {/* Description */}
             <p
-              className="text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto"
+              className="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
               style={{ color: "rgba(255,255,255,0.75)" }}
             >
               Seamless academic transitions to India — Globiculum ensures a seamless shift with tailored gap analysis
