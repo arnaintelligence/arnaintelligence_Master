@@ -19,7 +19,8 @@ export function HeroSection() {
         <div className="max-w-3xl mx-auto text-center">
           {/* Company Name */}
           <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground leading-relaxed tracking-wide mb-4 sm:mb-6 animate-fade-in">
-            Arnas Learning Intelligence<br />Studio
+            Arnas Learning Intelligence
+            <span className="block mt-3">Studio</span>
           </p>
 
           {/* Main Heading */}
