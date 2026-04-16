@@ -20,7 +20,7 @@ export function HeroSection() {
           {/* Company Name */}
           <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground leading-relaxed tracking-wide mb-4 sm:mb-6 animate-fade-in">
             Arnas Learning Intelligence
-            <span className="block mt-3">Studio</span>
+            <span className="block mt-4">Studio</span>
           </p>
 
           {/* Main Heading */}
