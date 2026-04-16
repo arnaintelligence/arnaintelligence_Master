@@ -78,7 +78,7 @@ export function ProductsSection() {
                 href="/globiculum-preview"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-8 rounded-2xl text-center cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-[1.02] group"
+                className="block p-8 rounded-2xl text-center cursor-pointer transition-all duration-300 hover:bg-[#0D9488] hover:border-[#0D9488] hover:shadow-lg hover:scale-[1.02] group"
                 style={{ backgroundColor: '#F8FAFC', border: '1px solid #E5E7EB' }}
               >
                 <div 
