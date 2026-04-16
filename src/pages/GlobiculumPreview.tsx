@@ -54,23 +54,23 @@ const GlobiculumPreview = () => {
           style={{ backgroundColor: "#0D9488" }}
         />
 
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 pb-12 lg:pb-16">
           <div className="max-w-4xl mx-auto text-center">
             {/* Logo */}
             <img
               src={globiculumLogo}
               alt="Globiculum"
-              className="h-12 sm:h-14 lg:h-16 w-auto mx-auto mb-3 object-contain"
+              className="h-12 sm:h-14 lg:h-16 w-auto mx-auto mb-4 md:mb-6 object-contain"
             />
 
             {/* Tagline */}
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] mb-4" style={{ color: "#F59E0B" }}>
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] mb-2" style={{ color: "#F59E0B" }}>
               Don't Let the Move Set Your Child Behind
             </p>
 
             {/* Main Heading */}
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.03] mb-5 max-w-4xl mx-auto"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.03] mb-6 max-w-4xl mx-auto"
               style={{ color: "#FFFFFF" }}
             >
               Bridge Your Child&apos;s Education
