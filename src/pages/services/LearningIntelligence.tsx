@@ -32,10 +32,10 @@ const LearningIntelligence = () => {
     <Layout>
       <section className="py-20 lg:py-28 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <Link to="/services" className="inline-flex items-center text-sm text-primary hover:underline mb-6">
-              ← Back to Services
-            </Link>
+          <Link to="/services" className="inline-flex items-center text-sm text-primary hover:underline mb-8">
+            ← Back to Services
+          </Link>
+          <div className="max-w-3xl mx-auto text-center mt-8">
             <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
               <Layers className="w-8 h-8 text-primary" />
             </div>
