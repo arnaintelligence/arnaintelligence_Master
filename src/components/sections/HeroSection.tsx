@@ -18,8 +18,8 @@ export function HeroSection() {
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="max-w-3xl mx-auto text-center">
           {/* Company Name */}
-          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground leading-tight tracking-wide mb-4 sm:mb-6 animate-fade-in">
-            Arnas Learning Intelligence Studio
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground leading-relaxed tracking-wide mb-4 sm:mb-6 animate-fade-in">
+            Arnas Learning Intelligence<br />Studio
           </p>
 
           {/* Main Heading */}
