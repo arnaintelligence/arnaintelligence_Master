@@ -120,12 +120,12 @@ const GlobiculumPreview = () => {
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#ffffff" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#14b8a6" }}>
-              The challenge families face
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3" style={{ color: "#0f172a" }}>
               Every year, thousands of children land in India academically unprepared.
             </h2>
+            <p className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: "#14b8a6" }}>
+              The challenge families face
+            </p>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
               The excitement of returning home quickly turns to anxiety when parents realise that CBSE Grade 7 Math is
               two years ahead of what their child studied in the US — and that no one told them in advance.
@@ -200,12 +200,12 @@ const GlobiculumPreview = () => {
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#f8fafc" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#14b8a6" }}>
-              Simple · Fast · Personalised
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3" style={{ color: "#0f172a" }}>
               From signup to study plan in under 10 minutes
             </h2>
+            <p className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: "#14b8a6" }}>
+              Simple · Fast · Personalised
+            </p>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
               No lengthy intake forms. No waiting. Just three steps between you and a clear actionable roadmap.
             </p>
@@ -286,12 +286,12 @@ const GlobiculumPreview = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="max-w-4xl mx-auto text-center mb-14">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#14b8a6" }}>
-              The Globiculum Difference
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3" style={{ color: "#0f172a" }}>
               Your child doesn't have to choose between two worlds.
             </h2>
+            <p className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: "#14b8a6" }}>
+              The Globiculum Difference
+            </p>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
               Our unique AI-driven approach ensures your child excels in Indian education standards and stays aligned
               with global academic competitiveness.
@@ -420,12 +420,12 @@ const GlobiculumPreview = () => {
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#f8fafc" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#14b8a6" }}>
-              Why Choose Globiculum
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3" style={{ color: "#0f172a" }}>
               Traditional vs Globiculum
             </h2>
+            <p className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: "#14b8a6" }}>
+              Why Choose Globiculum
+            </p>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
               Traditional approaches treat every child the same. Globiculum starts from where they actually are not
               where the textbook assumes.
@@ -510,12 +510,12 @@ const GlobiculumPreview = () => {
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#f8fafc" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#14b8a6" }}>
-              What You'll Receive
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3" style={{ color: "#0f172a" }}>
               Transition Readiness Report(sample for reference only)
             </h2>
+            <p className="text-sm font-semibold uppercase tracking-wider mb-4" style={{ color: "#14b8a6" }}>
+              What You'll Receive
+            </p>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
               See exactly what you'll receive — a comprehensive, actionable report tailored to your child's academic
               transition.
