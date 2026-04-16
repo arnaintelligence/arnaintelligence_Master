@@ -61,7 +61,7 @@ const IntelligenceEngine = () => {
       <section className="py-20 lg:py-28 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+            <span className="text-sm font-medium text-primary uppercase tracking-wider mb-6 block">
               Our Framework
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-4 sm:mb-6">
