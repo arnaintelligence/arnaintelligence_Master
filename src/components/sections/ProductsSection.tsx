@@ -83,7 +83,7 @@ export function ProductsSection() {
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
                     <product.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-secondary transition-colors duration-300">{product.name}</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-secondary/80 transition-colors duration-300">{product.name}</h3>
                   <p className="text-muted-foreground">{product.description}</p>
                 </a>
               );
