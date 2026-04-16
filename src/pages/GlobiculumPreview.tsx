@@ -70,8 +70,12 @@ const GlobiculumPreview = () => {
 
             {/* Main Heading */}
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.03] mb-6 max-w-4xl mx-auto"
-              style={{ color: "#FFFFFF" }}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 max-w-4xl mx-auto"
+              style={{ 
+                color: "#FFFFFF",
+                lineHeight: "1.2",
+                letterSpacing: "-0.5px"
+              }}
             >
               Bridge Your Child&apos;s Education
               <br />
