@@ -70,7 +70,7 @@ const GlobiculumPreview = () => {
 
             {/* Main Heading */}
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.03] mb-5 max-w-4xl mx-auto"
+              className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.03] mb-5 max-w-4xl mx-auto"
               style={{ color: "#FFFFFF" }}
             >
               Bridge Your Child&apos;s Education
@@ -123,7 +123,7 @@ const GlobiculumPreview = () => {
             <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#14b8a6" }}>
               The challenge families face
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
               Every year, thousands of children land in India academically unprepared.
             </h2>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
@@ -203,7 +203,7 @@ const GlobiculumPreview = () => {
             <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#14b8a6" }}>
               Simple · Fast · Personalised
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
               From signup to study plan in under 10 minutes
             </h2>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
@@ -289,7 +289,7 @@ const GlobiculumPreview = () => {
             <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#14b8a6" }}>
               The Globiculum Difference
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
               Your child doesn't have to choose between two worlds.
             </h2>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
@@ -423,7 +423,7 @@ const GlobiculumPreview = () => {
             <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#14b8a6" }}>
               Why Choose Globiculum
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
               Traditional vs Globiculum
             </h2>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
@@ -513,7 +513,7 @@ const GlobiculumPreview = () => {
             <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#14b8a6" }}>
               What You'll Receive
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
               Transition Readiness Report(sample for reference only)
             </h2>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
