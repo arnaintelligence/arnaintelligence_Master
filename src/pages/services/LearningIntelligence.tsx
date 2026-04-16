@@ -30,8 +30,8 @@ const services = [
 const LearningIntelligence = () => {
   return (
     <Layout>
-      <section className="py-20 lg:py-28 bg-secondary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-secondary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-20 lg:pb-28">
           <Link to="/services" className="inline-flex items-center text-sm text-primary hover:underline mb-6">
             ← Back to Services
           </Link>
