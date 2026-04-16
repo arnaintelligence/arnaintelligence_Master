@@ -73,19 +73,19 @@ export function ProductsSection() {
             // Globiculum card - clickable with hover effects
             if (product.name === "Globiculum") {
               return (
-                <a
-                  key={product.name}
-                  href="/globiculum-preview"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block p-8 rounded-2xl bg-background border border-border text-center cursor-pointer transition-all duration-300 hover:border-secondary hover:bg-secondary/5 hover:scale-[1.02] hover:shadow-lg group"
-                >
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                    <product.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-secondary/80 transition-colors duration-300">{product.name}</h3>
-                  <p className="text-muted-foreground">{product.description}</p>
-                </a>
+              <a
+                key={product.name}
+                href="/globiculum-preview"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block p-8 rounded-2xl bg-background border border-border text-center cursor-pointer transition-all duration-300 hover:border-secondary hover:bg-secondary hover:shadow-lg group"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 group-hover:bg-white/20 flex items-center justify-center mx-auto mb-6 transition-colors duration-300">
+                  <product.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300" />
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-white transition-colors duration-300">{product.name}</h3>
+                <p className="text-muted-foreground group-hover:text-white/90 transition-colors duration-300">{product.description}</p>
+              </a>
               );
             }
 
