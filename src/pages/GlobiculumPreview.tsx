@@ -120,7 +120,7 @@ const GlobiculumPreview = () => {
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#ffffff" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#14b8a6]">
               The Challenge Families Face
             </h1>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground mt-3">
