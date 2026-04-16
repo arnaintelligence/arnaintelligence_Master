@@ -438,7 +438,7 @@ const GlobiculumPreview = () => {
               Why Choose Globiculum
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
-              Traditional vs. Globiculum
+              Traditional vs Globiculum
             </h2>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
               Traditional approaches treat every child the same. Globiculum starts from where they actually are not
