@@ -286,10 +286,10 @@ const GlobiculumPreview = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="max-w-4xl mx-auto text-center mb-14">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#14b8a6" }}>
+            <h1 className="text-3xl md:text-5xl font-bold text-[#14b8a6] mb-3" style={{ color: "#14b8a6" }}>
               The Globiculum Difference
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
+            </h1>
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4" style={{ color: "#0f172a" }}>
               Your child doesn't have to choose between two worlds.
             </h2>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
