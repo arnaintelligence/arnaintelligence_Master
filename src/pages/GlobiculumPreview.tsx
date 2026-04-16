@@ -200,12 +200,12 @@ const GlobiculumPreview = () => {
       <section className="py-16 md:py-20" style={{ backgroundColor: "#f8fafc" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center mb-12">
-            <p className="text-sm md:text-base font-medium mb-2" style={{ color: "#64748b" }}>
+            <h1 className="text-2xl md:text-4xl font-bold text-[#14b8a6] mb-3" style={{ color: "#14b8a6" }}>
               Simple · Fast · Personalised
-            </p>
-            <h1 className="text-3xl md:text-5xl font-bold text-[#14b8a6] mb-4" style={{ color: "#14b8a6" }}>
-              From signup to study plan in under 10 minutes
             </h1>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4" style={{ color: "#0f172a" }}>
+              From signup to study plan in under 10 minutes
+            </h2>
             <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: "#64748b" }}>
               No lengthy intake forms. No waiting. Just three steps between you and a clear actionable roadmap.
             </p>
