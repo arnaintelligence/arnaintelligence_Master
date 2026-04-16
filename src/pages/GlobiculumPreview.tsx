@@ -528,7 +528,7 @@ const GlobiculumPreview = () => {
               What You'll Receive
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
-              Sample Transition Readiness Report
+              Transition Readiness Report(sample for reference only)
             </h2>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
               See exactly what you'll receive — a comprehensive, actionable report tailored to your child's academic
