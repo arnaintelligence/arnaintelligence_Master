@@ -70,7 +70,7 @@ export function ProductsSection() {
               );
             }
 
-            // Globiculum card - full teal hover interaction
+            // Globiculum card - premium gradient hover interaction
             if (product.name === "Globiculum") {
               return (
               <a
@@ -78,13 +78,16 @@ export function ProductsSection() {
                 href="/globiculum-preview"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block p-8 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] text-center cursor-pointer transition-all duration-300 hover:!bg-[#0D9488] hover:!border-[#0D9488] hover:shadow-lg hover:scale-[1.02]"
+                className="group relative block p-8 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] text-center cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:border-transparent overflow-hidden"
               >
-                <div className="w-16 h-16 rounded-2xl bg-[rgba(13,148,136,0.1)] group-hover:bg-white/20 flex items-center justify-center mx-auto mb-6 transition-colors duration-300">
-                  <product.icon className="w-8 h-8 text-[#0D9488] group-hover:text-white transition-colors duration-300" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#0D9488] to-[#14B8A6] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
+                <div className="relative z-10">
+                  <div className="w-16 h-16 rounded-2xl bg-[rgba(13,148,136,0.1)] group-hover:bg-white/20 flex items-center justify-center mx-auto mb-6 transition-colors duration-300">
+                    <product.icon className="w-8 h-8 text-[#0D9488] group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#0F172A] group-hover:text-white mb-2 transition-colors duration-300">{product.name}</h3>
+                  <p className="text-[#64748B] group-hover:text-white/90 transition-colors duration-300">{product.description}</p>
                 </div>
-                <h3 className="text-xl font-bold text-[#0F172A] group-hover:text-white mb-2 transition-colors duration-300">{product.name}</h3>
-                <p className="text-[#64748B] group-hover:text-white/90 transition-colors duration-300">{product.description}</p>
               </a>
               );
             }
