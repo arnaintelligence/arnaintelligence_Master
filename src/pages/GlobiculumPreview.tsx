@@ -197,21 +197,21 @@ const GlobiculumPreview = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 lg:py-24" style={{ backgroundColor: "#f8fafc" }}>
+      <section className="py-16 md:py-20" style={{ backgroundColor: "#f8fafc" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#14b8a6" }}>
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <p className="text-xs font-semibold uppercase tracking-wide mb-3" style={{ color: "#14b8a6" }}>
               Simple · Fast · Personalised
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
+            <h1 className="text-3xl md:text-5xl font-bold text-[#14b8a6] mb-4" style={{ color: "#14b8a6" }}>
               From signup to study plan in under 10 minutes
-            </h2>
-            <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
+            </h1>
+            <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: "#64748b" }}>
               No lengthy intake forms. No waiting. Just three steps between you and a clear actionable roadmap.
             </p>
           </div>
 
-<div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
           {/* Step 1 */}
           <div
             className="relative p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
