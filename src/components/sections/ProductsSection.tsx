@@ -71,19 +71,19 @@ export function ProductsSection() {
               );
             }
 
-            // Globiculum card - light teal with preview button
+            // Globiculum card - light teal with premium hover effect
             if (product.name === "Globiculum") {
               return (
               <div
                 key={product.name}
-                className="p-8 rounded-2xl bg-[#5EEAD4] border border-[#5EEAD4] text-center cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg"
+                className="group p-8 rounded-2xl bg-[#5EEAD4] border border-[#5EEAD4] text-center cursor-pointer transition-all duration-300 ease-out hover:bg-[#0D9488] hover:scale-[1.03] hover:shadow-[0_10px_30px_rgba(13,148,136,0.3)]"
               >
                 <div className="space-y-4">
-                  <div className="w-16 h-16 rounded-2xl bg-white/30 flex items-center justify-center mx-auto">
-                    <product.icon className="w-8 h-8 text-[#0D9488]" />
+                  <div className="w-16 h-16 rounded-2xl bg-white/30 flex items-center justify-center mx-auto transition-colors duration-300">
+                    <product.icon className="w-8 h-8 text-[#0D9488] group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0f172a]">{product.name}</h3>
-                  <p className="text-[#475569]">{product.description}</p>
+                  <h3 className="text-xl font-bold text-[#0f172a] group-hover:text-white transition-colors duration-300">{product.name}</h3>
+                  <p className="text-[#475569] group-hover:text-white/90 transition-colors duration-300">{product.description}</p>
                   <a
                     href="/globiculum-preview"
                     target="_blank"
@@ -91,7 +91,7 @@ export function ProductsSection() {
                     onClick={(e) => e.stopPropagation()}
                   >
                     <Button 
-                      className="mt-2 bg-white text-[#0D9488] hover:bg-white/90 font-medium"
+                      className="mt-2 bg-white text-[#0D9488] hover:bg-transparent hover:border-white hover:text-white font-medium border-2 border-transparent transition-all duration-300"
                     >
                       Quick Preview <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
