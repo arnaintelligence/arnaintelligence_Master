@@ -1,6 +1,7 @@
-import { GraduationCap, Bot, Workflow } from "lucide-react";
+import { GraduationCap, Bot, Workflow, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const products = [
   {
@@ -70,25 +71,33 @@ export function ProductsSection() {
               );
             }
 
-            // Globiculum card - premium gradient hover interaction
+            // Globiculum card - light teal with preview button
             if (product.name === "Globiculum") {
               return (
-              <a
+              <div
                 key={product.name}
-                href="/globiculum-preview"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative block p-8 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] text-center cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:ring-1 hover:ring-white/20 hover:border-transparent overflow-hidden"
+                className="p-8 rounded-2xl bg-[#5EEAD4] border border-[#5EEAD4] text-center cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg"
               >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#0D9488] to-[#14B8A6] opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out" />
-                <div className="relative z-10 space-y-3">
-                  <div className="w-16 h-16 rounded-2xl bg-[rgba(13,148,136,0.1)] group-hover:bg-white/20 group-hover:backdrop-blur-sm flex items-center justify-center mx-auto transition-all duration-300">
-                    <product.icon className="w-8 h-8 text-[#0D9488] group-hover:text-white transition-colors duration-300" />
+                <div className="space-y-4">
+                  <div className="w-16 h-16 rounded-2xl bg-white/30 flex items-center justify-center mx-auto">
+                    <product.icon className="w-8 h-8 text-[#0D9488]" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0F172A] group-hover:text-white transition-colors duration-300">{product.name}</h3>
-                  <p className="text-[#64748B] group-hover:text-white/90 transition-colors duration-300">{product.description}</p>
+                  <h3 className="text-xl font-bold text-[#0f172a]">{product.name}</h3>
+                  <p className="text-[#475569]">{product.description}</p>
+                  <a
+                    href="/globiculum-preview"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <Button 
+                      className="mt-2 bg-white text-[#0D9488] hover:bg-white/90 font-medium"
+                    >
+                      Quick Preview <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </a>
                 </div>
-              </a>
+              </div>
               );
             }
 
