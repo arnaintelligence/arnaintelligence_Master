@@ -70,7 +70,7 @@ const GlobiculumPreview = () => {
 
             {/* Main Heading */}
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.03] mb-5 max-w-4xl mx-auto"
+              className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.03] mb-5 max-w-4xl mx-auto"
               style={{ color: "#FFFFFF" }}
             >
               Bridge Your Child&apos;s Education
