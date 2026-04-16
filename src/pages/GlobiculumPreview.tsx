@@ -71,12 +71,10 @@ const GlobiculumPreview = () => {
 
             {/* Main Heading */}
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] mb-5"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.03] mb-5 max-w-4xl mx-auto"
               style={{ color: "#FFFFFF" }}
             >
-              Bridge Your Child's
-              <br />
-              Education
+              Bridge Your Child&apos;s Education
               <br />
               <span style={{ color: "#FFFFFF" }}>Between </span>
               <span style={{ color: "#0D9488" }}>Global Curricula</span>
