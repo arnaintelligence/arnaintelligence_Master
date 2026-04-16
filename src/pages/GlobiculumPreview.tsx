@@ -120,10 +120,10 @@ const GlobiculumPreview = () => {
       <section className="py-16 lg:py-24" style={{ backgroundColor: "#ffffff" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "#14b8a6" }}>
-              The challenge families face
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "#0f172a" }}>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
+              The Challenge Families Face
+            </h1>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-foreground mt-3">
               Every year, thousands of children land in India academically unprepared.
             </h2>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
