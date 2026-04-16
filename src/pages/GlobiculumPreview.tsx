@@ -513,7 +513,9 @@ const GlobiculumPreview = () => {
             <h1 className="text-3xl md:text-5xl font-bold text-[#14b8a6] mb-3" style={{ color: "#14b8a6" }}>
               What You'll Receive
             </h1>
-            <h2 className="text-xl md:text-3xl font-medium text-foreground mb-1">Transition Readiness Report</h2>
+            <h2 className="text-xl md:text-3xl text-bold font-medium text-foreground mb-1">
+              Transition Readiness Report
+            </h2>
 
             <h3 className="text-sm md:text-base text-muted-foreground mb-4">(sample for reference only)</h3>
             <p className="text-base sm:text-lg leading-relaxed" style={{ color: "#64748b" }}>
