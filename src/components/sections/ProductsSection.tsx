@@ -78,30 +78,13 @@ export function ProductsSection() {
                 href="/globiculum-preview"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-8 rounded-2xl text-center cursor-pointer transition-all duration-300 hover:bg-[#0D9488] hover:border-[#0D9488] hover:shadow-lg hover:scale-[1.02] group"
-                style={{ backgroundColor: '#F8FAFC', border: '1px solid #E5E7EB' }}
+                className="group block p-8 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] text-center cursor-pointer transition-all duration-300 hover:!bg-[#0D9488] hover:!border-[#0D9488] hover:shadow-lg hover:scale-[1.02]"
               >
-                <div 
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors duration-300 group-hover:bg-white/20"
-                  style={{ backgroundColor: 'rgba(13, 148, 136, 0.1)' }}
-                >
-                  <product.icon 
-                    className="w-8 h-8 transition-colors duration-300 group-hover:text-white" 
-                    style={{ color: '#0D9488' }}
-                  />
+                <div className="w-16 h-16 rounded-2xl bg-[rgba(13,148,136,0.1)] group-hover:bg-white/20 flex items-center justify-center mx-auto mb-6 transition-colors duration-300">
+                  <product.icon className="w-8 h-8 text-[#0D9488] group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 
-                  className="text-xl font-bold mb-2 transition-colors duration-300 group-hover:text-white"
-                  style={{ color: '#0F172A' }}
-                >
-                  {product.name}
-                </h3>
-                <p 
-                  className="transition-colors duration-300 group-hover:text-white/90"
-                  style={{ color: '#64748B' }}
-                >
-                  {product.description}
-                </p>
+                <h3 className="text-xl font-bold text-[#0F172A] group-hover:text-white mb-2 transition-colors duration-300">{product.name}</h3>
+                <p className="text-[#64748B] group-hover:text-white/90 transition-colors duration-300">{product.description}</p>
               </a>
               );
             }
