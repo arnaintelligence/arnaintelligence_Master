@@ -25,17 +25,18 @@ const services = [
 const ExperienceDesign = () => {
   return (
     <Layout>
-      <section className="py-20 lg:py-28 bg-secondary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <Link to="/services" className="inline-flex items-center text-sm text-primary hover:underline mb-6">
-              ← Back to Services
-            </Link>
+      <section className="bg-secondary">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-20 lg:pb-28">
+          <Link to="/services" className="inline-flex items-center text-sm text-primary hover:underline mb-12">
+            ← Back to Services
+          </Link>
+          <div className="max-w-3xl mx-auto text-center pt-8">
             <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
               <PenTool className="w-8 h-8 text-primary" />
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-4">
-              Design as a Service (DaaS)
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-relaxed mb-4">
+              Design as a Service
+              <span className="block mt-3">(DaaS)</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-secondary-foreground/70 leading-relaxed">
               Experience-first creative support for learning and enablement teams, powered by 
