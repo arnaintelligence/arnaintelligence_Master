@@ -224,7 +224,7 @@ const GlobiculumPreview = () => {
               01
             </span>
             <div
-              className="w-14 h-14 rounded-lg flex items-center justify-center mb-3 mx-auto"
+              className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 mx-auto"
               style={{ backgroundColor: "#dbeafe" }}
             >
               <MapPin className="w-7 h-7" style={{ color: "#3b82f6" }} />
@@ -246,7 +246,7 @@ const GlobiculumPreview = () => {
               02
             </span>
             <div
-              className="w-14 h-14 rounded-lg flex items-center justify-center mb-3 mx-auto"
+              className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 mx-auto"
               style={{ backgroundColor: "#ccfbf1" }}
             >
               <Brain className="w-7 h-7" style={{ color: "#14b8a6" }} />
@@ -268,7 +268,7 @@ const GlobiculumPreview = () => {
               03
             </span>
             <div
-              className="w-14 h-14 rounded-lg flex items-center justify-center mb-3 mx-auto"
+              className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 mx-auto"
               style={{ backgroundColor: "#fef3c7" }}
             >
               <Route className="w-7 h-7" style={{ color: "#f59e0b" }} />
