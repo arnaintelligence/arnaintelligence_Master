@@ -316,57 +316,75 @@ const GlobiculumPreview = () => {
               idx: number;
             }) => {
               const gradId = `diamond-arrow-${idx}-${direction}`;
+              const dotId = `diamond-dots-${idx}-${direction}`;
               const isRight = direction === "right";
+              // Large continuous flow shape: wide rounded body merging into a soft arrow head.
               return (
                 <div
                   className={`group/arrow relative flex items-center justify-center transition-transform duration-300 ease-out ${
-                    isRight ? "hover:translate-x-1.5" : "hover:translate-y-1.5"
+                    isRight ? "hover:translate-x-1.5 -mx-6 lg:-mx-8" : "hover:translate-y-1.5 -my-6"
                   }`}
                   aria-hidden="true"
+                  style={{ zIndex: 5 }}
                 >
                   {/* Soft glow halo */}
                   <div
-                    className="absolute w-20 h-20 rounded-full blur-2xl pointer-events-none transition-opacity duration-300 group-hover/arrow:opacity-90"
-                    style={{ background: def.glow, opacity: 0.6 }}
+                    className="absolute rounded-full blur-3xl pointer-events-none"
+                    style={{
+                      background: def.glow,
+                      opacity: 0.55,
+                      width: isRight ? "160px" : "90px",
+                      height: isRight ? "90px" : "160px",
+                    }}
                   />
                   <svg
-                    width={isRight ? "78" : "44"}
-                    height={isRight ? "44" : "78"}
-                    viewBox="0 0 78 44"
+                    width={isRight ? "140" : "70"}
+                    height={isRight ? "70" : "140"}
+                    viewBox="0 0 140 70"
                     style={{
                       transform: isRight ? "none" : "rotate(90deg)",
-                      filter: `drop-shadow(0 6px 10px ${def.glow}) drop-shadow(0 2px 3px rgba(15,23,42,0.15))`,
+                      filter: `drop-shadow(0 8px 14px ${def.glow}) drop-shadow(0 3px 5px rgba(15,23,42,0.12))`,
                       position: "relative",
+                      overflow: "visible",
                     }}
                   >
                     <defs>
                       <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor={def.from} />
-                        <stop offset="100%" stopColor={def.to} />
+                        <stop offset="0%" stopColor={def.from} stopOpacity="0.85" />
+                        <stop offset="100%" stopColor={def.to} stopOpacity="1" />
                       </linearGradient>
+                      <pattern id={dotId} x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+                        <circle cx="3" cy="3" r="1" fill={def.to} fillOpacity="0.35" />
+                      </pattern>
                     </defs>
+
+                    {/* Subtle dotted connector line behind the arrow */}
+                    <rect x="0" y="32" width="140" height="6" fill={`url(#${dotId})`} />
+
                     {/*
-                      Bold infographic arrow:
-                      - Thick rectangular body with rounded left edge
-                      - Clear triangular head on the right
+                      Continuous flow arrow:
+                      - Wide soft body (height ~30 of viewBox 70)
+                      - Rounded left cap (rx 18)
+                      - Smoothly curved transition into a soft triangular head
                     */}
                     <path
-                      d="M6 14
-                         Q2 14 2 18
-                         L2 26
-                         Q2 30 6 30
-                         L48 30
-                         L48 40
-                         Q48 44 51 41
-                         L75 24
-                         Q77 22 75 20
-                         L51 3
-                         Q48 0 48 4
-                         L48 14 Z"
+                      d="
+                        M 18 20
+                        Q 4 20 4 35
+                        Q 4 50 18 50
+                        L 86 50
+                        Q 92 50 92 56
+                        L 92 62
+                        Q 92 70 99 65
+                        L 134 38
+                        Q 139 35 134 32
+                        L 99 5
+                        Q 92 0 92 8
+                        L 92 14
+                        Q 92 20 86 20
+                        Z
+                      "
                       fill={`url(#${gradId})`}
-                      stroke={def.to}
-                      strokeWidth="0.5"
-                      strokeOpacity="0.4"
                     />
                   </svg>
                 </div>
@@ -376,7 +394,7 @@ const GlobiculumPreview = () => {
             return (
               <div className="max-w-6xl mx-auto">
                 {/* Desktop: horizontal diamond flow */}
-                <div className="hidden md:flex items-center justify-center gap-3 lg:gap-5 px-4 py-8">
+                <div className="hidden md:flex items-center justify-center gap-0 px-4 py-8">
                   {steps.map((step, i) => (
                     <React.Fragment key={step.title}>
                       {renderDiamond(step, i)}
@@ -386,7 +404,7 @@ const GlobiculumPreview = () => {
                 </div>
 
                 {/* Mobile: stacked diamonds with downward arrows */}
-                <div className="md:hidden flex flex-col items-center gap-4 py-4">
+                <div className="md:hidden flex flex-col items-center gap-0 py-4">
                   {steps.map((step, i) => (
                     <React.Fragment key={step.title}>
                       {renderDiamond(step, i)}
