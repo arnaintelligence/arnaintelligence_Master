@@ -234,9 +234,9 @@ const GlobiculumPreview = () => {
               {
                 icon: Route,
                 title: "Get a personalised learning pathway",
-                gradient: "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
-                iconBg: "#ede9fe",
-                iconColor: "#8b5cf6",
+                gradient: "linear-gradient(135deg, #f97316 0%, #fb923c 100%)",
+                iconBg: "#ffedd5",
+                iconColor: "#f97316",
               },
             ];
             // Arrow color between consecutive steps
