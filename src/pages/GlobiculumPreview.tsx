@@ -250,9 +250,8 @@ const GlobiculumPreview = () => {
                   style={{ gridTemplateColumns: "1fr auto 1fr auto 1fr" }}
                 >
                   {steps.map((step, i) => (
-                    <>
+                    <React.Fragment key={step.title}>
                       <div
-                        key={step.title}
                         className="relative h-full p-6 pt-7 rounded-2xl text-center transition-all duration-300 hover:-translate-y-1"
                         style={{
                           backgroundColor: "#ffffff",
@@ -281,11 +280,7 @@ const GlobiculumPreview = () => {
                         </h3>
                       </div>
                       {i < steps.length - 1 && (
-                        <div
-                          key={`arrow-${i}`}
-                          className="flex items-center justify-center"
-                          aria-hidden="true"
-                        >
+                        <div className="flex items-center justify-center" aria-hidden="true">
                           <ArrowRight
                             className="w-8 h-8"
                             style={{ color: arrowColors[i], opacity: 0.85 }}
@@ -293,7 +288,7 @@ const GlobiculumPreview = () => {
                           />
                         </div>
                       )}
-                    </>
+                    </React.Fragment>
                   ))}
                 </div>
 
