@@ -241,73 +241,84 @@ const GlobiculumPreview = () => {
             ];
             const arrowColors = ["#14b8a6", "#f97316"];
 
-            const renderCard = (step: typeof steps[number], i: number, emphasized = false) => (
-              <div
-                className={`group relative h-full rounded-2xl text-center bg-white border border-[#e5e7eb] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
-                  emphasized ? "p-7 pt-8 shadow-xl md:scale-[1.04]" : "p-6 pt-7 shadow-lg"
-                }`}
-              >
+            const renderDiamond = (step: typeof steps[number], i: number) => (
+              <div className="relative w-44 h-44 lg:w-52 lg:h-52 mx-auto">
                 <div
-                  className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
-                  style={{ background: step.gradient }}
+                  className="absolute inset-0 rotate-45 rounded-2xl bg-white border border-[#e5e7eb] shadow-lg transition-all duration-300 hover:shadow-2xl"
+                  aria-hidden="true"
                 />
                 <div
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shadow-md"
+                  className="absolute inset-0 rotate-45 rounded-2xl pointer-events-none"
+                  style={{ background: step.gradient, opacity: 0.08 }}
+                  aria-hidden="true"
+                />
+                <div
+                  className="absolute -top-3 left-1/2 -translate-x-1/2 w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white shadow-md z-10"
                   style={{ background: step.gradient }}
                 >
                   {i + 1}
                 </div>
-                <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 mx-auto mt-2 transition-transform duration-300 group-hover:scale-110"
-                  style={{ backgroundColor: step.iconBg }}
-                >
-                  <step.icon className="w-7 h-7" style={{ color: step.iconColor }} />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-3 transition-transform duration-300 hover:scale-110"
+                    style={{ backgroundColor: step.iconBg }}
+                  >
+                    <step.icon className="w-6 h-6" style={{ color: step.iconColor }} />
+                  </div>
+                  <h3
+                    className="text-[13px] lg:text-sm font-bold leading-snug max-w-[140px]"
+                    style={{ color: "#0f172a" }}
+                  >
+                    {step.title}
+                  </h3>
                 </div>
-                <h3 className="text-base font-bold leading-snug" style={{ color: "#0f172a" }}>
-                  {step.title}
-                </h3>
               </div>
             );
 
+            const BigArrow = ({ color, direction = "right" }: { color: string; direction?: "right" | "down" }) => {
+              const gradId = `arrow-grad-${color.replace("#", "")}-${direction}`;
+              return (
+                <div className="flex items-center justify-center transition-transform duration-300 hover:scale-110" aria-hidden="true">
+                  <svg
+                    width={direction === "right" ? "72" : "40"}
+                    height={direction === "right" ? "40" : "72"}
+                    viewBox="0 0 72 40"
+                    style={{
+                      transform: direction === "down" ? "rotate(90deg)" : "none",
+                      filter: `drop-shadow(0 4px 6px ${color}55)`,
+                    }}
+                  >
+                    <defs>
+                      <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor={color} stopOpacity="0.55" />
+                        <stop offset="100%" stopColor={color} stopOpacity="1" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M0 14 L48 14 L48 4 L72 20 L48 36 L48 26 L0 26 Z" fill={`url(#${gradId})`} />
+                  </svg>
+                </div>
+              );
+            };
+
             return (
               <div className="max-w-6xl mx-auto">
-                {/* Desktop */}
-                <div className="hidden md:block relative px-4">
-                  {/* Background connector line */}
-                  <div
-                    className="absolute left-8 right-8 top-1/2 -translate-y-1/2 h-px pointer-events-none"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, transparent 0%, #14b8a6 20%, #14b8a6 50%, #f97316 80%, transparent 100%)",
-                      opacity: 0.35,
-                    }}
-                    aria-hidden="true"
-                  />
-                  <div
-                    className="relative grid items-center gap-4"
-                    style={{ gridTemplateColumns: "1fr auto 1fr auto 1fr" }}
-                  >
-                    {steps.map((step, i) => (
-                      <React.Fragment key={step.title}>
-                        {renderCard(step, i, i === 1)}
-                        {i < steps.length - 1 && (
-                          <div className="flex items-center justify-center" aria-hidden="true">
-                            <ArrowRight
-                              className="w-9 h-9 transition-all duration-300 hover:scale-125 hover:translate-x-1 cursor-default"
-                              style={{ color: arrowColors[i] }}
-                              strokeWidth={2.5}
-                            />
-                          </div>
-                        )}
-                      </React.Fragment>
-                    ))}
-                  </div>
+                {/* Desktop: horizontal diamonds with large arrows */}
+                <div className="hidden md:flex items-center justify-center gap-2 lg:gap-4 px-4 py-6">
+                  {steps.map((step, i) => (
+                    <React.Fragment key={step.title}>
+                      {renderDiamond(step, i)}
+                      {i < steps.length - 1 && <BigArrow color={arrowColors[i]} />}
+                    </React.Fragment>
+                  ))}
                 </div>
 
-                {/* Mobile: stacked, no arrows */}
-                <div className="md:hidden flex flex-col gap-5">
+                {/* Mobile: stacked diamonds with downward arrows */}
+                <div className="md:hidden flex flex-col items-center gap-4">
                   {steps.map((step, i) => (
-                    <div key={step.title}>{renderCard(step, i)}</div>
+                    <React.Fragment key={step.title}>
+                      {renderDiamond(step, i)}
+                      {i < steps.length - 1 && <BigArrow color={arrowColors[i]} direction="down" />}
+                    </React.Fragment>
                   ))}
                 </div>
               </div>
