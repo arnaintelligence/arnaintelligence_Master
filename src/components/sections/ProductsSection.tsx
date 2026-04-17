@@ -88,16 +88,15 @@ export function ProductsSection() {
                     <p className="text-[#64748B] group-hover:text-white/90 transition-colors duration-300">
                       {product.description}
                     </p>
-                    <a
-                      href="/globiculum-preview"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
+                    <Button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate("/globiculum-preview");
+                      }}
+                      className="mt-2 bg-white text-[#0D9488] hover:bg-white/95 font-medium transition-all duration-300"
                     >
-                      <Button className="mt-2 bg-white text-[#0D9488] hover:bg-white/95 font-medium transition-all duration-300">
-                        Quick Preview <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </a>
+                      Quick Preview <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
                   </div>
                 </div>
               );
