@@ -316,72 +316,98 @@ const GlobiculumPreview = () => {
               idx: number;
             }) => {
               const gradId = `diamond-arrow-${idx}-${direction}`;
-              const dotId = `diamond-dots-${idx}-${direction}`;
+              const softGradId = `diamond-arrow-soft-${idx}-${direction}`;
+              const blurId = `diamond-arrow-blur-${idx}-${direction}`;
               const isRight = direction === "right";
-              // Large continuous flow shape: wide rounded body merging into a soft arrow head.
               return (
                 <div
                   className={`group/arrow relative flex items-center justify-center transition-transform duration-300 ease-out ${
-                    isRight ? "hover:translate-x-1.5 -mx-6 lg:-mx-8" : "hover:translate-y-1.5 -my-6"
+                    isRight ? "hover:translate-x-1.5 -mx-10 lg:-mx-12" : "hover:translate-y-1.5 -my-10"
                   }`}
                   aria-hidden="true"
                   style={{ zIndex: 5 }}
                 >
-                  {/* Soft glow halo */}
+                  {/* Soft ambient glow */}
                   <div
                     className="absolute rounded-full blur-3xl pointer-events-none"
                     style={{
                       background: def.glow,
-                      opacity: 0.55,
-                      width: isRight ? "160px" : "90px",
-                      height: isRight ? "90px" : "160px",
+                      opacity: 0.5,
+                      width: isRight ? "180px" : "100px",
+                      height: isRight ? "100px" : "180px",
                     }}
                   />
                   <svg
-                    width={isRight ? "140" : "70"}
-                    height={isRight ? "70" : "140"}
-                    viewBox="0 0 140 70"
+                    width={isRight ? "160" : "80"}
+                    height={isRight ? "80" : "160"}
+                    viewBox="0 0 160 80"
                     style={{
                       transform: isRight ? "none" : "rotate(90deg)",
-                      filter: `drop-shadow(0 8px 14px ${def.glow}) drop-shadow(0 3px 5px rgba(15,23,42,0.12))`,
+                      filter: `drop-shadow(0 6px 12px ${def.glow})`,
                       position: "relative",
                       overflow: "visible",
                     }}
                   >
                     <defs>
                       <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor={def.from} stopOpacity="0.85" />
+                        <stop offset="0%" stopColor={def.from} stopOpacity="0" />
+                        <stop offset="20%" stopColor={def.from} stopOpacity="0.65" />
+                        <stop offset="70%" stopColor={def.to} stopOpacity="0.95" />
                         <stop offset="100%" stopColor={def.to} stopOpacity="1" />
                       </linearGradient>
-                      <pattern id={dotId} x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
-                        <circle cx="3" cy="3" r="1" fill={def.to} fillOpacity="0.35" />
-                      </pattern>
+                      <linearGradient id={softGradId} x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor={def.from} stopOpacity="0" />
+                        <stop offset="50%" stopColor={def.from} stopOpacity="0.35" />
+                        <stop offset="100%" stopColor={def.to} stopOpacity="0.5" />
+                      </linearGradient>
+                      <filter id={blurId} x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="1.2" />
+                      </filter>
                     </defs>
 
-                    {/* Subtle dotted connector line behind the arrow */}
-                    <rect x="0" y="32" width="140" height="6" fill={`url(#${dotId})`} />
-
                     {/*
-                      Continuous flow arrow:
-                      - Wide soft body (height ~30 of viewBox 70)
-                      - Rounded left cap (rx 18)
-                      - Smoothly curved transition into a soft triangular head
+                      Smooth tapered flow arrow:
+                      - Starts thin on the left, widens through the middle,
+                        then narrows into a soft, organic arrow head on the right.
+                      - All curves are quadratic/cubic — no hard corners.
                     */}
+                    <g filter={`url(#${blurId})`}>
+                      {/* Soft underlay for blended depth */}
+                      <path
+                        d="
+                          M 4 40
+                          C 22 36, 40 30, 70 30
+                          C 92 30, 108 32, 116 34
+                          L 116 18
+                          C 116 12, 122 10, 128 14
+                          L 154 36
+                          C 158 39, 158 41, 154 44
+                          L 128 66
+                          C 122 70, 116 68, 116 62
+                          L 116 46
+                          C 108 48, 92 50, 70 50
+                          C 40 50, 22 44, 4 40
+                          Z
+                        "
+                        fill={`url(#${softGradId})`}
+                      />
+                    </g>
+
+                    {/* Main tapered arrow body */}
                     <path
                       d="
-                        M 18 20
-                        Q 4 20 4 35
-                        Q 4 50 18 50
-                        L 86 50
-                        Q 92 50 92 56
-                        L 92 62
-                        Q 92 70 99 65
-                        L 134 38
-                        Q 139 35 134 32
-                        L 99 5
-                        Q 92 0 92 8
-                        L 92 14
-                        Q 92 20 86 20
+                        M 6 40
+                        C 24 37, 42 32, 72 32
+                        C 92 32, 106 33, 114 35
+                        L 114 22
+                        C 114 15, 121 13, 127 17
+                        L 152 37
+                        C 156 39, 156 41, 152 43
+                        L 127 63
+                        C 121 67, 114 65, 114 58
+                        L 114 45
+                        C 106 47, 92 48, 72 48
+                        C 42 48, 24 43, 6 40
                         Z
                       "
                       fill={`url(#${gradId})`}
