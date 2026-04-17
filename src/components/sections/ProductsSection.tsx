@@ -76,7 +76,6 @@ export function ProductsSection() {
               return (
                 <div
                   key={product.name}
-                  onClick={() => navigate("/globiculum-preview")}
                   className="group relative p-8 rounded-2xl bg-[#F8FAFC] border border-border text-center cursor-pointer transition-all duration-300 ease-out hover:bg-gradient-to-br hover:from-[#0D9488] hover:to-[#14B8A6] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_12px_30px_rgba(13,148,136,0.25)] overflow-hidden"
                 >
                   <div className="space-y-4">
@@ -89,15 +88,16 @@ export function ProductsSection() {
                     <p className="text-[#64748B] group-hover:text-white/90 transition-colors duration-300">
                       {product.description}
                     </p>
-                    <Button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        navigate("/globiculum-preview");
-                      }}
-                      className="mt-2 bg-white text-[#0D9488] hover:bg-white/95 font-medium transition-all duration-300"
+                    <a
+                      href="/globiculum-preview"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      Quick Preview <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                      <Button className="mt-2 bg-white text-[#0D9488] hover:bg-white/95 font-medium transition-all duration-300">
+                        Quick Preview <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </a>
                   </div>
                 </div>
               );
