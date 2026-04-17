@@ -34,11 +34,11 @@ export function ProductsSection() {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="text-4xl sm:text-5xl font-bold text-primary">Our Flagship Products</span>
           <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-foreground">
-            Powerfull Tools | Infinite Possibilities
+            Powerful Tools | Infinite Possibilities
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Purpose built platforms that put AI to work across your organisation,flexibilty enough to fit your structure
-            powerfull enough to transform it
+            Purpose-built platforms that put AI to work across your organisation—flexible enough to fit your structure
+            and powerful enough to transform it.
           </p>
         </div>
 
