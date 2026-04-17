@@ -361,7 +361,7 @@ const GlobiculumPreview = () => {
                       </linearGradient>
                     </defs>
                     <path
-                      d="M 0 20 L 55 20 L 55 6 L 95 30 L 55 54 L 55 40 L 0 40 Z"
+                      d="M 0 22 L 55 22 L 55 4 L 95 24 L 55 44 L 55 38 L 0 38 Z"
                       fill={`url(#${gradId})`}
                     />
                   </svg>
