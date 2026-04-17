@@ -254,7 +254,18 @@ const GlobiculumPreview = () => {
             ];
 
             const renderDiamond = (step: (typeof steps)[number], i: number) => (
-              <div className="relative w-56 h-56 lg:w-64 lg:h-64 mx-auto group">
+              <div className="relative w-56 h-56 lg:w-64 lg:h-64 mx-auto group" style={{ zIndex: 2 }}>
+                {/* Soft radial glow halo behind diamond for depth */}
+                <div
+                  className="absolute -inset-6 pointer-events-none transition-opacity duration-300 group-hover:opacity-100"
+                  style={{
+                    background: `radial-gradient(ellipse at center, ${step.ringColor} 0%, transparent 65%)`,
+                    filter: "blur(18px)",
+                    opacity: 0.55,
+                    zIndex: -1,
+                  }}
+                  aria-hidden="true"
+                />
                 {/* Rotated diamond shell */}
                 <div
                   className="absolute inset-0 rotate-45 rounded-3xl border border-[#e5e7eb] shadow-lg transition-all duration-300 ease-out group-hover:scale-[1.04] group-hover:shadow-2xl"
