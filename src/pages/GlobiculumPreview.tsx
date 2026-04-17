@@ -331,7 +331,7 @@ const GlobiculumPreview = () => {
                     viewBox="0 0 150 80"
                     style={{
                       transform: isRight ? "none" : "rotate(90deg)",
-                      filter: "drop-shadow(0 3px 5px rgba(15,23,42,0.15))",
+                      filter: "drop-shadow(0 4px 8px rgba(15,23,42,0.18))",
                       position: "relative",
                       overflow: "visible",
                     }}
@@ -342,9 +342,30 @@ const GlobiculumPreview = () => {
                         <stop offset="100%" stopColor={def.to} />
                       </linearGradient>
                     </defs>
-                    {/* Bold infographic arrow: thick rounded body + large triangular head */}
+                    {/*
+                      Single continuous fluid infographic arrow:
+                      - Thick rounded body that swells slightly toward the head
+                      - Smooth curved transition from body shoulders into a soft, fluid arrow head
+                      - No sharp corners — every junction is a bezier curve
+                    */}
                     <path
-                      d="M 4 26 Q 0 26 0 30 L 0 50 Q 0 54 4 54 L 90 54 L 90 70 Q 90 76 95 72 L 148 42 Q 152 40 148 38 L 95 8 Q 90 4 90 10 L 90 26 Z"
+                      d="
+                        M 6 28
+                        C 0 28, 0 30, 0 34
+                        L 0 46
+                        C 0 50, 0 52, 6 52
+                        L 78 52
+                        C 84 52, 86 54, 86 60
+                        L 86 66
+                        C 86 74, 92 76, 99 71
+                        L 144 44
+                        C 150 41, 150 39, 144 36
+                        L 99 9
+                        C 92 4, 86 6, 86 14
+                        L 86 20
+                        C 86 26, 84 28, 78 28
+                        Z
+                      "
                       fill={`url(#${gradId})`}
                     />
                   </svg>
