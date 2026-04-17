@@ -254,7 +254,7 @@ const GlobiculumPreview = () => {
             ];
 
             const renderDiamond = (step: (typeof steps)[number], i: number) => (
-              <div className="relative w-56 h-56 lg:w-64 lg:h-64 mx-auto group" style={{ zIndex: 2 }}>
+              <div className="relative w-[260px] h-[260px] md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto group" style={{ zIndex: 2 }}>
                 {/* Soft radial glow halo behind diamond for depth */}
                 <div
                   className="absolute -inset-6 pointer-events-none transition-opacity duration-300 group-hover:opacity-100"
@@ -328,7 +328,7 @@ const GlobiculumPreview = () => {
               return (
                 <div
                   className={`relative flex items-center justify-center ${
-                    isRight ? "-mx-8 lg:-mx-10 -translate-y-20 lg:-translate-y-24" : "-my-8"
+                    isRight ? "-mx-8 lg:-mx-10 -translate-y-20 lg:-translate-y-24" : "my-4"
                   }`}
                   aria-hidden="true"
                   style={{ zIndex: 3 }}
@@ -390,7 +390,7 @@ const GlobiculumPreview = () => {
                 </div>
 
                 {/* Mobile: stacked diamonds with downward arrows */}
-                <div className="md:hidden flex flex-col items-center gap-0 py-4">
+                <div className="md:hidden flex flex-col items-center gap-6 py-4">
                   {steps.map((step, i) => (
                     <React.Fragment key={step.title}>
                       {renderDiamond(step, i)}
