@@ -40,24 +40,24 @@ const GlobiculumPreview = () => {
 
   return (
     <Layout>
-      {/* Back to Products Button */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24">
-        <Link
-          to="/products"
-          className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200 hover:opacity-80"
-          style={{ color: "#0D9488" }}
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span>Back to Products</span>
-        </Link>
-      </div>
-
       <section
         className="relative min-h-[75vh] flex items-center overflow-hidden"
         style={{
           background: "linear-gradient(135deg, #0B1120 0%, #0F2027 30%, #0D9488 100%)",
         }}
       >
+        {/* Back to Products Button - Top Left of Hero */}
+        <div className="absolute top-6 left-6 sm:top-8 sm:left-8 lg:top-10 lg:left-10 z-20">
+          <Link
+            to="/products"
+            className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200 hover:opacity-80"
+            style={{ color: "rgba(255,255,255,0.9)" }}
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back to Products</span>
+          </Link>
+        </div>
+
         {/* Subtle glow accents */}
         <div
           className="absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full blur-[120px] opacity-30"
