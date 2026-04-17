@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { Layout } from "@/components/layout/Layout";
 import {
   ArrowRight,
