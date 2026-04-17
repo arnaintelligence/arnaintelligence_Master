@@ -1,7 +1,9 @@
 import React, { useState, useCallback } from "react";
+import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import {
   ArrowRight,
+  ArrowLeft,
   Globe,
   Shield,
   Award,
@@ -38,6 +40,23 @@ const GlobiculumPreview = () => {
 
   return (
     <Layout>
+      <nav aria-label="Breadcrumb" className="bg-secondary border-b border-secondary-foreground/10 pt-16 sm:pt-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-sm">
+          <Link
+            to="/products"
+            className="inline-flex items-center gap-1 text-secondary-foreground/70 hover:text-primary transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Products
+          </Link>
+          <span className="text-secondary-foreground/40 mx-2">/</span>
+          <Link to="/products" className="text-secondary-foreground/70 hover:text-primary transition-colors">
+            Products
+          </Link>
+          <span className="text-secondary-foreground/40">/</span>
+          <span className="text-secondary-foreground font-medium" aria-current="page">Globiculum</span>
+        </div>
+      </nav>
       <section
         className="relative min-h-[75vh] flex items-center overflow-hidden"
         style={{
