@@ -32,15 +32,11 @@ export function ProductsSection() {
     <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="text-4xl sm:text-5xl font-bold text-primary">
-            Products & Platforms
-          </span>
-          <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-foreground">
-            Proprietary Tools Built for Scale
-          </h2>
+          <span className="text-4xl sm:text-5xl font-bold text-primary">Our Flagship Products</span>
+          <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-foreground">Proprietary Tools Built for Scale</h2>
           <p className="mt-6 text-lg text-muted-foreground">
-            Our proprietary tools and platforms evolve from continuous learning intelligence 
-            and are built for flexible customization and scalable deployment.
+            Our proprietary tools and platforms evolve from continuous learning intelligence and are built for flexible
+            customization and scalable deployment.
           </p>
         </div>
 
@@ -54,7 +50,9 @@ export function ProductsSection() {
                 <h3 className="text-xl font-bold text-foreground mb-2">{product.name}</h3>
                 <p className="text-muted-foreground">{product.description}</p>
                 {product.comingSoon && (
-                  <span className="inline-block mt-4 px-3 py-1 text-sm font-medium bg-amber-100 text-amber-700 rounded-full">Coming Soon</span>
+                  <span className="inline-block mt-4 px-3 py-1 text-sm font-medium bg-amber-100 text-amber-700 rounded-full">
+                    Coming Soon
+                  </span>
                 )}
               </>
             );
@@ -74,30 +72,32 @@ export function ProductsSection() {
             // Globiculum card - light default, teal hover with gradient
             if (product.name === "Globiculum") {
               return (
-              <div
-                key={product.name}
-                className="group relative p-8 rounded-2xl bg-[#F8FAFC] border border-border text-center cursor-pointer transition-all duration-300 ease-out hover:bg-gradient-to-br hover:from-[#0D9488] hover:to-[#14B8A6] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_12px_30px_rgba(13,148,136,0.25)] overflow-hidden"
-              >
-                <div className="space-y-4">
-                  <div className="w-16 h-16 rounded-2xl bg-[#0D9488]/10 flex items-center justify-center mx-auto transition-all duration-300">
-                    <product.icon className="w-8 h-8 text-[#0D9488] group-hover:text-white transition-colors duration-300" />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#0f172a] group-hover:text-white transition-colors duration-300">{product.name}</h3>
-                  <p className="text-[#64748B] group-hover:text-white/90 transition-colors duration-300">{product.description}</p>
-                  <a
-                    href="/globiculum-preview"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <Button 
-                      className="mt-2 bg-white text-[#0D9488] hover:bg-white/95 font-medium transition-all duration-300"
+                <div
+                  key={product.name}
+                  className="group relative p-8 rounded-2xl bg-[#F8FAFC] border border-border text-center cursor-pointer transition-all duration-300 ease-out hover:bg-gradient-to-br hover:from-[#0D9488] hover:to-[#14B8A6] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_12px_30px_rgba(13,148,136,0.25)] overflow-hidden"
+                >
+                  <div className="space-y-4">
+                    <div className="w-16 h-16 rounded-2xl bg-[#0D9488]/10 flex items-center justify-center mx-auto transition-all duration-300">
+                      <product.icon className="w-8 h-8 text-[#0D9488] group-hover:text-white transition-colors duration-300" />
+                    </div>
+                    <h3 className="text-xl font-bold text-[#0f172a] group-hover:text-white transition-colors duration-300">
+                      {product.name}
+                    </h3>
+                    <p className="text-[#64748B] group-hover:text-white/90 transition-colors duration-300">
+                      {product.description}
+                    </p>
+                    <a
+                      href="/globiculum-preview"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      Quick Preview <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </a>
+                      <Button className="mt-2 bg-white text-[#0D9488] hover:bg-white/95 font-medium transition-all duration-300">
+                        Quick Preview <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </a>
+                  </div>
                 </div>
-              </div>
               );
             }
 
@@ -116,4 +116,3 @@ export function ProductsSection() {
     </section>
   );
 }
-
