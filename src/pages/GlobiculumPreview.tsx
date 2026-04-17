@@ -71,10 +71,10 @@ const GlobiculumPreview = () => {
             {/* Main Heading */}
             <h1
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 max-w-4xl mx-auto"
-              style={{ 
+              style={{
                 color: "#FFFFFF",
                 lineHeight: "1.2",
-                letterSpacing: "-0.5px"
+                letterSpacing: "-0.5px",
               }}
             >
               Bridge Your Child&apos;s Education
@@ -253,7 +253,7 @@ const GlobiculumPreview = () => {
               { from: "#fb923c", to: "#f97316", glow: "rgba(249,115,22,0.45)" },
             ];
 
-            const renderDiamond = (step: typeof steps[number], i: number) => (
+            const renderDiamond = (step: (typeof steps)[number], i: number) => (
               <div className="relative w-56 h-56 lg:w-64 lg:h-64 mx-auto group">
                 {/* Rotated diamond shell */}
                 <div
@@ -292,10 +292,7 @@ const GlobiculumPreview = () => {
                     >
                       <step.icon className="w-6 h-6" style={{ color: step.iconColor }} />
                     </div>
-                    <h3
-                      className="text-[13px] lg:text-sm font-bold leading-snug mb-1.5"
-                      style={{ color: "#0f172a" }}
-                    >
+                    <h3 className="text-[13px] lg:text-sm font-bold leading-snug mb-1.5" style={{ color: "#0f172a" }}>
                       {step.title}
                     </h3>
                     <p className="text-[11px] lg:text-xs leading-snug" style={{ color: "#64748b" }}>
@@ -350,22 +347,15 @@ const GlobiculumPreview = () => {
                     */}
                     <path
                       d="
-                        M 6 28
-                        C 0 28, 0 30, 0 34
-                        L 0 46
-                        C 0 50, 0 52, 6 52
-                        L 78 52
-                        C 84 52, 86 54, 86 60
-                        L 86 66
-                        C 86 74, 92 76, 99 71
-                        L 144 44
-                        C 150 41, 150 39, 144 36
-                        L 99 9
-                        C 92 4, 86 6, 86 14
-                        L 86 20
-                        C 86 26, 84 28, 78 28
-                        Z
-                      "
+    M 0 25
+    L 90 25
+    L 90 10
+    L 140 40
+    L 90 70
+    L 90 55
+    L 0 55
+    Z
+  "
                       fill={`url(#${gradId})`}
                     />
                   </svg>
@@ -636,16 +626,15 @@ const GlobiculumPreview = () => {
               Transition Readiness Report
             </h2>
 
-
-            <p 
+            <p
               className="text-center"
-              style={{ 
+              style={{
                 fontSize: "12px",
                 fontWeight: "500",
                 color: "#64748B",
                 letterSpacing: "0.4px",
                 marginTop: "6px",
-                marginBottom: "10px"
+                marginBottom: "10px",
               }}
             >
               — Sample for reference only —
