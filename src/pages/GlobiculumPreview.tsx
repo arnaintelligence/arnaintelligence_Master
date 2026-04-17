@@ -326,29 +326,25 @@ const GlobiculumPreview = () => {
                   style={{ zIndex: 5 }}
                 >
                   <svg
-                    width={isRight ? "140" : "60"}
-                    height={isRight ? "60" : "140"}
-                    viewBox="0 0 140 60"
+                    width={isRight ? "150" : "80"}
+                    height={isRight ? "80" : "150"}
+                    viewBox="0 0 150 80"
                     style={{
                       transform: isRight ? "none" : "rotate(90deg)",
-                      filter: "drop-shadow(0 2px 3px rgba(15,23,42,0.12))",
+                      filter: "drop-shadow(0 3px 5px rgba(15,23,42,0.15))",
                       position: "relative",
                       overflow: "visible",
                     }}
                   >
                     <defs>
                       <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor={def.from} />
+                        <stop offset="0%" stopColor={def.from} stopOpacity="0.9" />
                         <stop offset="100%" stopColor={def.to} />
                       </linearGradient>
                     </defs>
-                    {/*
-                      Clean geometric infographic arrow:
-                      - Rectangular body (y 22 → 38, height 16)
-                      - Sharp triangular head extending to x=140
-                    */}
-                    <polygon
-                      points="0,22 96,22 96,8 140,30 96,52 96,38 0,38"
+                    {/* Bold infographic arrow: thick rounded body + large triangular head */}
+                    <path
+                      d="M 4 26 Q 0 26 0 30 L 0 50 Q 0 54 4 54 L 90 54 L 90 70 Q 90 76 95 72 L 148 42 Q 152 40 148 38 L 95 8 Q 90 4 90 10 L 90 26 Z"
                       fill={`url(#${gradId})`}
                     />
                   </svg>
