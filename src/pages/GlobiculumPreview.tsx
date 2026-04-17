@@ -322,6 +322,15 @@ const GlobiculumPreview = () => {
                   aria-hidden="true"
                   style={{ zIndex: 5 }}
                 >
+                  {/* Soft gradient glow behind the arrow */}
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background: `radial-gradient(ellipse at center, ${def.glow} 0%, transparent 65%)`,
+                      filter: "blur(10px)",
+                      opacity: 0.7,
+                    }}
+                  />
                   <svg
                     width={isRight ? "84" : "56"}
                     height={isRight ? "56" : "84"}
@@ -339,12 +348,6 @@ const GlobiculumPreview = () => {
                         <stop offset="100%" stopColor={def.to} />
                       </linearGradient>
                     </defs>
-                    {/*
-                      Single continuous fluid infographic arrow:
-                      - Thick rounded body that swells slightly toward the head
-                      - Smooth curved transition from body shoulders into a soft, fluid arrow head
-                      - No sharp corners — every junction is a bezier curve
-                    */}
                     <path
                       d="
     M 0 20
