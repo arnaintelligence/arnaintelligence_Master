@@ -49,9 +49,6 @@ const Insights = () => {
                 Learn About ALIS Engine
               </Button>
             </div>
-            <span className="mt-4 inline-block text-xs font-medium uppercase tracking-wider text-muted-foreground/70 bg-muted px-3 py-1 rounded-full">
-              Coming Soon
-            </span>
           </div>
         </div>
       </section>
