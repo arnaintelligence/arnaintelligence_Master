@@ -220,7 +220,9 @@ const GlobiculumPreview = () => {
               {
                 icon: MapPin,
                 title: "Tell us where your child is coming from",
+                description: "Share your child's current curriculum and grade.",
                 gradient: "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)",
+                tint: "linear-gradient(135deg, #ffffff 0%, #eff6ff 100%)",
                 iconGradient: "linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)",
                 iconColor: "#3b82f6",
                 ringColor: "rgba(59,130,246,0.25)",
@@ -228,7 +230,9 @@ const GlobiculumPreview = () => {
               {
                 icon: Brain,
                 title: "Our AI maps and bridges the gaps instantly",
+                description: "Smart analysis identifies and closes learning gaps.",
                 gradient: "linear-gradient(135deg, #14b8a6 0%, #0ea5e9 100%)",
+                tint: "linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%)",
                 iconGradient: "linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%)",
                 iconColor: "#14b8a6",
                 ringColor: "rgba(20,184,166,0.25)",
@@ -236,53 +240,73 @@ const GlobiculumPreview = () => {
               {
                 icon: Route,
                 title: "Get a personalised learning pathway",
+                description: "A clear, actionable roadmap built for your child.",
                 gradient: "linear-gradient(135deg, #f97316 0%, #fb923c 100%)",
+                tint: "linear-gradient(135deg, #ffffff 0%, #fff7ed 100%)",
                 iconGradient: "linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%)",
                 iconColor: "#f97316",
                 ringColor: "rgba(249,115,22,0.25)",
               },
             ];
-            // Arrow gradients: blue→teal, teal→orange
             const arrowDefs = [
-              { from: "#3b82f6", to: "#14b8a6", glow: "rgba(20,184,166,0.35)" },
-              { from: "#14b8a6", to: "#f97316", glow: "rgba(249,115,22,0.35)" },
+              { from: "#14b8a6", to: "#0ea5e9", glow: "rgba(20,184,166,0.4)" },
+              { from: "#f97316", to: "#fb923c", glow: "rgba(249,115,22,0.4)" },
             ];
 
-            const renderCard = (step: typeof steps[number], i: number, emphasized = false) => (
-              <div
-                className={`group relative h-full rounded-2xl text-center bg-white border border-[#e5e7eb] transition-all duration-300 ease-out hover:-translate-y-[6px] hover:shadow-2xl ${
-                  emphasized ? "p-7 pt-8 shadow-xl md:scale-[1.04]" : "p-6 pt-7 shadow-lg"
-                }`}
-              >
+            const renderDiamond = (step: typeof steps[number], i: number) => (
+              <div className="relative w-56 h-56 lg:w-64 lg:h-64 mx-auto group">
+                {/* Rotated diamond shell */}
                 <div
-                  className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
-                  style={{ background: step.gradient }}
+                  className="absolute inset-0 rotate-45 rounded-3xl border border-[#e5e7eb] shadow-lg transition-all duration-300 ease-out group-hover:scale-[1.04] group-hover:shadow-2xl"
+                  style={{ background: step.tint }}
+                  aria-hidden="true"
                 />
+                {/* Top-corner gradient accent on the diamond */}
                 <div
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white"
+                  className="absolute inset-0 rotate-45 rounded-3xl pointer-events-none transition-opacity duration-300 group-hover:opacity-100"
                   style={{
                     background: step.gradient,
-                    boxShadow: `0 0 0 4px white, 0 0 0 7px ${step.ringColor}, 0 4px 10px ${step.ringColor}`,
+                    opacity: 0.06,
                   }}
-                >
-                  {i + 1}
-                </div>
+                  aria-hidden="true"
+                />
+                {/* Step number indicator (upright, near top corner of diamond) */}
                 <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 mx-auto mt-2 transition-transform duration-300 group-hover:scale-110"
+                  className="absolute -top-4 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-full text-[11px] font-bold text-white tracking-wider z-20 shadow-md"
                   style={{
-                    background: step.iconGradient,
-                    boxShadow: `inset 0 0 0 1px ${step.ringColor}`,
+                    background: step.gradient,
+                    boxShadow: `0 0 0 3px white, 0 4px 10px ${step.ringColor}`,
                   }}
                 >
-                  <step.icon className="w-7 h-7" style={{ color: step.iconColor }} />
+                  {String(i + 1).padStart(2, "0")}
                 </div>
-                <h3 className="text-base font-bold leading-snug" style={{ color: "#0f172a" }}>
-                  {step.title}
-                </h3>
+                {/* Upright content area (square inscribed in diamond) */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex flex-col items-center justify-center text-center w-[72%]">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-2.5 transition-transform duration-300 group-hover:scale-110"
+                      style={{
+                        background: step.iconGradient,
+                        boxShadow: `inset 0 0 0 1px ${step.ringColor}`,
+                      }}
+                    >
+                      <step.icon className="w-6 h-6" style={{ color: step.iconColor }} />
+                    </div>
+                    <h3
+                      className="text-[13px] lg:text-sm font-bold leading-snug mb-1.5"
+                      style={{ color: "#0f172a" }}
+                    >
+                      {step.title}
+                    </h3>
+                    <p className="text-[11px] lg:text-xs leading-snug" style={{ color: "#64748b" }}>
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
               </div>
             );
 
-            const GradientArrow = ({
+            const FlowArrow = ({
               def,
               direction = "right",
               idx,
@@ -291,7 +315,7 @@ const GlobiculumPreview = () => {
               direction?: "right" | "down";
               idx: number;
             }) => {
-              const gradId = `arrow-grad-${idx}-${direction}`;
+              const gradId = `diamond-arrow-${idx}-${direction}`;
               return (
                 <div
                   className="relative flex items-center justify-center transition-transform duration-300 hover:scale-110"
@@ -328,34 +352,23 @@ const GlobiculumPreview = () => {
 
             return (
               <div className="max-w-6xl mx-auto">
-                {/* Desktop */}
-                <div className="hidden md:block relative px-4">
-                  <div
-                    className="absolute left-8 right-8 top-1/2 -translate-y-1/2 h-px pointer-events-none"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, transparent 0%, #3b82f6 15%, #14b8a6 50%, #f97316 85%, transparent 100%)",
-                      opacity: 0.35,
-                    }}
-                    aria-hidden="true"
-                  />
-                  <div
-                    className="relative grid items-center gap-4"
-                    style={{ gridTemplateColumns: "1fr auto 1fr auto 1fr" }}
-                  >
-                    {steps.map((step, i) => (
-                      <React.Fragment key={step.title}>
-                        {renderCard(step, i, i === 1)}
-                        {i < steps.length - 1 && <GradientArrow def={arrowDefs[i]} idx={i} />}
-                      </React.Fragment>
-                    ))}
-                  </div>
+                {/* Desktop: horizontal diamond flow */}
+                <div className="hidden md:flex items-center justify-center gap-3 lg:gap-5 px-4 py-8">
+                  {steps.map((step, i) => (
+                    <React.Fragment key={step.title}>
+                      {renderDiamond(step, i)}
+                      {i < steps.length - 1 && <FlowArrow def={arrowDefs[i]} idx={i} />}
+                    </React.Fragment>
+                  ))}
                 </div>
 
-                {/* Mobile: stacked, no arrows */}
-                <div className="md:hidden flex flex-col gap-5">
+                {/* Mobile: stacked diamonds with downward arrows */}
+                <div className="md:hidden flex flex-col items-center gap-4 py-4">
                   {steps.map((step, i) => (
-                    <div key={step.title}>{renderCard(step, i)}</div>
+                    <React.Fragment key={step.title}>
+                      {renderDiamond(step, i)}
+                      {i < steps.length - 1 && <FlowArrow def={arrowDefs[i]} idx={i} direction="down" />}
+                    </React.Fragment>
                   ))}
                 </div>
               </div>
