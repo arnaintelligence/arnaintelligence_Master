@@ -328,52 +328,40 @@ const GlobiculumPreview = () => {
               return (
                 <div
                   className={`relative flex items-center justify-center ${
-                    isRight ? "-mx-6 lg:-mx-8 w-16 lg:w-20 h-12" : "-my-4 h-16 w-12"
+                    isRight ? "-mx-8 lg:-mx-10 -translate-y-20 lg:-translate-y-24" : "-my-8"
                   }`}
                   aria-hidden="true"
                   style={{ zIndex: 3 }}
                 >
-                  {/* Dotted connector embedded behind the arrow */}
-                  <div
-                    className={`absolute pointer-events-none ${
-                      isRight
-                        ? "left-0 right-0 top-1/2 -translate-y-1/2 border-t-2 border-dotted"
-                        : "top-0 bottom-0 left-1/2 -translate-x-1/2 border-l-2 border-dotted"
-                    }`}
-                    style={{ borderColor: def.glow, opacity: 0.55, zIndex: 0 }}
-                  />
-                  {/* Soft gradient glow halo behind the arrow */}
+                  {/* Soft gradient glow behind the arrow */}
                   <div
                     className="absolute inset-0 pointer-events-none"
                     style={{
-                      background: `radial-gradient(ellipse at center, ${def.glow} 0%, transparent 70%)`,
-                      filter: "blur(10px)",
-                      opacity: 0.7,
-                      zIndex: 1,
+                      background: `radial-gradient(ellipse at center, ${def.glow} 0%, transparent 65%)`,
+                      filter: "blur(12px)",
+                      opacity: 0.65,
                     }}
                   />
                   <svg
-                    width={isRight ? "52" : "36"}
-                    height={isRight ? "36" : "52"}
-                    viewBox="0 0 52 36"
+                    width={isRight ? "84" : "56"}
+                    height={isRight ? "56" : "84"}
+                    viewBox="0 0 100 60"
                     className={isRight ? "arrow-pulse-x" : "arrow-pulse-y"}
                     style={{
                       transform: isRight ? "none" : "rotate(90deg)",
-                      filter: "drop-shadow(0 3px 6px rgba(15,23,42,0.22))",
+                      filter: "drop-shadow(0 4px 8px rgba(15,23,42,0.18))",
                       position: "relative",
-                      zIndex: 2,
                       overflow: "visible",
                     }}
                   >
                     <defs>
                       <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor={def.from} stopOpacity="0.95" />
+                        <stop offset="0%" stopColor={def.from} stopOpacity="0.9" />
                         <stop offset="100%" stopColor={def.to} />
                       </linearGradient>
                     </defs>
-                    {/* Compact polygon arrow: short thick body + bold head */}
-                    <polygon
-                      points="2,13 28,13 28,4 50,18 28,32 28,23 2,23"
+                    <path
+                      d="M 0 20 L 55 20 L 55 6 L 95 30 L 55 54 L 55 40 L 0 40 Z"
                       fill={`url(#${gradId})`}
                     />
                   </svg>
