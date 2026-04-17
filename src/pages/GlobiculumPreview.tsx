@@ -369,13 +369,21 @@ const GlobiculumPreview = () => {
             return (
               <div className="max-w-6xl mx-auto">
                 {/* Desktop: horizontal diamond flow */}
-                <div className="hidden md:flex items-center justify-center gap-0 px-4 py-8">
-                  {steps.map((step, i) => (
-                    <React.Fragment key={step.title}>
-                      {renderDiamond(step, i)}
-                      {i < steps.length - 1 && <FlowArrow def={arrowDefs[i]} idx={i} />}
-                    </React.Fragment>
-                  ))}
+                <div className="hidden md:block relative px-4 py-8">
+                  {/* Subtle dotted horizontal connector behind the steps */}
+                  <div
+                    className="absolute left-12 right-12 top-1/2 -translate-y-1/2 border-t-2 border-dotted border-slate-300/70 pointer-events-none"
+                    aria-hidden="true"
+                    style={{ zIndex: 0 }}
+                  />
+                  <div className="relative flex items-center justify-center gap-0" style={{ zIndex: 1 }}>
+                    {steps.map((step, i) => (
+                      <React.Fragment key={step.title}>
+                        {renderDiamond(step, i)}
+                        {i < steps.length - 1 && <FlowArrow def={arrowDefs[i]} idx={i} />}
+                      </React.Fragment>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Mobile: stacked diamonds with downward arrows */}
