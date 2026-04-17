@@ -365,51 +365,14 @@ const GlobiculumPreview = () => {
                       </filter>
                     </defs>
 
-                    {/*
-                      Smooth tapered flow arrow:
-                      - Starts thin on the left, widens through the middle,
-                        then narrows into a soft, organic arrow head on the right.
-                      - All curves are quadratic/cubic — no hard corners.
-                    */}
-                    <g filter={`url(#${blurId})`}>
-                      {/* Soft underlay for blended depth */}
-                      <path
-                        d="
-                          M 4 40
-                          C 22 36, 40 30, 70 30
-                          C 92 30, 108 32, 116 34
-                          L 116 18
-                          C 116 12, 122 10, 128 14
-                          L 154 36
-                          C 158 39, 158 41, 154 44
-                          L 128 66
-                          C 122 70, 116 68, 116 62
-                          L 116 46
-                          C 108 48, 92 50, 70 50
-                          C 40 50, 22 44, 4 40
-                          Z
-                        "
-                        fill={`url(#${softGradId})`}
-                      />
-                    </g>
-
-                    {/* Main tapered arrow body */}
+                    {/* Single continuous fluid arrow: thin tail → swelling body → curved head */}
                     <path
-                      d="
-                        M 6 40
-                        C 24 37, 42 32, 72 32
-                        C 92 32, 106 33, 114 35
-                        L 114 22
-                        C 114 15, 121 13, 127 17
-                        L 152 37
-                        C 156 39, 156 41, 152 43
-                        L 127 63
-                        C 121 67, 114 65, 114 58
-                        L 114 45
-                        C 106 47, 92 48, 72 48
-                        C 42 48, 24 43, 6 40
-                        Z
-                      "
+                      filter={`url(#${blurId})`}
+                      d="M 4 40 C 18 32, 40 24, 70 24 C 96 24, 110 28, 118 32 C 120 28, 124 22, 130 18 C 138 13, 156 30, 156 40 C 156 50, 138 67, 130 62 C 124 58, 120 52, 118 48 C 110 52, 96 56, 70 56 C 40 56, 18 48, 4 40 Z"
+                      fill={`url(#${softGradId})`}
+                    />
+                    <path
+                      d="M 8 40 C 22 33, 44 27, 72 27 C 96 27, 110 31, 116 34 C 119 30, 122 24, 128 21 C 136 17, 152 32, 152 40 C 152 48, 136 63, 128 59 C 122 56, 119 50, 116 46 C 110 49, 96 53, 72 53 C 44 53, 22 47, 8 40 Z"
                       fill={`url(#${gradId})`}
                     />
                   </svg>
