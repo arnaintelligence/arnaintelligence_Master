@@ -76,6 +76,7 @@ export function ProductsSection() {
               return (
                 <div
                   key={product.name}
+                  onClick={() => navigate("/globiculum-preview")}
                   className="group relative p-8 rounded-2xl bg-[#F8FAFC] border border-border text-center cursor-pointer transition-all duration-300 ease-out hover:bg-gradient-to-br hover:from-[#0D9488] hover:to-[#14B8A6] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_12px_30px_rgba(13,148,136,0.25)] overflow-hidden"
                 >
                   <div className="space-y-4">
