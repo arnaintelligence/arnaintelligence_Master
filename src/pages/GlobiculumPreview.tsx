@@ -317,15 +317,15 @@ const GlobiculumPreview = () => {
               return (
                 <div
                   className={`relative flex items-center justify-center transition-transform duration-200 ease-out ${
-                    isRight ? "hover:translate-x-1 -mx-8 lg:-mx-10" : "hover:translate-y-1 -my-8"
+                    isRight ? "hover:translate-x-1 -mx-3 lg:-mx-4" : "hover:translate-y-1 -my-3"
                   }`}
                   aria-hidden="true"
                   style={{ zIndex: 5 }}
                 >
                   <svg
-                    width={isRight ? "150" : "80"}
-                    height={isRight ? "80" : "150"}
-                    viewBox="0 0 150 80"
+                    width={isRight ? "84" : "56"}
+                    height={isRight ? "56" : "84"}
+                    viewBox="0 0 100 60"
                     style={{
                       transform: isRight ? "none" : "rotate(90deg)",
                       filter: "drop-shadow(0 4px 8px rgba(15,23,42,0.18))",
