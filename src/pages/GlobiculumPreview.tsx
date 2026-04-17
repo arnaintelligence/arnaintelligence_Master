@@ -40,6 +40,18 @@ const GlobiculumPreview = () => {
 
   return (
     <Layout>
+      {/* Back to Products Button */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24">
+        <Link
+          to="/products"
+          className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200 hover:opacity-80"
+          style={{ color: "#0D9488" }}
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Back to Products</span>
+        </Link>
+      </div>
+
       <section
         className="relative min-h-[75vh] flex items-center overflow-hidden"
         style={{
