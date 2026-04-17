@@ -215,73 +215,87 @@ const GlobiculumPreview = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
-            {/* Step 1 */}
-            <div
-              className="relative p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
-              style={{ backgroundColor: "#ffffff", border: "1px solid #e5e7eb" }}
-            >
-              <span
-                className="absolute top-3 right-3 text-4xl font-extrabold select-none"
-                style={{ color: "#cbd5e1", opacity: 0.4 }}
-              >
-                01
-              </span>
-              <div
-                className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 mx-auto"
-                style={{ backgroundColor: "#dbeafe" }}
-              >
-                <MapPin className="w-7 h-7" style={{ color: "#3b82f6" }} />
-              </div>
-              <h3 className="text-lg font-bold" style={{ color: "#0f172a" }}>
-                Tell us where your child is coming from
-              </h3>
-            </div>
+          {(() => {
+            const steps = [
+              {
+                icon: MapPin,
+                title: "Tell us where your child is coming from",
+                gradient: "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)",
+                iconBg: "#dbeafe",
+                iconColor: "#3b82f6",
+              },
+              {
+                icon: Brain,
+                title: "Our AI maps and bridges the gaps instantly",
+                gradient: "linear-gradient(135deg, #14b8a6 0%, #0ea5e9 100%)",
+                iconBg: "#ccfbf1",
+                iconColor: "#14b8a6",
+              },
+              {
+                icon: Route,
+                title: "Get a personalised learning pathway",
+                gradient: "linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)",
+                iconBg: "#ede9fe",
+                iconColor: "#8b5cf6",
+              },
+            ];
+            return (
+              <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-stretch md:items-center justify-center gap-4 md:gap-2">
+                {steps.map((step, i) => (
+                  <div
+                    key={step.title}
+                    className="flex flex-col md:flex-row items-center gap-4 md:gap-2 md:flex-1"
+                  >
+                    {/* Step card */}
+                    <div
+                      className="relative w-full md:flex-1 p-6 pt-7 rounded-2xl text-center transition-all duration-300 hover:-translate-y-1"
+                      style={{
+                        backgroundColor: "#ffffff",
+                        border: "1px solid #e5e7eb",
+                        boxShadow: "0 4px 20px rgba(15, 23, 42, 0.06)",
+                      }}
+                    >
+                      {/* Gradient top accent */}
+                      <div
+                        className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
+                        style={{ background: step.gradient }}
+                      />
+                      {/* Step number badge */}
+                      <div
+                        className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shadow-md"
+                        style={{ background: step.gradient }}
+                      >
+                        {i + 1}
+                      </div>
+                      <div
+                        className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 mx-auto mt-2"
+                        style={{ backgroundColor: step.iconBg }}
+                      >
+                        <step.icon className="w-7 h-7" style={{ color: step.iconColor }} />
+                      </div>
+                      <h3 className="text-base font-bold leading-snug" style={{ color: "#0f172a" }}>
+                        {step.title}
+                      </h3>
+                    </div>
 
-            {/* Step 2 */}
-            <div
-              className="relative p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
-              style={{ backgroundColor: "#ffffff", border: "1px solid #e5e7eb" }}
-            >
-              <span
-                className="absolute top-3 right-3 text-4xl font-extrabold select-none"
-                style={{ color: "#cbd5e1", opacity: 0.4 }}
-              >
-                02
-              </span>
-              <div
-                className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 mx-auto"
-                style={{ backgroundColor: "#ccfbf1" }}
-              >
-                <Brain className="w-7 h-7" style={{ color: "#14b8a6" }} />
+                    {/* Connector arrow */}
+                    {i < steps.length - 1 && (
+                      <div className="flex items-center justify-center flex-shrink-0">
+                        <div
+                          className="w-10 h-10 rounded-full flex items-center justify-center shadow-sm rotate-90 md:rotate-0"
+                          style={{
+                            background: "linear-gradient(135deg, #14b8a6 0%, #6366f1 100%)",
+                          }}
+                        >
+                          <ArrowRight className="w-5 h-5 text-white" />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
-              <h3 className="text-lg font-bold" style={{ color: "#0f172a" }}>
-                Our AI maps and bridges the gaps instantly
-              </h3>
-            </div>
-
-            {/* Step 3 */}
-            <div
-              className="relative p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
-              style={{ backgroundColor: "#ffffff", border: "1px solid #e5e7eb" }}
-            >
-              <span
-                className="absolute top-3 right-3 text-4xl font-extrabold select-none"
-                style={{ color: "#cbd5e1", opacity: 0.4 }}
-              >
-                03
-              </span>
-              <div
-                className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 mx-auto"
-                style={{ backgroundColor: "#fef3c7" }}
-              >
-                <Route className="w-7 h-7" style={{ color: "#f59e0b" }} />
-              </div>
-              <h3 className="text-lg font-bold" style={{ color: "#0f172a" }}>
-                Get a personalised learning pathway
-              </h3>
-            </div>
-          </div>
+            );
+          })()}
         </div>
       </section>
 
