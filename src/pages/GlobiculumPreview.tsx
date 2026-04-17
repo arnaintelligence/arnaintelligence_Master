@@ -203,14 +203,14 @@ const GlobiculumPreview = () => {
       {/* How It Works Section */}
       <section className="py-16 md:py-20" style={{ backgroundColor: "#f8fafc" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center mb-12">
-            <h1 className="text-3xl md:text-5xl font-bold text-[#14b8a6] mb-3" style={{ color: "#14b8a6" }}>
+          <div className="max-w-2xl mx-auto text-center mb-16 md:mb-20">
+            <h1 className="text-3xl md:text-5xl font-bold text-[#14b8a6] mb-4" style={{ color: "#14b8a6" }}>
               Simple · Fast · Personalised
             </h1>
-            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4" style={{ color: "#0f172a" }}>
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-6" style={{ color: "#0f172a" }}>
               From signup to study plan in under 10 minutes
             </h2>
-            <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: "#64748b" }}>
+            <p className="text-base md:text-lg leading-relaxed" style={{ color: "#64748b" }}>
               No lengthy intake forms. No waiting. Just three steps between you and a clear actionable roadmap.
             </p>
           </div>
@@ -221,109 +221,93 @@ const GlobiculumPreview = () => {
                 icon: MapPin,
                 title: "Tell us where your child is coming from",
                 gradient: "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)",
-                iconBg: "#dbeafe",
+                iconBg: "#dbeafe", // blue-100
                 iconColor: "#3b82f6",
               },
               {
                 icon: Brain,
                 title: "Our AI maps and bridges the gaps instantly",
                 gradient: "linear-gradient(135deg, #14b8a6 0%, #0ea5e9 100%)",
-                iconBg: "#ccfbf1",
+                iconBg: "#ccfbf1", // teal-100
                 iconColor: "#14b8a6",
               },
               {
                 icon: Route,
                 title: "Get a personalised learning pathway",
                 gradient: "linear-gradient(135deg, #f97316 0%, #fb923c 100%)",
-                iconBg: "#ffedd5",
+                iconBg: "#ffedd5", // orange-100
                 iconColor: "#f97316",
               },
             ];
-            // Arrow color between consecutive steps
             const arrowColors = ["#14b8a6", "#f97316"];
+
+            const renderCard = (step: typeof steps[number], i: number, emphasized = false) => (
+              <div
+                className={`group relative h-full rounded-2xl text-center bg-white border border-[#e5e7eb] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+                  emphasized ? "p-7 pt-8 shadow-xl md:scale-[1.04]" : "p-6 pt-7 shadow-lg"
+                }`}
+              >
+                <div
+                  className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
+                  style={{ background: step.gradient }}
+                />
+                <div
+                  className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shadow-md"
+                  style={{ background: step.gradient }}
+                >
+                  {i + 1}
+                </div>
+                <div
+                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 mx-auto mt-2 transition-transform duration-300 group-hover:scale-110"
+                  style={{ backgroundColor: step.iconBg }}
+                >
+                  <step.icon className="w-7 h-7" style={{ color: step.iconColor }} />
+                </div>
+                <h3 className="text-base font-bold leading-snug" style={{ color: "#0f172a" }}>
+                  {step.title}
+                </h3>
+              </div>
+            );
 
             return (
               <div className="max-w-6xl mx-auto">
-                {/* Desktop: grid with explicit arrow columns for perfect centering */}
-                <div
-                  className="hidden md:grid items-center gap-3"
-                  style={{ gridTemplateColumns: "1fr auto 1fr auto 1fr" }}
-                >
-                  {steps.map((step, i) => (
-                    <React.Fragment key={step.title}>
-                      <div
-                        className="relative h-full p-6 pt-7 rounded-2xl text-center transition-all duration-300 hover:-translate-y-1"
-                        style={{
-                          backgroundColor: "#ffffff",
-                          border: "1px solid #e5e7eb",
-                          boxShadow: "0 4px 20px rgba(15, 23, 42, 0.06)",
-                        }}
-                      >
-                        <div
-                          className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
-                          style={{ background: step.gradient }}
-                        />
-                        <div
-                          className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shadow-md"
-                          style={{ background: step.gradient }}
-                        >
-                          {i + 1}
-                        </div>
-                        <div
-                          className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 mx-auto mt-2"
-                          style={{ backgroundColor: step.iconBg }}
-                        >
-                          <step.icon className="w-7 h-7" style={{ color: step.iconColor }} />
-                        </div>
-                        <h3 className="text-base font-bold leading-snug" style={{ color: "#0f172a" }}>
-                          {step.title}
-                        </h3>
-                      </div>
-                      {i < steps.length - 1 && (
-                        <div className="flex items-center justify-center" aria-hidden="true">
-                          <ArrowRight
-                            className="w-8 h-8"
-                            style={{ color: arrowColors[i], opacity: 0.85 }}
-                            strokeWidth={2.5}
-                          />
-                        </div>
-                      )}
-                    </React.Fragment>
-                  ))}
+                {/* Desktop */}
+                <div className="hidden md:block relative px-4">
+                  {/* Background connector line */}
+                  <div
+                    className="absolute left-8 right-8 top-1/2 -translate-y-1/2 h-px pointer-events-none"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, transparent 0%, #14b8a6 20%, #14b8a6 50%, #f97316 80%, transparent 100%)",
+                      opacity: 0.35,
+                    }}
+                    aria-hidden="true"
+                  />
+                  <div
+                    className="relative grid items-center gap-4"
+                    style={{ gridTemplateColumns: "1fr auto 1fr auto 1fr" }}
+                  >
+                    {steps.map((step, i) => (
+                      <React.Fragment key={step.title}>
+                        {renderCard(step, i, i === 1)}
+                        {i < steps.length - 1 && (
+                          <div className="flex items-center justify-center" aria-hidden="true">
+                            <ArrowRight
+                              className="w-9 h-9 transition-all duration-300 hover:scale-125 hover:translate-x-1 cursor-default"
+                              style={{ color: arrowColors[i] }}
+                              strokeWidth={2.5}
+                            />
+                          </div>
+                        )}
+                      </React.Fragment>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Mobile: stacked cards, no arrows */}
+                {/* Mobile: stacked, no arrows */}
                 <div className="md:hidden flex flex-col gap-5">
                   {steps.map((step, i) => (
-                    <div
-                      key={step.title}
-                      className="relative p-6 pt-7 rounded-2xl text-center"
-                      style={{
-                        backgroundColor: "#ffffff",
-                        border: "1px solid #e5e7eb",
-                        boxShadow: "0 4px 20px rgba(15, 23, 42, 0.06)",
-                      }}
-                    >
-                      <div
-                        className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl"
-                        style={{ background: step.gradient }}
-                      />
-                      <div
-                        className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shadow-md"
-                        style={{ background: step.gradient }}
-                      >
-                        {i + 1}
-                      </div>
-                      <div
-                        className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 mx-auto mt-2"
-                        style={{ backgroundColor: step.iconBg }}
-                      >
-                        <step.icon className="w-7 h-7" style={{ color: step.iconColor }} />
-                      </div>
-                      <h3 className="text-base font-bold leading-snug" style={{ color: "#0f172a" }}>
-                        {step.title}
-                      </h3>
-                    </div>
+                    <div key={step.title}>{renderCard(step, i)}</div>
                   ))}
                 </div>
               </div>
