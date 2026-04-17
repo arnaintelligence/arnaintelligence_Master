@@ -327,11 +327,11 @@ const GlobiculumPreview = () => {
               const isRight = direction === "right";
               return (
                 <div
-                  className={`relative flex justify-center ${
-                    isRight ? "-mx-8 lg:-mx-10 items-start pt-4" : "-my-8 items-center"
+                  className={`relative flex items-center justify-center ${
+                    isRight ? "-mx-8 lg:-mx-10 -translate-y-20 lg:-translate-y-24" : "-my-8"
                   }`}
                   aria-hidden="true"
-                  style={{ zIndex: 1, alignSelf: isRight ? "flex-start" : undefined, marginTop: isRight ? "-1rem" : undefined }}
+                  style={{ zIndex: 3 }}
                 >
                   {/* Soft gradient glow behind the arrow */}
                   <div
