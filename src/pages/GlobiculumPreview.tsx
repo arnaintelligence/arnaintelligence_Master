@@ -249,8 +249,8 @@ const GlobiculumPreview = () => {
               },
             ];
             const arrowDefs = [
-              { from: "#14b8a6", to: "#0ea5e9", glow: "rgba(20,184,166,0.4)" },
-              { from: "#f97316", to: "#fb923c", glow: "rgba(249,115,22,0.4)" },
+              { from: "#14b8a6", to: "#0ea5a4", glow: "rgba(20,184,166,0.45)" },
+              { from: "#fb923c", to: "#f97316", glow: "rgba(249,115,22,0.45)" },
             ];
 
             const renderDiamond = (step: typeof steps[number], i: number) => (
