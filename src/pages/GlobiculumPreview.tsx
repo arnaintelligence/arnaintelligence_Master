@@ -316,63 +316,39 @@ const GlobiculumPreview = () => {
               idx: number;
             }) => {
               const gradId = `diamond-arrow-${idx}-${direction}`;
-              const softGradId = `diamond-arrow-soft-${idx}-${direction}`;
-              const blurId = `diamond-arrow-blur-${idx}-${direction}`;
               const isRight = direction === "right";
               return (
                 <div
-                  className={`group/arrow relative flex items-center justify-center transition-transform duration-300 ease-out ${
-                    isRight ? "hover:translate-x-1.5 -mx-10 lg:-mx-12" : "hover:translate-y-1.5 -my-10"
+                  className={`relative flex items-center justify-center transition-transform duration-200 ease-out ${
+                    isRight ? "hover:translate-x-1 -mx-8 lg:-mx-10" : "hover:translate-y-1 -my-8"
                   }`}
                   aria-hidden="true"
                   style={{ zIndex: 5 }}
                 >
-                  {/* Soft ambient glow */}
-                  <div
-                    className="absolute rounded-full blur-3xl pointer-events-none"
-                    style={{
-                      background: def.glow,
-                      opacity: 0.5,
-                      width: isRight ? "180px" : "100px",
-                      height: isRight ? "100px" : "180px",
-                    }}
-                  />
                   <svg
-                    width={isRight ? "160" : "80"}
-                    height={isRight ? "80" : "160"}
-                    viewBox="0 0 160 80"
+                    width={isRight ? "140" : "60"}
+                    height={isRight ? "60" : "140"}
+                    viewBox="0 0 140 60"
                     style={{
                       transform: isRight ? "none" : "rotate(90deg)",
-                      filter: `drop-shadow(0 6px 12px ${def.glow})`,
+                      filter: "drop-shadow(0 2px 3px rgba(15,23,42,0.12))",
                       position: "relative",
                       overflow: "visible",
                     }}
                   >
                     <defs>
                       <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor={def.from} stopOpacity="0" />
-                        <stop offset="20%" stopColor={def.from} stopOpacity="0.65" />
-                        <stop offset="70%" stopColor={def.to} stopOpacity="0.95" />
-                        <stop offset="100%" stopColor={def.to} stopOpacity="1" />
+                        <stop offset="0%" stopColor={def.from} />
+                        <stop offset="100%" stopColor={def.to} />
                       </linearGradient>
-                      <linearGradient id={softGradId} x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor={def.from} stopOpacity="0" />
-                        <stop offset="50%" stopColor={def.from} stopOpacity="0.35" />
-                        <stop offset="100%" stopColor={def.to} stopOpacity="0.5" />
-                      </linearGradient>
-                      <filter id={blurId} x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur stdDeviation="1.2" />
-                      </filter>
                     </defs>
-
-                    {/* Single continuous fluid arrow: thin tail → swelling body → curved head */}
-                    <path
-                      filter={`url(#${blurId})`}
-                      d="M 4 40 C 18 32, 40 24, 70 24 C 96 24, 110 28, 118 32 C 120 28, 124 22, 130 18 C 138 13, 156 30, 156 40 C 156 50, 138 67, 130 62 C 124 58, 120 52, 118 48 C 110 52, 96 56, 70 56 C 40 56, 18 48, 4 40 Z"
-                      fill={`url(#${softGradId})`}
-                    />
-                    <path
-                      d="M 8 40 C 22 33, 44 27, 72 27 C 96 27, 110 31, 116 34 C 119 30, 122 24, 128 21 C 136 17, 152 32, 152 40 C 152 48, 136 63, 128 59 C 122 56, 119 50, 116 46 C 110 49, 96 53, 72 53 C 44 53, 22 47, 8 40 Z"
+                    {/*
+                      Clean geometric infographic arrow:
+                      - Rectangular body (y 22 → 38, height 16)
+                      - Sharp triangular head extending to x=140
+                    */}
+                    <polygon
+                      points="0,22 96,22 96,8 140,30 96,52 96,38 0,38"
                       fill={`url(#${gradId})`}
                     />
                   </svg>
