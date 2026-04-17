@@ -347,13 +347,13 @@ const GlobiculumPreview = () => {
                     */}
                     <path
                       d="
-    M 0 25
-    L 90 25
-    L 90 10
-    L 140 40
-    L 90 70
-    L 90 55
-    L 0 55
+    M 0 20
+    L 55 20
+    L 55 6
+    L 95 30
+    L 55 54
+    L 55 40
+    L 0 40
     Z
   "
                       fill={`url(#${gradId})`}
