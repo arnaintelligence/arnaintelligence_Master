@@ -316,22 +316,26 @@ const GlobiculumPreview = () => {
               idx: number;
             }) => {
               const gradId = `diamond-arrow-${idx}-${direction}`;
+              const isRight = direction === "right";
               return (
                 <div
-                  className="relative flex items-center justify-center transition-transform duration-300 hover:scale-110"
+                  className={`group/arrow relative flex items-center justify-center transition-transform duration-300 ease-out ${
+                    isRight ? "hover:translate-x-1.5" : "hover:translate-y-1.5"
+                  }`}
                   aria-hidden="true"
                 >
+                  {/* Soft glow halo */}
                   <div
-                    className="absolute w-16 h-16 rounded-full blur-xl"
-                    style={{ background: def.glow, opacity: 0.7 }}
+                    className="absolute w-20 h-20 rounded-full blur-2xl pointer-events-none transition-opacity duration-300 group-hover/arrow:opacity-90"
+                    style={{ background: def.glow, opacity: 0.6 }}
                   />
                   <svg
-                    width="64"
-                    height="36"
-                    viewBox="0 0 72 40"
+                    width={isRight ? "78" : "44"}
+                    height={isRight ? "44" : "78"}
+                    viewBox="0 0 78 44"
                     style={{
-                      transform: direction === "down" ? "rotate(90deg)" : "none",
-                      filter: `drop-shadow(0 4px 8px ${def.glow})`,
+                      transform: isRight ? "none" : "rotate(90deg)",
+                      filter: `drop-shadow(0 6px 10px ${def.glow}) drop-shadow(0 2px 3px rgba(15,23,42,0.15))`,
                       position: "relative",
                     }}
                   >
@@ -341,9 +345,28 @@ const GlobiculumPreview = () => {
                         <stop offset="100%" stopColor={def.to} />
                       </linearGradient>
                     </defs>
+                    {/*
+                      Bold infographic arrow:
+                      - Thick rectangular body with rounded left edge
+                      - Clear triangular head on the right
+                    */}
                     <path
-                      d="M0 14 L48 14 L48 4 L72 20 L48 36 L48 26 L0 26 Z"
+                      d="M6 14
+                         Q2 14 2 18
+                         L2 26
+                         Q2 30 6 30
+                         L48 30
+                         L48 40
+                         Q48 44 51 41
+                         L75 24
+                         Q77 22 75 20
+                         L51 3
+                         Q48 0 48 4
+                         L48 14 Z"
                       fill={`url(#${gradId})`}
+                      stroke={def.to}
+                      strokeWidth="0.5"
+                      strokeOpacity="0.4"
                     />
                   </svg>
                 </div>
