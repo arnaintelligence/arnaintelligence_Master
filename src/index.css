@@ -181,4 +181,22 @@ Brand Colors:
       transform: translateY(0);
     }
   }
+
+  .arrow-pulse-x {
+    animation: arrowPulseX 2.4s ease-in-out infinite;
+  }
+
+  .arrow-pulse-y {
+    animation: arrowPulseY 2.4s ease-in-out infinite;
+  }
+
+  @keyframes arrowPulseX {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+  }
+
+  @keyframes arrowPulseY {
+    0%, 100% { transform: rotate(90deg) translateX(0); }
+    50% { transform: rotate(90deg) translateX(4px); }
+  }
 }

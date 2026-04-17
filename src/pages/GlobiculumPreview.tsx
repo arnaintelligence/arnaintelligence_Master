@@ -254,7 +254,18 @@ const GlobiculumPreview = () => {
             ];
 
             const renderDiamond = (step: (typeof steps)[number], i: number) => (
-              <div className="relative w-56 h-56 lg:w-64 lg:h-64 mx-auto group">
+              <div className="relative w-56 h-56 lg:w-64 lg:h-64 mx-auto group" style={{ zIndex: 2 }}>
+                {/* Soft radial glow halo behind diamond for depth */}
+                <div
+                  className="absolute -inset-6 pointer-events-none transition-opacity duration-300 group-hover:opacity-100"
+                  style={{
+                    background: `radial-gradient(ellipse at center, ${step.ringColor} 0%, transparent 65%)`,
+                    filter: "blur(18px)",
+                    opacity: 0.55,
+                    zIndex: -1,
+                  }}
+                  aria-hidden="true"
+                />
                 {/* Rotated diamond shell */}
                 <div
                   className="absolute inset-0 rotate-45 rounded-3xl border border-[#e5e7eb] shadow-lg transition-all duration-300 ease-out group-hover:scale-[1.04] group-hover:shadow-2xl"
@@ -316,25 +327,26 @@ const GlobiculumPreview = () => {
               const isRight = direction === "right";
               return (
                 <div
-                  className={`relative flex items-center justify-center transition-transform duration-200 ease-out ${
-                    isRight ? "hover:translate-x-1 -mx-3 lg:-mx-4" : "hover:translate-y-1 -my-3"
+                  className={`relative flex items-center justify-center ${
+                    isRight ? "-mx-8 lg:-mx-10" : "-my-8"
                   }`}
                   aria-hidden="true"
-                  style={{ zIndex: 5 }}
+                  style={{ zIndex: 1 }}
                 >
                   {/* Soft gradient glow behind the arrow */}
                   <div
                     className="absolute inset-0 pointer-events-none"
                     style={{
                       background: `radial-gradient(ellipse at center, ${def.glow} 0%, transparent 65%)`,
-                      filter: "blur(10px)",
-                      opacity: 0.7,
+                      filter: "blur(12px)",
+                      opacity: 0.65,
                     }}
                   />
                   <svg
                     width={isRight ? "84" : "56"}
                     height={isRight ? "56" : "84"}
                     viewBox="0 0 100 60"
+                    className={isRight ? "arrow-pulse-x" : "arrow-pulse-y"}
                     style={{
                       transform: isRight ? "none" : "rotate(90deg)",
                       filter: "drop-shadow(0 4px 8px rgba(15,23,42,0.18))",
@@ -349,16 +361,7 @@ const GlobiculumPreview = () => {
                       </linearGradient>
                     </defs>
                     <path
-                      d="
-    M 0 20
-    L 55 20
-    L 55 6
-    L 95 30
-    L 55 54
-    L 55 40
-    L 0 40
-    Z
-  "
+                      d="M 0 20 L 55 20 L 55 6 L 95 30 L 55 54 L 55 40 L 0 40 Z"
                       fill={`url(#${gradId})`}
                     />
                   </svg>
