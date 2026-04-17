@@ -20,21 +20,6 @@ import {
   ZoomIn,
   ZoomOut,
 } from "lucide-react";
-  Shield,
-  Award,
-  Users,
-  Cpu,
-  AlertTriangle,
-  BookOpen,
-  Clock,
-  MapPin,
-  Brain,
-  Route,
-  X,
-  Check,
-  ZoomIn,
-  ZoomOut,
-} from "lucide-react";
 import globiculumLogo from "@/assets/globiculum-logo-white.png";
 const readinessReport = "/images/Readiness_Report.jpeg";
 
