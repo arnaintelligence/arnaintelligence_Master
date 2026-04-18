@@ -13,6 +13,7 @@ import Products from "./pages/Products";
 import GlobiculumPreview from "./pages/GlobiculumPreview";
 import Insights from "./pages/Insights";
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/globiculum-preview" element={<GlobiculumPreview />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>
