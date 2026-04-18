@@ -90,33 +90,33 @@ export default function About() {
           </div>
 
           {/* Vertical COACH Acronym */}
-          <div className="max-w-4xl mx-auto flex flex-col gap-5">
+          <div className="max-w-4xl mx-auto flex flex-col gap-4 sm:gap-5">
             {principles.map((p, idx) => (
               <div
                 key={idx}
-                className="group flex flex-col sm:flex-row items-stretch bg-[#F8FAFC] border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                className="group relative flex flex-col sm:flex-row items-stretch bg-[#F8FAFC] border border-gray-100 rounded-2xl overflow-hidden shadow-sm sm:hover:shadow-lg sm:hover:-translate-y-1 transition-all duration-300"
               >
-                {/* LEFT STRIP */}
-                <div className="w-full sm:w-20 md:w-24 py-5 sm:py-0 flex items-center justify-center bg-gradient-to-b from-primary to-primary/80 sm:rounded-l-2xl">
-                  <span className="text-white text-3xl sm:text-4xl font-bold tracking-tight">
+                {/* LEFT/TOP STRIP */}
+                <div className="w-full h-14 sm:h-auto sm:w-20 md:w-24 flex items-center justify-center bg-gradient-to-r sm:bg-gradient-to-b from-primary to-primary/80">
+                  <span className="text-white text-2xl sm:text-4xl font-bold tracking-tight">
                     {p.letter}
                   </span>
                 </div>
 
                 {/* CONTENT */}
-                <div className="flex-1 px-6 py-6 sm:py-7 flex flex-col justify-center">
-                  <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-foreground mb-2">
+                <div className="flex-1 px-5 sm:px-6 pt-5 pb-20 sm:py-7 sm:pr-2 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-2xl font-semibold tracking-tight text-foreground mb-2 max-w-md">
                     {p.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-md">
                     {p.description}
                   </p>
                 </div>
 
-                {/* RIGHT ICON */}
-                <div className="flex items-center justify-center px-6 pb-6 sm:pb-0 sm:pr-6">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-sm transition-transform duration-300 group-hover:scale-110">
-                    <p.icon className="w-8 h-8" />
+                {/* RIGHT/BOTTOM-RIGHT ICON */}
+                <div className="absolute bottom-4 right-4 sm:static sm:flex sm:items-center sm:justify-center sm:px-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-sm transition-transform duration-300 sm:group-hover:scale-110">
+                    <p.icon className="w-6 h-6 sm:w-8 sm:h-8" />
                   </div>
                 </div>
               </div>
