@@ -20,11 +20,11 @@ const services = [
 
 const navLinks = [
   { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
   { name: "Services", href: "/services", children: services },
   { name: "Framework", href: "/intelligence-engine" },
   { name: "Products", href: "/products" },
   { name: "Insights", href: "/insights" },
-  { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
 
