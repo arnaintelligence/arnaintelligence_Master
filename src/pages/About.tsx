@@ -88,29 +88,32 @@ export default function About() {
             <div className="mt-4 w-24 h-1 bg-primary/30 rounded-full mx-auto" />
           </div>
 
-          {/* Vertical COACH Acronym - Modern Card Design */}
-          <div className="max-w-2xl mx-auto space-y-4">
-            {principles.map((p) => (
-              <div
-                key={p.letter}
-                className="flex items-start gap-4 sm:gap-5 p-5 rounded-xl bg-muted border border-border/30 
-                           shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group"
-              >
-                {/* Letter Badge */}
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-                  <span className="text-2xl font-bold text-primary">{p.letter}</span>
-                </div>
+          {/* Vertical COACH Acronym */}
+          <div className="max-w-2xl mx-auto">
+            <div className="flex flex-col">
+              {principles.map((p, idx) => (
+                <div key={`${p.letter}-${idx}`}>
+                  <div className="flex items-start gap-4 sm:gap-6 py-6 group">
+                    {/* Large Letter */}
+                    <div className="flex-shrink-0 w-16 sm:w-20 h-16 sm:h-20 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                      <span className="text-3xl sm:text-4xl font-bold text-primary">{p.letter}</span>
+                    </div>
 
-                {/* Content */}
-                <div className="flex-1 min-w-0 pt-0.5">
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <p.icon className="w-4 h-4 text-primary flex-shrink-0" />
-                    <h3 className="text-lg font-semibold text-foreground">{p.title}</h3>
+                    {/* Content */}
+                    <div className="flex-1 min-w-0 pt-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <p.icon className="w-5 h-5 text-primary flex-shrink-0" />
+                        <h3 className="text-lg sm:text-xl font-semibold text-foreground">{p.title}</h3>
+                      </div>
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{p.description}</p>
+                    </div>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{p.description}</p>
+
+                  {/* Divider between items (not after last) */}
+                  {idx < principles.length - 1 && <Separator className="bg-border/60" />}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
