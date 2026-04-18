@@ -23,8 +23,7 @@ const principles = [
     letter: "A",
     icon: BrainCircuit,
     title: "AI with Human-Centered Intelligence",
-    description:
-      "We design systems where artificial intelligence enhances human thinking rather than replacing it.",
+    description: "We design systems where artificial intelligence enhances human thinking rather than replacing it.",
   },
   {
     letter: "C",
@@ -37,8 +36,7 @@ const principles = [
     letter: "H",
     icon: Target,
     title: "High-Impact Thinking",
-    description:
-      "We focus on impact that truly matters and create solutions that generate lasting value.",
+    description: "We focus on impact that truly matters and create solutions that generate lasting value.",
   },
 ];
 
@@ -57,14 +55,10 @@ export default function About() {
       {/* Hero */}
       <section className="bg-secondary text-secondary-foreground py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-          <span className="text-sm font-medium text-primary uppercase tracking-wider mb-4 block">
-            About Us
-          </span>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            About Arna Intelligence
-          </h1>
+          <span className="text-sm font-medium text-primary uppercase tracking-wider mb-4 block">About Us</span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">About Arna Intelligence</h1>
           <p className="text-base sm:text-lg text-secondary-foreground/80">
-            The principles, partnerships, and people behind our work.
+            The principles, partnerships and people behind our work.
           </p>
         </div>
       </section>
@@ -74,16 +68,16 @@ export default function About() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="max-w-3xl mx-auto text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Our COACH Philosophy
-            </h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Our COACH Philosophy</h2>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Five values that aren't on a poster — they're in the product, the team, and the decisions we make every single day.
+              Five values that aren't on a poster — they're in the product, the team, and the decisions we make every
+              single day.
             </p>
           </div>
 
           {/* Philosophy Statement */}
           <div className="max-w-2xl mx-auto text-center mb-12">
+            <div className="mt-6 w-24 h-1 bg-primary/30 rounded-full mx-auto" />
             <p className="text-lg sm:text-xl text-foreground/90 italic leading-relaxed">
               "We believe intelligent systems should amplify human thinking, not replace it."
             </p>
@@ -98,29 +92,21 @@ export default function About() {
                   <div className="flex items-start gap-4 sm:gap-6 py-6 group">
                     {/* Large Letter */}
                     <div className="flex-shrink-0 w-16 sm:w-20 h-16 sm:h-20 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
-                      <span className="text-3xl sm:text-4xl font-bold text-primary">
-                        {p.letter}
-                      </span>
+                      <span className="text-3xl sm:text-4xl font-bold text-primary">{p.letter}</span>
                     </div>
 
                     {/* Content */}
                     <div className="flex-1 min-w-0 pt-1">
                       <div className="flex items-center gap-2 mb-2">
                         <p.icon className="w-5 h-5 text-primary flex-shrink-0" />
-                        <h3 className="text-lg sm:text-xl font-semibold text-foreground">
-                          {p.title}
-                        </h3>
+                        <h3 className="text-lg sm:text-xl font-semibold text-foreground">{p.title}</h3>
                       </div>
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        {p.description}
-                      </p>
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{p.description}</p>
                     </div>
                   </div>
 
                   {/* Divider between items (not after last) */}
-                  {idx < principles.length - 1 && (
-                    <Separator className="bg-border/60" />
-                  )}
+                  {idx < principles.length - 1 && <Separator className="bg-border/60" />}
                 </div>
               ))}
             </div>
@@ -142,12 +128,10 @@ export default function About() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Enterprise Partnerships
-            </h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Enterprise Partnerships</h2>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-              We collaborate with forward-thinking organizations shaping the future of
-              learning, artificial intelligence, and operational excellence.
+              We collaborate with forward-thinking organizations shaping the future of learning, artificial
+              intelligence, and operational excellence.
             </p>
           </div>
 
@@ -172,9 +156,7 @@ export default function About() {
 
                     {/* Right: Content */}
                     <div className="md:col-span-3 p-8 flex flex-col justify-center">
-                      <h4 className="text-xl sm:text-2xl font-bold text-foreground mb-4">
-                        {partner.name}
-                      </h4>
+                      <h4 className="text-xl sm:text-2xl font-bold text-foreground mb-4">{partner.name}</h4>
                       <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                         {partner.description}
                       </p>
