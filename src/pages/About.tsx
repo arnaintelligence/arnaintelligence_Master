@@ -55,7 +55,7 @@ export default function About() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-secondary text-secondary-foreground py-16 lg:py-20">
+      <section className="bg-secondary text-secondary-foreground py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
           <span className="text-sm font-medium text-primary uppercase tracking-wider mb-4 block">
             About Us
