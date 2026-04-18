@@ -24,6 +24,7 @@ const navLinks = [
   { name: "Framework", href: "/intelligence-engine" },
   { name: "Products", href: "/products" },
   { name: "Insights", href: "/insights" },
+  { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
 
