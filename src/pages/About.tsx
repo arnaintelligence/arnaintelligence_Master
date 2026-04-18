@@ -21,7 +21,7 @@ const principles = [
   },
   {
     letter: "A",
-    icon: BrainCircuit,
+    icon: Users,
     title: "AI with Human-Centered Intelligence",
     description: "We design systems where artificial intelligence enhances human thinking rather than replacing it.",
   },
