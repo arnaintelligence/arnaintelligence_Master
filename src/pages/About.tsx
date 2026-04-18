@@ -1,7 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Compass, ShieldCheck, Users, Rocket, Target } from "lucide-react";
+import { Compass, ShieldCheck, Rocket, Target } from "lucide-react";
+import { HumanAiIcon } from "@/components/icons/HumanAiIcon";
 import tbgLogo from "@/assets/tbg-logo.png";
 
 const principles = [
@@ -21,7 +22,7 @@ const principles = [
   },
   {
     letter: "A",
-    icon: Users,
+    icon: HumanAiIcon,
     title: "AI with Human-Centered Intelligence",
     description: "We design systems where artificial intelligence enhances human thinking rather than replacing it.",
   },
@@ -115,7 +116,7 @@ export default function About() {
                 {/* RIGHT ICON */}
                 <div className="flex items-center justify-center px-6 pb-6 sm:pb-0 sm:pr-6">
                   <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-sm transition-transform duration-300 group-hover:scale-110">
-                    <p.icon className="w-7 h-7" />
+                    <p.icon className="w-8 h-8" />
                   </div>
                 </div>
               </div>
