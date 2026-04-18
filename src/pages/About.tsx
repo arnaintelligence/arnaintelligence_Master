@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { Compass, ShieldCheck, BrainCircuit, Rocket, Target } from "lucide-react";
 import tbgLogo from "@/assets/tbg-logo.png";
 
@@ -46,7 +47,7 @@ const partners = [
     name: "The Bradbury Group (TBG)",
     logo: tbgLogo,
     description:
-      "Arna Intelligence partners with The Bradbury Group to support its mission of architecting the human experience around artificial intelligence.\n\nOur collaboration focuses on strengthening operational excellence and optimizing AI-driven systems that enable scalable, human-centered innovation.",
+      "Arna Intelligence partners with The Bradbury Group to support its mission of architecting the human experience around artificial intelligence. Our collaboration focuses on operational excellence and optimizing AI-driven systems that enable scalable, human-centered innovation.",
   },
 ];
 
@@ -65,14 +66,15 @@ export default function About() {
         </div>
       </section>
 
-      {/* COACH Philosophy - Vertical Stack */}
-      <section className="py-16 lg:py-24 bg-background">
+      {/* COACH Philosophy - Vertical Acronym Layout */}
+      <section className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12">
+          {/* Section Header */}
+          <div className="max-w-3xl mx-auto text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
               Our COACH Philosophy
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
               At Arna Intelligence, our work is guided by a philosophy we call the COACH
               approach. Like a great coach, we help organizations think clearly, build
               intelligent systems, and navigate the evolving world of artificial
@@ -80,37 +82,65 @@ export default function About() {
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto flex flex-col gap-4">
-            {principles.map((p, idx) => (
-              <Card
-                key={`${p.letter}-${idx}`}
-                className="group border-border hover:border-primary/40 hover:shadow-lg transition-all"
-              >
-                <CardContent className="p-5 sm:p-6 flex items-start gap-4 sm:gap-6">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold text-2xl sm:text-3xl group-hover:bg-primary/20 transition-colors flex-shrink-0">
-                    {p.letter}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <p.icon className="w-4 h-4 text-primary flex-shrink-0" />
-                      <h3 className="text-base sm:text-lg font-semibold text-foreground">
-                        {p.title}
-                      </h3>
+          {/* Philosophy Statement */}
+          <div className="max-w-2xl mx-auto text-center mb-12">
+            <p className="text-lg sm:text-xl text-foreground/90 italic leading-relaxed">
+              "We believe intelligent systems should amplify human thinking, not replace it."
+            </p>
+            <div className="mt-6 w-24 h-1 bg-primary/30 rounded-full mx-auto" />
+          </div>
+
+          {/* Vertical COACH Acronym */}
+          <div className="max-w-2xl mx-auto">
+            <div className="flex flex-col">
+              {principles.map((p, idx) => (
+                <div key={`${p.letter}-${idx}`}>
+                  <div className="flex items-start gap-4 sm:gap-6 py-6 group">
+                    {/* Large Letter */}
+                    <div className="flex-shrink-0 w-16 sm:w-20 h-16 sm:h-20 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                      <span className="text-3xl sm:text-4xl font-bold text-primary">
+                        {p.letter}
+                      </span>
                     </div>
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      {p.description}
-                    </p>
+
+                    {/* Content */}
+                    <div className="flex-1 min-w-0 pt-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <p.icon className="w-5 h-5 text-primary flex-shrink-0" />
+                        <h3 className="text-lg sm:text-xl font-semibold text-foreground">
+                          {p.title}
+                        </h3>
+                      </div>
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        {p.description}
+                      </p>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+
+                  {/* Divider between items (not after last) */}
+                  {idx < principles.length - 1 && (
+                    <Separator className="bg-border/60" />
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Enterprise Partnerships */}
-      <section className="py-16 lg:py-24 bg-muted/30">
+      {/* Section Transition Divider */}
+      <div className="bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <Separator className="bg-gradient-to-r from-transparent via-border to-transparent" />
+          </div>
+        </div>
+      </div>
+
+      {/* Enterprise Partnerships */}
+      <section className="py-20 lg:py-28 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
               Enterprise Partnerships
@@ -121,38 +151,35 @@ export default function About() {
             </p>
           </div>
 
+          {/* Partner Spotlight */}
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-center text-sm font-semibold uppercase tracking-wider text-primary mb-6">
+            <h3 className="text-center text-sm font-semibold uppercase tracking-wider text-primary mb-8">
               Partner Spotlight
             </h3>
 
             <div className="grid grid-cols-1 gap-6">
               {partners.map((partner) => (
-                <Card key={partner.name} className="border-border shadow-md">
-                  <CardContent className="p-6 sm:p-10">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                      <div className="flex justify-center md:col-span-1">
-                        <img
-                          src={partner.logo}
-                          alt={`${partner.name} logo`}
-                          className="w-full max-w-[220px] h-auto object-contain"
-                        />
-                      </div>
-                      <div className="md:col-span-2 text-center md:text-left">
-                        <h4 className="text-xl sm:text-2xl font-bold text-foreground mb-3">
-                          {partner.name}
-                        </h4>
-                        {partner.description.split("\n\n").map((para, i) => (
-                          <p
-                            key={i}
-                            className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3 last:mb-0"
-                          >
-                            {para}
-                          </p>
-                        ))}
-                      </div>
+                <Card key={partner.name} className="border-border shadow-md overflow-hidden">
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+                    {/* Left: Logo */}
+                    <div className="md:col-span-2 flex items-center justify-center p-8 bg-muted/20 border-b md:border-b-0 md:border-r border-border/50">
+                      <img
+                        src={partner.logo}
+                        alt={`${partner.name} logo`}
+                        className="w-full max-w-[200px] h-auto object-contain"
+                      />
                     </div>
-                  </CardContent>
+
+                    {/* Right: Content */}
+                    <div className="md:col-span-3 p-8 flex flex-col justify-center">
+                      <h4 className="text-xl sm:text-2xl font-bold text-foreground mb-4">
+                        {partner.name}
+                      </h4>
+                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                        {partner.description}
+                      </p>
+                    </div>
+                  </div>
                 </Card>
               ))}
             </div>
