@@ -123,13 +123,6 @@ export default function About() {
     </div>
   ))}
 </div>
-
-                  {/* Divider between items (not after last) */}
-                  {idx < principles.length - 1 && <Separator className="bg-border/60" />}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
