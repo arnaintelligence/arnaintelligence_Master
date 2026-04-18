@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Compass, ShieldCheck, BrainCircuit, Rocket, Target } from "lucide-react";
+import { Compass, ShieldCheck, Users, Rocket, Target } from "lucide-react";
 import tbgLogo from "@/assets/tbg-logo.png";
 
 const principles = [
