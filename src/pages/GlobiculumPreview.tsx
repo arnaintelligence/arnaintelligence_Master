@@ -261,16 +261,29 @@ const GlobiculumPreview = () => {
             ];
 
             return (
-              <div className="max-w-4xl mx-auto flex flex-col gap-4 sm:gap-5">
-                {steps.map((step) => (
+              <div className="max-w-4xl mx-auto relative flex flex-col gap-4 sm:gap-5">
+                {/* Vertical connector line — aligned with center of number strip on sm+ */}
+                <div
+                  className="hidden sm:block absolute top-6 bottom-6 w-[2px] rounded-full pointer-events-none z-0 sm:left-[39px] md:left-[55px] -translate-x-1/2"
+                  style={{
+                    background:
+                      "linear-gradient(to bottom, rgba(59,130,246,0.45) 0%, rgba(20,184,166,0.45) 50%, rgba(249,115,22,0.45) 100%)",
+                  }}
+                  aria-hidden="true"
+                />
+                {steps.map((step, i) => (
                   <div
                     key={step.number}
-                    className="group relative flex flex-col sm:flex-row items-stretch bg-[#F8FAFC] border border-gray-100 rounded-2xl overflow-hidden shadow-sm sm:hover:shadow-lg sm:hover:-translate-y-1 transition-all duration-300"
+                    className="group relative z-10 flex flex-col sm:flex-row items-stretch bg-[#F8FAFC] border border-gray-100 rounded-2xl overflow-hidden shadow-sm sm:hover:shadow-lg sm:hover:-translate-y-1 transition-all duration-300 animate-fade-in"
+                    style={{ animationDelay: `${i * 120}ms`, animationFillMode: "both" }}
                   >
                     {/* Number Strip */}
                     <div
-                      className="w-full h-14 sm:h-auto sm:w-20 md:w-28 flex items-center justify-center"
-                      style={{ background: step.gradient }}
+                      className="relative w-full h-14 sm:h-auto sm:w-20 md:w-28 flex items-center justify-center"
+                      style={{
+                        background: step.gradient,
+                        boxShadow: `0 0 0 4px #F8FAFC, 0 6px 18px ${step.iconColor}40`,
+                      }}
                     >
                       <span className="text-white text-2xl sm:text-4xl font-bold tracking-tight">
                         {step.number}
