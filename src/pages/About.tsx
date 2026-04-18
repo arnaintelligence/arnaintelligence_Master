@@ -93,7 +93,7 @@ export default function About() {
             {principles.map((p) => (
               <div
                 key={p.letter}
-                className="flex items-start gap-4 sm:gap-5 p-5 rounded-xl bg-slate-50 border border-slate-100 
+                className="flex items-start gap-4 sm:gap-5 p-5 rounded-xl bg-muted border border-border/30 
                            shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group"
               >
                 {/* Letter Badge */}
