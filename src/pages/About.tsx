@@ -89,40 +89,38 @@ export default function About() {
           </div>
 
           {/* Vertical COACH Acronym */}
-<div className="max-w-4xl mx-auto flex flex-col gap-6">
-  {principles.map((p, idx) => (
-    <div
-      key={idx}
-      className="flex items-center bg-[#F3F6F9] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all"
-    >
-      
-      {/* LEFT STRIP */}
-      <div className="w-16 sm:w-20 h-full bg-primary flex items-center justify-center">
-        <span className="text-white text-2xl sm:text-3xl font-bold">
-          {p.letter}
-        </span>
-      </div>
+          <div className="max-w-4xl mx-auto flex flex-col gap-5">
+            {principles.map((p, idx) => (
+              <div
+                key={idx}
+                className="group flex flex-col sm:flex-row items-stretch bg-[#F8FAFC] border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              >
+                {/* LEFT STRIP */}
+                <div className="w-full sm:w-20 md:w-24 py-5 sm:py-0 flex items-center justify-center bg-gradient-to-b from-primary to-primary/80 sm:rounded-l-2xl">
+                  <span className="text-white text-3xl sm:text-4xl font-bold tracking-tight">
+                    {p.letter}
+                  </span>
+                </div>
 
-      {/* CONTENT */}
-      <div className="flex-1 px-5 py-4">
-        <h3 className="text-base sm:text-lg font-semibold text-foreground">
-          {p.title}
-        </h3>
-        <p className="text-sm sm:text-base text-muted-foreground mt-1 leading-relaxed">
-          {p.description}
-        </p>
-      </div>
+                {/* CONTENT */}
+                <div className="flex-1 px-6 py-6 sm:py-7 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-foreground mb-2">
+                    {p.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    {p.description}
+                  </p>
+                </div>
 
-      {/* RIGHT ICON */}
-      <div className="pr-5">
-        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary hover:scale-110 transition-transform">
-          <p.icon className="w-5 h-5" />
-        </div>
-      </div>
-
-    </div>
-  ))}
-</div>
+                {/* RIGHT ICON */}
+                <div className="flex items-center justify-center px-6 pb-6 sm:pb-0 sm:pr-6">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-sm transition-transform duration-300 group-hover:scale-110">
+                    <p.icon className="w-6 h-6" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
