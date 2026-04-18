@@ -74,11 +74,8 @@ export default function About() {
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
               Our COACH Philosophy
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
-              At Arna Intelligence, our work is guided by a philosophy we call the COACH
-              approach. Like a great coach, we help organizations think clearly, build
-              intelligent systems, and navigate the evolving world of artificial
-              intelligence with confidence and responsibility.
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+              Five values that aren't on a poster — they're in the product, the team, and the decisions we make every single day.
             </p>
           </div>
 
