@@ -57,7 +57,7 @@ export default function About() {
       <section className="bg-secondary text-secondary-foreground py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
           <span className="text-sm font-medium text-primary uppercase tracking-wider mb-4 block">About Us</span>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">About Arna Intelligence</h1>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"> Arna Intelligence</h1>
           <p className="text-base sm:text-lg text-secondary-foreground/80">
             The principles, partnerships and people behind our work.
           </p>
@@ -94,29 +94,25 @@ export default function About() {
             {principles.map((p, idx) => (
               <div
                 key={idx}
-                className="group relative flex flex-row items-stretch bg-[#F8FAFC] border border-gray-100 rounded-2xl overflow-hidden shadow-sm sm:hover:shadow-lg sm:hover:-translate-y-1 transition-all duration-300"
+                className="group relative flex flex-col sm:flex-row items-stretch bg-[#F8FAFC] border border-gray-100 rounded-2xl overflow-hidden shadow-sm sm:hover:shadow-lg sm:hover:-translate-y-1 transition-all duration-300"
               >
-                {/* LEFT STRIP */}
-                <div className="flex-shrink-0 w-16 sm:w-20 md:w-24 flex items-center justify-center bg-gradient-to-b from-primary to-primary/80">
-                  <span className="text-white text-3xl sm:text-4xl font-bold tracking-tight">
-                    {p.letter}
-                  </span>
+                {/* LEFT/TOP STRIP */}
+                <div className="w-full h-14 sm:h-auto sm:w-20 md:w-24 flex items-center justify-center bg-gradient-to-r sm:bg-gradient-to-b from-primary to-primary/80">
+                  <span className="text-white text-2xl sm:text-4xl font-bold tracking-tight">{p.letter}</span>
                 </div>
 
                 {/* CONTENT */}
-                <div className="flex-1 min-w-0 px-4 sm:px-6 py-5 sm:py-7 flex flex-col justify-center">
-                  <h3 className="text-base sm:text-2xl font-semibold tracking-tight text-foreground mb-1.5 sm:mb-2 max-w-md">
+                <div className="flex-1 px-5 sm:px-6 pt-5 pb-20 sm:py-7 sm:pr-2 flex flex-col justify-center">
+                  <h3 className="text-lg sm:text-2xl font-semibold tracking-tight text-foreground mb-2 max-w-md">
                     {p.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-md">
-                    {p.description}
-                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-md">{p.description}</p>
                 </div>
 
-                {/* RIGHT ICON */}
-                <div className="flex-shrink-0 flex items-center justify-center px-3 sm:px-6">
-                  <div className="w-11 h-11 sm:w-16 sm:h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-sm transition-transform duration-300 sm:group-hover:scale-110">
-                    <p.icon className="w-5 h-5 sm:w-8 sm:h-8" />
+                {/* RIGHT/BOTTOM-RIGHT ICON */}
+                <div className="absolute bottom-4 right-4 sm:static sm:flex sm:items-center sm:justify-center sm:px-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-sm transition-transform duration-300 sm:group-hover:scale-110">
+                    <p.icon className="w-6 h-6 sm:w-8 sm:h-8" />
                   </div>
                 </div>
               </div>
