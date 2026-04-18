@@ -269,7 +269,6 @@ gradient: "linear-gradient(135deg, #64748B 0%, #475569 100%)", iconBg: "#f1f5f9"
                     background:
                       "linear-gradient(to bottom, rgba(100,116,139,0.45) 0%, rgba(13,148,136,0.45) 50%, rgba(245,158,11,0.45) 100%)",
                   }}
-                  }}
                   aria-hidden="true"
                 />
                 {steps.map((step, i) => (
