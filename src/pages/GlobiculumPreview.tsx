@@ -236,10 +236,7 @@ const GlobiculumPreview = () => {
                 icon: MapPin,
                 title: "Tell us where your child is coming from",
                 description: "Share your child's current curriculum and grade.",
-                gradient: "linear-gradient(135deg, #5EEAD4 0%, #2DD4BF 100%)",
-                iconBg: "#ccfbf1",
-                iconColor: "#14b8a6",
-                iconTextColor: "#0F766E",
+gradient: "linear-gradient(135deg, #64748B 0%, #475569 100%)", iconBg: "#f1f5f9", iconColor: "#64748B", iconTextColor: "#475569",
               },
               {
                 number: "02",
@@ -270,7 +267,8 @@ const GlobiculumPreview = () => {
                   className="hidden sm:block absolute top-6 bottom-6 w-[2px] rounded-full pointer-events-none z-0 sm:left-[39px] md:left-[55px] -translate-x-1/2"
                   style={{
                     background:
-                      "linear-gradient(to bottom, rgba(94,234,212,0.45) 0%, rgba(13,148,136,0.45) 50%, rgba(245,158,11,0.45) 100%)",
+                      "linear-gradient(to bottom, rgba(100,116,139,0.45) 0%, rgba(13,148,136,0.45) 50%, rgba(245,158,11,0.45) 100%)",
+                  }}
                   }}
                   aria-hidden="true"
                 />
