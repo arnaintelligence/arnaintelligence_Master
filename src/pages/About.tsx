@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Compass, ShieldCheck, BrainCircuit, Rocket, Target } from "lucide-react";
+import { Compass, ShieldCheck, Users, Rocket, Target } from "lucide-react";
 import tbgLogo from "@/assets/tbg-logo.png";
 
 const principles = [
@@ -21,7 +21,7 @@ const principles = [
   },
   {
     letter: "A",
-    icon: BrainCircuit,
+    icon: Users,
     title: "AI with Human-Centered Intelligence",
     description: "We design systems where artificial intelligence enhances human thinking rather than replacing it.",
   },
@@ -104,7 +104,7 @@ export default function About() {
 
                 {/* CONTENT */}
                 <div className="flex-1 px-6 py-6 sm:py-7 flex flex-col justify-center">
-                  <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-foreground mb-2">
+                  <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-foreground mb-2">
                     {p.title}
                   </h3>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -114,8 +114,8 @@ export default function About() {
 
                 {/* RIGHT ICON */}
                 <div className="flex items-center justify-center px-6 pb-6 sm:pb-0 sm:pr-6">
-                  <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-sm transition-transform duration-300 group-hover:scale-110">
-                    <p.icon className="w-6 h-6" />
+                  <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center shadow-sm transition-transform duration-300 group-hover:scale-110">
+                    <p.icon className="w-7 h-7" />
                   </div>
                 </div>
               </div>
