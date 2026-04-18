@@ -236,27 +236,30 @@ const GlobiculumPreview = () => {
                 icon: MapPin,
                 title: "Tell us where your child is coming from",
                 description: "Share your child's current curriculum and grade.",
-                gradient: "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)",
+                gradient: "linear-gradient(135deg, #2563EB 0%, #1E40AF 100%)",
                 iconBg: "#dbeafe",
-                iconColor: "#3b82f6",
+                iconColor: "#2563EB",
+                iconTextColor: "#2563EB",
               },
               {
                 number: "02",
                 icon: Brain,
                 title: "Our AI maps and bridges the gaps instantly",
                 description: "Smart analysis identifies and closes learning gaps.",
-                gradient: "linear-gradient(135deg, #14b8a6 0%, #0ea5e9 100%)",
+                gradient: "linear-gradient(135deg, #0D9488 0%, #0F766E 100%)",
                 iconBg: "#ccfbf1",
-                iconColor: "#14b8a6",
+                iconColor: "#0D9488",
+                iconTextColor: "#0F766E",
               },
               {
                 number: "03",
                 icon: Route,
                 title: "Get a personalised learning pathway",
                 description: "A clear, actionable roadmap built for your child.",
-                gradient: "linear-gradient(135deg, #f97316 0%, #fb923c 100%)",
-                iconBg: "#ffedd5",
-                iconColor: "#f97316",
+                gradient: "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
+                iconBg: "#fef3c7",
+                iconColor: "#F59E0B",
+                iconTextColor: "#D97706",
               },
             ];
 
@@ -267,7 +270,7 @@ const GlobiculumPreview = () => {
                   className="hidden sm:block absolute top-6 bottom-6 w-[2px] rounded-full pointer-events-none z-0 sm:left-[39px] md:left-[55px] -translate-x-1/2"
                   style={{
                     background:
-                      "linear-gradient(to bottom, rgba(59,130,246,0.45) 0%, rgba(20,184,166,0.45) 50%, rgba(249,115,22,0.45) 100%)",
+                      "linear-gradient(to bottom, rgba(37,99,235,0.45) 0%, rgba(13,148,136,0.45) 50%, rgba(245,158,11,0.45) 100%)",
                   }}
                   aria-hidden="true"
                 />
