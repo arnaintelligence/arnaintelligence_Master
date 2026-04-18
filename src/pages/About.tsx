@@ -77,11 +77,15 @@ export default function About() {
 
           {/* Philosophy Statement */}
           <div className="max-w-2xl mx-auto text-center mb-12">
+            {/* ✅ KEEP THIS EXACT (top line stays same position) */}
             <div className="mt-6 w-24 h-1 bg-primary/30 rounded-full mx-auto" />
-            <p className="text-lg sm:text-xl text-foreground/90 italic leading-relaxed">
+
+            <p className="text-lg sm:text-xl text-foreground/90 italic leading-relaxed mt-4">
               "We believe intelligent systems should amplify human thinking, not replace it."
             </p>
-            <div className="mt-6 w-24 h-1 bg-primary/30 rounded-full mx-auto" />
+
+            {/* ✅ ADD THIS (bottom line only) */}
+            <div className="mt-4 w-24 h-1 bg-primary/30 rounded-full mx-auto" />
           </div>
 
           {/* Vertical COACH Acronym */}
