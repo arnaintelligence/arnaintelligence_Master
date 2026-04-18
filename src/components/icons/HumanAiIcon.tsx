@@ -6,24 +6,27 @@ export const HumanAiIcon = (props: SVGProps<SVGSVGElement>) => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth={1.75}
+    strokeWidth={1.6}
     strokeLinecap="round"
     strokeLinejoin="round"
     {...props}
   >
-    {/* Human head profile */}
-    <path d="M16.5 21v-2a3 3 0 0 0-1.2-2.4L14 15.5v-1.2a4 4 0 0 0 1.5-3.1V8.5A4.5 4.5 0 0 0 11 4a4.5 4.5 0 0 0-4.5 4.5" />
-    <path d="M6.5 12.5 5 14l1.5 1v1.5H8V19H6.5v2" />
-    {/* Neural network nodes on the AI side */}
-    <circle cx="18" cy="6" r="1.4" />
-    <circle cx="21" cy="11" r="1.4" />
-    <circle cx="18" cy="16" r="1.4" />
-    {/* Connections from head to nodes */}
-    <path d="M13 8.5h3.6" />
-    <path d="M14 11h5.6" />
-    <path d="M13.5 13.5 16.7 15.4" />
-    {/* Inter-node connections */}
-    <path d="m19 7 1.4 2.8" />
-    <path d="m19.4 12.3-.8 2.4" />
+    {/* Human head profile silhouette (facing right) */}
+    <path d="M14 21v-2.2c0-.8.4-1.5 1-2 1.8-1.3 3-3.4 3-5.8a6 6 0 0 0-6-6c-3.3 0-6 2.7-6 6 0 1.6.6 3 1.6 4L8 16H6v2h2v3" />
+
+    {/* Vertical divider down the middle of the head */}
+    <path d="M12 5v13" strokeDasharray="1.2 1.6" opacity="0.55" />
+
+    {/* Circuit / neural nodes on the AI half (right side of head) */}
+    <circle cx="14.5" cy="9" r="1" />
+    <circle cx="16.5" cy="12.5" r="1" />
+    <circle cx="14.5" cy="15.5" r="1" />
+
+    {/* Circuit connections inside the head */}
+    <path d="M12 9h1.5" />
+    <path d="M12 12.5h3.5" />
+    <path d="M12 15.5h1.5" />
+    <path d="M14.5 10v1.5" />
+    <path d="M14.5 14v.5" />
   </svg>
 );
