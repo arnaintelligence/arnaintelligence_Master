@@ -84,10 +84,11 @@ export default function About() {
 
           {/* Philosophy Statement */}
           <div className="max-w-2xl mx-auto text-center mb-12">
+            <div className="w-24 h-0.5 bg-primary rounded-full mx-auto mb-6" />
             <p className="text-lg sm:text-xl text-foreground/90 italic leading-relaxed">
               "We believe intelligent systems should amplify human thinking, not replace it."
             </p>
-            <div className="mt-6 w-24 h-1 bg-primary/30 rounded-full mx-auto" />
+            <div className="w-24 h-0.5 bg-primary rounded-full mx-auto mt-6" />
           </div>
 
           {/* Vertical COACH Acronym */}
