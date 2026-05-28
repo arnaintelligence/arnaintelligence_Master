@@ -199,4 +199,11 @@ Brand Colors:
     0%, 100% { transform: rotate(90deg) translateX(0); }
     50% { transform: rotate(90deg) translateX(4px); }
   }
+
+  @keyframes connectorPulse {
+    0% { left: 0%; opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
+    20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { left: 100%; opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
+  }
 }

@@ -96,15 +96,47 @@ const Insights = () => {
                   01
                 </span>
               </div>
-              {/* Connector line */}
+              {/* Connector: line + glowing node + arrow tip */}
               <div
                 aria-hidden
-                className="absolute top-1/2 -right-12 h-px w-12"
-                style={{
-                  background:
-                    "linear-gradient(to right, rgba(13,148,136,0.6), rgba(13,148,136,0))",
-                }}
-              />
+                className="absolute top-1/2 -right-16 w-16 h-4 -translate-y-1/2 pointer-events-none"
+              >
+                {/* Line */}
+                <div
+                  className="absolute left-0 top-1/2 -translate-y-1/2 h-px w-full transition-all duration-500 group-hover:h-[2px]"
+                  style={{
+                    background:
+                      "linear-gradient(to right, rgba(94,234,212,0.9), rgba(94,234,212,0.35))",
+                    boxShadow: "0 0 8px rgba(94,234,212,0.5)",
+                  }}
+                />
+                {/* Pulse dot traveling along line */}
+                <span
+                  className="absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full"
+                  style={{
+                    background: "#5EEAD4",
+                    boxShadow: "0 0 8px rgba(94,234,212,0.9)",
+                    animation: "connectorPulse 2.4s ease-in-out infinite",
+                  }}
+                />
+                {/* Arrow tip */}
+                <svg
+                  className="absolute -right-1 top-1/2 -translate-y-1/2 transition-transform duration-300 group-hover:translate-x-0.5"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  style={{ filter: "drop-shadow(0 0 4px rgba(94,234,212,0.7))" }}
+                >
+                  <path
+                    d="M1 1l4 4-4 4"
+                    stroke="#5EEAD4"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
             </div>
 
             {/* Featured Card */}
