@@ -61,56 +61,57 @@ const Insights = () => {
         />
 
         <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative mx-auto max-w-[1000px]">
-            {/* Attached side label (desktop) */}
-            <div className="hidden lg:flex absolute left-0 top-1/2 -translate-x-[55%] -translate-y-1/2 z-10 flex-col items-center animate-fade-in">
+          <div className="relative mx-auto max-w-[1200px] flex items-center justify-center gap-6 lg:gap-10">
+            {/* Side label (desktop) */}
+            <div className="hidden lg:flex relative shrink-0 flex-col items-center animate-fade-in">
               <div
-                className="relative flex flex-col items-center gap-2 px-4 py-4 rounded-[20px] backdrop-blur-xl"
+                className="relative flex flex-col items-center gap-2 px-5 py-5 rounded-[20px]"
                 style={{
-                  background: "rgba(255,255,255,0.9)",
-                  border: "1px solid rgba(13,148,136,0.3)",
+                  background: "#FFFFFF",
+                  border: "1px solid rgba(13,148,136,0.35)",
                   boxShadow:
-                    "0 12px 28px -12px rgba(13,148,136,0.3), 0 2px 6px rgba(15,23,42,0.06)",
+                    "0 12px 28px -12px rgba(13,148,136,0.25), 0 2px 6px rgba(15,23,42,0.05)",
                 }}
               >
                 <div
-                  className="flex items-center justify-center w-9 h-9 rounded-lg"
+                  className="flex items-center justify-center w-10 h-10 rounded-lg"
                   style={{
                     background:
-                      "linear-gradient(135deg, rgba(13,148,136,0.12), rgba(94,234,212,0.18))",
+                      "linear-gradient(135deg, rgba(13,148,136,0.10), rgba(94,234,212,0.15))",
                     border: "1px solid rgba(13,148,136,0.25)",
                   }}
                 >
                   <FileText className="w-4 h-4" style={{ color: "#0D9488" }} />
                 </div>
                 <span
-                  className="text-[10px] font-semibold tracking-[0.14em] uppercase"
+                  className="text-[10px] font-semibold tracking-[0.16em] uppercase"
                   style={{ color: "#0D9488" }}
                 >
                   Case Study
                 </span>
                 <span
-                  className="text-base font-semibold"
+                  className="text-lg font-semibold leading-none"
                   style={{ color: "#0F172A" }}
                 >
                   01
                 </span>
               </div>
-              {/* Short connector into card edge */}
+              {/* Connector: dashed line + glowing node */}
               <div
                 aria-hidden
-                className="absolute top-1/2 -right-6 w-6 h-3 -translate-y-1/2 pointer-events-none"
+                className="absolute top-1/2 left-full w-10 h-3 -translate-y-1/2 pointer-events-none"
               >
                 <div
-                  className="absolute left-0 top-1/2 -translate-y-1/2 h-px w-full transition-all duration-500 group-hover:h-[2px]"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-px"
                   style={{
-                    background:
-                      "linear-gradient(to right, rgba(94,234,212,0.9), rgba(94,234,212,0.35))",
-                    boxShadow: "0 0 8px rgba(94,234,212,0.5)",
+                    backgroundImage:
+                      "linear-gradient(to right, rgba(94,234,212,0.85) 50%, transparent 50%)",
+                    backgroundSize: "6px 1px",
+                    backgroundRepeat: "repeat-x",
                   }}
                 />
                 <span
-                  className="absolute top-1/2 right-0 -translate-y-1/2 w-1.5 h-1.5 rounded-full"
+                  className="absolute top-1/2 right-0 -translate-y-1/2 w-2 h-2 rounded-full"
                   style={{
                     background: "#5EEAD4",
                     boxShadow: "0 0 10px rgba(94,234,212,1)",
@@ -121,7 +122,7 @@ const Insights = () => {
 
             {/* Featured Card */}
             <article
-              className="group relative overflow-hidden rounded-[28px] animate-fade-in transition-all duration-500 hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-[28px] flex-1 max-w-[1000px] animate-fade-in transition-all duration-500 hover:-translate-y-1"
               style={{
                 background:
                   "linear-gradient(135deg, #123047 0%, #176B63 55%, #7ED7D1 100%)",
@@ -152,7 +153,7 @@ const Insights = () => {
                 className="absolute inset-0 rounded-[28px] ring-1 ring-white/15 transition-all duration-500 group-hover:ring-white/30"
               />
 
-              <div className="relative p-8 sm:p-10 lg:p-14 lg:pl-20 space-y-6">
+              <div className="relative p-8 sm:p-10 lg:p-12 space-y-6">
                 {/* Top badge */}
                 <div
                   className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold tracking-[0.14em] uppercase backdrop-blur-md"
