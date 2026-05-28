@@ -62,15 +62,15 @@ const Insights = () => {
 
         <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative mx-auto max-w-[1000px]">
-            {/* Floating side badge (desktop) */}
-            <div className="hidden lg:flex absolute -left-24 top-10 flex-col items-center animate-fade-in">
+            {/* Attached side label (desktop) */}
+            <div className="hidden lg:flex absolute left-0 top-1/2 -translate-x-[55%] -translate-y-1/2 z-10 flex-col items-center animate-fade-in">
               <div
                 className="relative flex flex-col items-center gap-2 px-4 py-4 rounded-[20px] backdrop-blur-xl"
                 style={{
-                  background: "rgba(255,255,255,0.7)",
+                  background: "rgba(255,255,255,0.9)",
                   border: "1px solid rgba(13,148,136,0.3)",
                   boxShadow:
-                    "0 8px 24px -10px rgba(13,148,136,0.25), 0 2px 6px rgba(15,23,42,0.04)",
+                    "0 12px 28px -12px rgba(13,148,136,0.3), 0 2px 6px rgba(15,23,42,0.06)",
                 }}
               >
                 <div
@@ -96,12 +96,11 @@ const Insights = () => {
                   01
                 </span>
               </div>
-              {/* Connector: line + glowing node + arrow tip */}
+              {/* Short connector into card edge */}
               <div
                 aria-hidden
-                className="absolute top-1/2 -right-16 w-16 h-4 -translate-y-1/2 pointer-events-none"
+                className="absolute top-1/2 -right-6 w-6 h-3 -translate-y-1/2 pointer-events-none"
               >
-                {/* Line */}
                 <div
                   className="absolute left-0 top-1/2 -translate-y-1/2 h-px w-full transition-all duration-500 group-hover:h-[2px]"
                   style={{
@@ -110,32 +109,13 @@ const Insights = () => {
                     boxShadow: "0 0 8px rgba(94,234,212,0.5)",
                   }}
                 />
-                {/* Pulse dot traveling along line */}
                 <span
-                  className="absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full"
+                  className="absolute top-1/2 right-0 -translate-y-1/2 w-1.5 h-1.5 rounded-full"
                   style={{
                     background: "#5EEAD4",
-                    boxShadow: "0 0 8px rgba(94,234,212,0.9)",
-                    animation: "connectorPulse 2.4s ease-in-out infinite",
+                    boxShadow: "0 0 10px rgba(94,234,212,1)",
                   }}
                 />
-                {/* Arrow tip */}
-                <svg
-                  className="absolute -right-1 top-1/2 -translate-y-1/2 transition-transform duration-300 group-hover:translate-x-0.5"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  style={{ filter: "drop-shadow(0 0 4px rgba(94,234,212,0.7))" }}
-                >
-                  <path
-                    d="M1 1l4 4-4 4"
-                    stroke="#5EEAD4"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
               </div>
             </div>
 
