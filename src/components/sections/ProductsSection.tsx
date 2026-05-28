@@ -1,7 +1,6 @@
 import { GraduationCap, Bot, Workflow, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 
 const products = [
   {
@@ -15,7 +14,9 @@ const products = [
     icon: Bot,
     name: "AI Learning Assistants",
     description: "Tailored to roles, programs, and systems",
-    comingSoon: true,
+    comingSoon: false,
+    href: "https://discover-design-map.lovable.app/",
+    external: true,
   },
   {
     icon: Workflow,
@@ -71,15 +72,19 @@ export function ProductsSection() {
               );
             }
 
-            // Globiculum card - light default, teal hover with gradient
-            if (product.name === "Globiculum") {
+            // Premium interactive cards - light default, teal hover with gradient
+            if (product.name === "Globiculum" || product.name === "AI Learning Assistants") {
+              const isExternal = (product as any).external;
               return (
-                <div
+                <a
                   key={product.name}
-                  className="group relative p-8 rounded-2xl bg-[#F8FAFC] border border-border text-center cursor-pointer transition-all duration-300 ease-out hover:bg-gradient-to-br hover:from-[#0D9488] hover:to-[#14B8A6] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_12px_30px_rgba(13,148,136,0.25)] overflow-hidden"
+                  href={product.href!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block p-8 rounded-2xl bg-[#F8FAFC] border border-border text-center cursor-pointer transition-all duration-300 ease-out hover:bg-gradient-to-br hover:from-[#0D9488] hover:to-[#2DD4BF] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_12px_30px_rgba(13,148,136,0.25)] hover:border-[#5EEAD4]/60 overflow-hidden"
                 >
                   <div className="space-y-4">
-                    <div className="w-16 h-16 rounded-2xl bg-[#0D9488]/10 flex items-center justify-center mx-auto transition-all duration-300">
+                    <div className="w-16 h-16 rounded-2xl bg-[#0D9488]/10 flex items-center justify-center mx-auto transition-all duration-300 group-hover:bg-white/15 group-hover:shadow-[0_0_24px_rgba(94,234,212,0.45)]">
                       <product.icon className="w-8 h-8 text-[#0D9488] group-hover:text-white transition-colors duration-300" />
                     </div>
                     <h3 className="text-xl font-bold text-[#0f172a] group-hover:text-white transition-colors duration-300">
@@ -88,18 +93,11 @@ export function ProductsSection() {
                     <p className="text-[#64748B] group-hover:text-white/90 transition-colors duration-300">
                       {product.description}
                     </p>
-                    <a
-                      href="/globiculum-preview"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <Button className="mt-2 bg-white text-[#0D9488] hover:bg-white/95 font-medium transition-all duration-300">
-                        Quick Preview <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </a>
+                    <span className="mt-2 inline-flex items-center justify-center gap-2 h-10 px-4 rounded-md bg-white text-[#0D9488] font-medium text-sm transition-all duration-300 group-hover:shadow-[0_8px_20px_-8px_rgba(94,234,212,0.7)]">
+                      Quick Preview <ArrowRight className="h-4 w-4" />
+                    </span>
                   </div>
-                </div>
+                </a>
               );
             }
 
