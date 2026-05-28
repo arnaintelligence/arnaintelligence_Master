@@ -13,6 +13,7 @@ import IntelligenceEngine from "./pages/IntelligenceEngine";
 import Products from "./pages/Products";
 import GlobiculumPreview from "./pages/GlobiculumPreview";
 import Insights from "./pages/Insights";
+import CaseStudyDetail from "./pages/CaseStudyDetail";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/products" element={<Products />} />
           <Route path="/globiculum-preview" element={<GlobiculumPreview />} />
           <Route path="/insights" element={<Insights />} />
+          <Route path="/insights/case-study-01" element={<CaseStudyDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />

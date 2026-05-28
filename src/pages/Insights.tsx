@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/sections/CTASection";
 import { ArrowRight, Calendar, Clock, Tag, Sparkles, FileText } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Insights = () => {
   return (
@@ -201,7 +202,8 @@ const Insights = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                  <button
+                  <Link
+                    to="/insights/case-study-01"
                     className="group/btn inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-8px_rgba(94,234,212,0.55)]"
                     style={{
                       background:
@@ -213,7 +215,7 @@ const Insights = () => {
                   >
                     Explore More
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5" />
-                  </button>
+                  </Link>
                   <button
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-sm backdrop-blur-md transition-all duration-300 hover:bg-white/10"
                     style={{
