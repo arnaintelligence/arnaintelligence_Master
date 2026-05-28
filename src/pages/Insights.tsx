@@ -152,7 +152,7 @@ const Insights = () => {
                 className="absolute inset-0 rounded-[28px] ring-1 ring-white/15 transition-all duration-500 group-hover:ring-white/30"
               />
 
-              <div className="relative p-8 sm:p-10 lg:p-14 space-y-6">
+              <div className="relative p-8 sm:p-10 lg:p-14 lg:pl-20 space-y-6">
                 {/* Top badge */}
                 <div
                   className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold tracking-[0.14em] uppercase backdrop-blur-md"
