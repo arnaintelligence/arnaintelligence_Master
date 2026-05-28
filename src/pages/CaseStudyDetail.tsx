@@ -63,10 +63,12 @@ const CaseStudyDetail = () => {
               </div>
 
               <h1
-                className="mt-6 text-3xl sm:text-4xl lg:text-[52px] font-bold leading-[1.1] tracking-tight"
+                className="mt-6 text-3xl sm:text-4xl lg:text-[52px] font-bold leading-[1.15] tracking-tight max-w-[18ch]"
                 style={{ color: "#0F172A" }}
               >
-                Building an AI Meeting Knowledge System{" "}
+                Building an AI Meeting
+                <br className="hidden sm:block" />{" "}
+                Knowledge System{" "}
                 <span
                   style={{
                     background:
@@ -76,18 +78,18 @@ const CaseStudyDetail = () => {
                     backgroundClip: "text",
                   }}
                 >
-                  Without Another Subscription
+                  Without<br className="hidden sm:block" /> Another Subscription
                 </span>
               </h1>
 
               <p
-                className="mt-6 text-base sm:text-lg leading-relaxed max-w-2xl"
+                className="mt-6 text-base sm:text-[17px] leading-[1.75] max-w-xl"
                 style={{ color: "#64748B" }}
               >
                 Inside the workflow ARNA Intelligence built to transform raw
                 meetings into structured, searchable knowledge using automation,
-                transcription, and AI analysis — without introducing additional
-                software costs.
+                transcription, and AI analysis — without adding another
+                software subscription.
               </p>
 
               {/* Highlight tag */}
@@ -122,23 +124,38 @@ const CaseStudyDetail = () => {
                   Full workflow • AI pipeline • Architecture • Automation logic
                 </span>
               </div>
+
+              {/* Trusted workflow components */}
+              <div className="mt-8 pt-6 border-t border-[#E2E8F0]/80 max-w-xl">
+                <p
+                  className="text-[11px] font-semibold tracking-[0.18em] uppercase mb-2"
+                  style={{ color: "#94A3B8" }}
+                >
+                  Trusted Workflow Components
+                </p>
+                <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>
+                  Whisper AI <span className="text-[#CBD5E1]">•</span> Automation Layer{" "}
+                  <span className="text-[#CBD5E1]">•</span> NLP Processing{" "}
+                  <span className="text-[#CBD5E1]">•</span> Search Indexing
+                </p>
+              </div>
             </div>
 
             {/* RIGHT — Abstract AI workflow visual */}
             <div className="lg:col-span-5 animate-fade-in animation-delay-200">
               <div
-                className="relative aspect-[5/6] sm:aspect-[4/5] lg:aspect-[5/6] rounded-[28px] overflow-hidden"
+                className="relative aspect-[5/6] sm:aspect-[4/5] lg:aspect-[5/6] rounded-[28px] overflow-hidden cs-float"
                 style={{
                   background:
-                    "linear-gradient(135deg, #0F172A 0%, #123047 55%, #0D9488 130%)",
+                    "linear-gradient(140deg, #0F172A 0%, #143246 50%, #137a72 110%)",
                   boxShadow:
-                    "0 40px 80px -30px rgba(15,23,42,0.45), 0 16px 30px -16px rgba(13,148,136,0.35)",
+                    "0 50px 100px -40px rgba(15,23,42,0.55), 0 20px 40px -20px rgba(13,148,136,0.30)",
                 }}
               >
                 {/* Glow */}
                 <div
                   aria-hidden
-                  className="absolute -top-20 -right-16 w-72 h-72 rounded-full blur-3xl opacity-50"
+                  className="absolute -top-20 -right-16 w-72 h-72 rounded-full blur-3xl opacity-50 cs-glow-a"
                   style={{
                     background:
                       "radial-gradient(circle, rgba(94,234,212,0.6) 0%, transparent 70%)",
@@ -146,7 +163,7 @@ const CaseStudyDetail = () => {
                 />
                 <div
                   aria-hidden
-                  className="absolute -bottom-24 -left-16 w-72 h-72 rounded-full blur-3xl opacity-40"
+                  className="absolute -bottom-24 -left-16 w-72 h-72 rounded-full blur-3xl opacity-40 cs-glow-b"
                   style={{
                     background:
                       "radial-gradient(circle, rgba(91,108,255,0.6) 0%, transparent 70%)",
