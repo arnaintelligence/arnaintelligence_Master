@@ -206,4 +206,20 @@ Brand Colors:
     80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
     100% { left: 100%; opacity: 0; transform: translate(-50%, -50%) scale(0.6); }
   }
+
+  .cs-float { animation: csFloat 7s ease-in-out infinite; will-change: transform; }
+  @keyframes csFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .cs-glow-a { animation: csGlowA 6s ease-in-out infinite; }
+  .cs-glow-b { animation: csGlowB 8s ease-in-out infinite; }
+  @keyframes csGlowA {
+    0%, 100% { opacity: 0.45; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.08); }
+  }
+  @keyframes csGlowB {
+    0%, 100% { opacity: 0.35; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.1); }
+  }
 }
