@@ -620,8 +620,8 @@ const CaseStudyDetail = () => {
           SECTION 3 — LIVE DEMO
          ============================================================ */}
       <section
-        className="relative py-20 lg:py-28 overflow-hidden"
-        style={{ backgroundColor: "#0F172A" }}
+        className="relative py-28 lg:py-40 overflow-hidden"
+        style={{ backgroundColor: "#F8FAFC" }}
       >
         {/* Background accents */}
         <div
@@ -629,16 +629,16 @@ const CaseStudyDetail = () => {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 60% 40% at 20% 20%, rgba(13,148,136,0.18) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 90% 80%, rgba(91,108,255,0.18) 0%, transparent 60%)",
+              "radial-gradient(ellipse 60% 40% at 20% 20%, rgba(13,148,136,0.08) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 90% 80%, rgba(91,108,255,0.08) 0%, transparent 60%)",
           }}
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-20"
+          className="pointer-events-none absolute inset-0 opacity-30"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
+              "radial-gradient(circle, rgba(13,148,136,0.12) 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
             maskImage:
               "radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent)",
             WebkitMaskImage:
@@ -652,21 +652,22 @@ const CaseStudyDetail = () => {
             <div
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] font-semibold tracking-[0.18em] uppercase"
               style={{
-                background: "rgba(94,234,212,0.10)",
-                color: "#5EEAD4",
-                border: "1px solid rgba(94,234,212,0.30)",
+                background: "rgba(13,148,136,0.08)",
+                color: "#0D9488",
+                border: "1px solid rgba(13,148,136,0.25)",
               }}
             >
               <PlayCircle className="w-3 h-3" />
               Live Demo
             </div>
             <h2
-              className="mt-6 text-3xl sm:text-4xl lg:text-[42px] font-bold leading-[1.2] tracking-tight text-white"
+              className="mt-8 text-3xl sm:text-4xl lg:text-[42px] font-bold leading-[1.2] tracking-tight"
+              style={{ color: "#0F172A" }}
             >
               Meeting Intelligence{" "}
               <span
                 style={{
-                  background: "linear-gradient(135deg, #5EEAD4 0%, #5B6CFF 100%)",
+                  background: "linear-gradient(135deg, #0D9488 0%, #5B6CFF 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -676,8 +677,8 @@ const CaseStudyDetail = () => {
               </span>
             </h2>
             <p
-              className="mt-5 text-base sm:text-[17px] leading-[1.75]"
-              style={{ color: "#94A3B8" }}
+              className="mt-8 text-base sm:text-[17px] leading-[1.8]"
+              style={{ color: "#64748B" }}
             >
               See how users can retrieve meeting decisions, action items,
               blockers, and summaries through natural language.
@@ -685,7 +686,7 @@ const CaseStudyDetail = () => {
           </div>
 
           {/* Video container */}
-          <div className="mt-14 max-w-5xl mx-auto">
+          <div className="mt-20 max-w-5xl mx-auto">
             <div
               className="relative aspect-video rounded-3xl overflow-hidden"
               style={{
@@ -693,7 +694,7 @@ const CaseStudyDetail = () => {
                   "linear-gradient(140deg, #0B1428 0%, #143246 60%, #0D9488 140%)",
                 border: "1px solid rgba(94,234,212,0.25)",
                 boxShadow:
-                  "0 50px 100px -40px rgba(0,0,0,0.6), 0 0 60px -20px rgba(13,148,136,0.4)",
+                  "0 50px 100px -40px rgba(15,23,42,0.35), 0 20px 40px -20px rgba(13,148,136,0.25)",
               }}
             >
               {/* glow ring */}
@@ -755,7 +756,7 @@ const CaseStudyDetail = () => {
             </div>
 
             {/* Feature checklist */}
-            <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 { icon: FileSearch, label: "Search previous meetings" },
                 { icon: ListChecks, label: "Retrieve action items" },
@@ -764,29 +765,28 @@ const CaseStudyDetail = () => {
               ].map((f) => (
                 <div
                   key={f.label}
-                  className="flex items-center gap-3 p-3.5 rounded-xl backdrop-blur-md"
+                  className="flex items-center gap-3 p-4 rounded-xl bg-white border border-[#E2E8F0]"
                   style={{
-                    background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 6px 18px -12px rgba(15,23,42,0.15)",
                   }}
                 >
                   <div
                     className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center"
                     style={{
-                      background: "rgba(94,234,212,0.12)",
-                      color: "#5EEAD4",
-                      border: "1px solid rgba(94,234,212,0.25)",
+                      background: "rgba(13,148,136,0.10)",
+                      color: "#0D9488",
+                      border: "1px solid rgba(13,148,136,0.25)",
                     }}
                   >
                     <Check className="w-4 h-4" />
                   </div>
-                  <span className="text-sm text-white/90">{f.label}</span>
+                  <span className="text-sm" style={{ color: "#0F172A" }}>{f.label}</span>
                 </div>
               ))}
             </div>
 
             {/* CTA */}
-            <div className="mt-12 flex justify-center">
+            <div className="mt-16 flex justify-center">
               <button
                 type="button"
                 className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5"
