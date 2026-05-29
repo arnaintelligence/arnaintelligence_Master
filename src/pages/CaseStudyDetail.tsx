@@ -455,10 +455,10 @@ const CaseStudyDetail = () => {
                         <p.icon className="w-4 h-4" />
                       </div>
                       <div className="min-w-0">
-                        <div className="text-sm font-semibold" style={{ color: "#0F172A" }}>
+                        <div className="text-sm font-semibold leading-snug tracking-[-0.01em]" style={{ color: "#0F172A" }}>
                           {p.title}
                         </div>
-                        <div className="text-xs mt-0.5 leading-relaxed" style={{ color: "#64748B" }}>
+                        <div className="text-xs mt-1.5 leading-[1.7]" style={{ color: "#64748B" }}>
                           {p.desc}
                         </div>
                       </div>
@@ -590,13 +590,13 @@ const CaseStudyDetail = () => {
                     </span>
                   </div>
                   <h3
-                    className="mt-5 text-lg font-semibold"
+                    className="mt-6 text-lg font-semibold leading-snug tracking-[-0.01em]"
                     style={{ color: "#0F172A" }}
                   >
                     {s.title}
                   </h3>
                   <p
-                    className="mt-2 text-sm leading-relaxed"
+                    className="mt-3 text-sm leading-[1.7]"
                     style={{ color: "#64748B" }}
                   >
                     {s.desc}
