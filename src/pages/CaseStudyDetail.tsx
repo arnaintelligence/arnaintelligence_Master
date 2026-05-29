@@ -24,7 +24,7 @@ const CaseStudyDetail = () => {
   return (
     <Layout>
       <section
-        className="relative overflow-hidden pt-20 pb-28 lg:pt-28 lg:pb-40"
+        className="relative overflow-hidden pt-16 pb-20 lg:pt-20 lg:pb-28"
         style={{ backgroundColor: "#F8FAFC" }}
       >
         {/* Background radial glows */}
@@ -321,7 +321,7 @@ const CaseStudyDetail = () => {
       {/* ============================================================
           SECTION 1 — THE CHALLENGE
          ============================================================ */}
-      <section className="relative py-28 lg:py-40" style={{ backgroundColor: "#F8FAFC" }}>
+      <section className="relative py-20 lg:py-28" style={{ backgroundColor: "#F8FAFC" }}>
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-60"
@@ -460,7 +460,7 @@ const CaseStudyDetail = () => {
       {/* ============================================================
           SECTION 2 — THE SOLUTION
          ============================================================ */}
-      <section className="relative py-28 lg:py-40" style={{ backgroundColor: "#F8FAFC" }}>
+      <section className="relative py-20 lg:py-28" style={{ backgroundColor: "#F8FAFC" }}>
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
@@ -608,7 +608,7 @@ const CaseStudyDetail = () => {
           SECTION 3 — LIVE DEMO
          ============================================================ */}
       <section
-        className="relative py-28 lg:py-40 overflow-hidden"
+        className="relative py-20 lg:py-28 overflow-hidden"
         style={{ backgroundColor: "#F8FAFC" }}
       >
         {/* Background accents */}
