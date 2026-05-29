@@ -24,7 +24,7 @@ const CaseStudyDetail = () => {
   return (
     <Layout>
       <section
-        className="relative overflow-hidden py-20 lg:py-28"
+        className="relative overflow-hidden pt-20 pb-28 lg:pt-28 lg:pb-40"
         style={{ backgroundColor: "#F8FAFC" }}
       >
         {/* Background radial glows */}
@@ -81,7 +81,7 @@ const CaseStudyDetail = () => {
               </div>
 
               <h1
-                className="mt-6 text-3xl sm:text-4xl lg:text-[52px] font-bold leading-[1.15] tracking-tight max-w-[18ch]"
+                className="mt-8 text-3xl sm:text-4xl lg:text-[52px] font-bold leading-[1.15] tracking-tight max-w-[16ch]"
                 style={{ color: "#0F172A" }}
               >
                 Building an AI Meeting
@@ -101,7 +101,7 @@ const CaseStudyDetail = () => {
               </h1>
 
               <p
-                className="mt-6 text-base sm:text-[17px] leading-[1.75] max-w-xl"
+                className="mt-8 text-base sm:text-[17px] leading-[1.8] max-w-xl"
                 style={{ color: "#64748B" }}
               >
                 Inside the workflow ARNA Intelligence built to transform raw
@@ -124,7 +124,7 @@ const CaseStudyDetail = () => {
               </div>
 
               {/* CTA */}
-              <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4">
+              <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-4">
                 <button
                   type="button"
                   className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-10px_rgba(13,148,136,0.55)]"
@@ -144,9 +144,9 @@ const CaseStudyDetail = () => {
               </div>
 
               {/* Trusted workflow components */}
-              <div className="mt-8 pt-6 border-t border-[#E2E8F0]/80 max-w-xl">
+              <div className="mt-12 pt-8 border-t border-[#E2E8F0]/80 max-w-xl">
                 <p
-                  className="text-[11px] font-semibold tracking-[0.18em] uppercase mb-2"
+                  className="text-[11px] font-semibold tracking-[0.18em] uppercase mb-3"
                   style={{ color: "#94A3B8" }}
                 >
                   Trusted Workflow Components
