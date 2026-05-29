@@ -17,12 +17,80 @@ import {
   MessageSquare,
   ListChecks,
   FileSearch,
+  Download,
+  X,
+  Loader2,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState, useRef } from "react";
+import { toast } from "sonner";
 
 const CaseStudyDetail = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [form, setForm] = useState({ name: "", organization: "", email: "" });
+  const pageRef = useRef<HTMLDivElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.name.trim() || !form.organization.trim() || !form.email.trim()) {
+      toast.error("Please fill in all required fields.");
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      toast.error("Please enter a valid work email.");
+      return;
+    }
+    setSubmitting(true);
+    try {
+      // Notify via FormSubmit (no backend, no DB)
+      await fetch(
+        "https://formsubmit.co/ajax/info_arnaintelligence@alis-global.com",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            _subject: "New Workflow Download Request",
+            _template: "table",
+            _captcha: "false",
+            Name: form.name,
+            Organization: form.organization,
+            Email: form.email,
+            Message: `A visitor downloaded the AI Meeting Knowledge System workflow.\n\nName: ${form.name}\nOrganization: ${form.organization}\nEmail: ${form.email}`,
+          }),
+        }
+      ).catch(() => null);
+
+      // Generate PDF of the case study page
+      const html2pdf = (await import("html2pdf.js")).default;
+      const element = pageRef.current;
+      if (element) {
+        await html2pdf()
+          .set({
+            margin: 10,
+            filename: "ARNA-AI-Meeting-Knowledge-System-Workflow.pdf",
+            image: { type: "jpeg", quality: 0.95 },
+            html2canvas: { scale: 2, useCORS: true, backgroundColor: "#F8FAFC" },
+            jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+          } as any)
+          .from(element)
+          .save();
+      }
+
+      toast.success("Thank you. Your workflow guide is downloading.");
+      setForm({ name: "", organization: "", email: "" });
+      setModalOpen(false);
+    } catch (err) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <Layout>
+      <div ref={pageRef}>
       <section
         className="relative overflow-hidden pt-16 pb-20 lg:pt-20 lg:pb-28"
         style={{ backgroundColor: "#F8FAFC" }}
@@ -777,6 +845,7 @@ const CaseStudyDetail = () => {
             <div className="mt-16 flex justify-center">
               <button
                 type="button"
+                onClick={() => setModalOpen(true)}
                 className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5"
                 style={{
                   background:
@@ -786,13 +855,133 @@ const CaseStudyDetail = () => {
                     "0 16px 36px -12px rgba(13,148,136,0.6), 0 0 0 1px rgba(94,234,212,0.3) inset",
                 }}
               >
-                Explore the Full Process
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <Download className="w-4 h-4" />
+                Download Complete Workflow
               </button>
             </div>
           </div>
         </div>
       </section>
+      </div>
+
+      {modalOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-in fade-in duration-200"
+          style={{ backgroundColor: "rgba(15,23,42,0.55)", backdropFilter: "blur(6px)" }}
+          onClick={() => !submitting && setModalOpen(false)}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-md rounded-2xl bg-white p-7 sm:p-8 animate-in zoom-in-95 duration-200"
+            style={{
+              boxShadow:
+                "0 30px 80px -20px rgba(15,23,42,0.35), 0 0 0 1px rgba(15,23,42,0.06)",
+            }}
+          >
+            <button
+              type="button"
+              onClick={() => !submitting && setModalOpen(false)}
+              className="absolute top-4 right-4 p-1.5 rounded-lg transition-colors hover:bg-slate-100"
+              aria-label="Close"
+            >
+              <X className="w-4 h-4" style={{ color: "#64748B" }} />
+            </button>
+
+            <div
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-semibold tracking-wider uppercase mb-4"
+              style={{
+                background: "rgba(13,148,136,0.08)",
+                color: "#0D9488",
+                border: "1px solid rgba(13,148,136,0.2)",
+              }}
+            >
+              <Download className="w-3 h-3" />
+              Workflow Guide
+            </div>
+
+            <h3
+              className="text-2xl font-bold tracking-tight"
+              style={{ color: "#0F172A" }}
+            >
+              Download the Complete Workflow
+            </h3>
+            <p
+              className="mt-3 text-sm leading-relaxed"
+              style={{ color: "#64748B" }}
+            >
+              Access the complete AI Meeting Knowledge System case study, including the challenge, solution, workflow architecture, implementation approach, and live demonstration details.
+            </p>
+
+            <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+              {[
+                { key: "name", label: "Full Name", type: "text", placeholder: "Jane Doe" },
+                { key: "organization", label: "Organization Name", type: "text", placeholder: "Acme Inc." },
+                { key: "email", label: "Work Email", type: "email", placeholder: "you@company.com" },
+              ].map((f) => (
+                <div key={f.key}>
+                  <label
+                    className="block text-xs font-semibold mb-1.5"
+                    style={{ color: "#0F172A" }}
+                  >
+                    {f.label} <span style={{ color: "#0D9488" }}>*</span>
+                  </label>
+                  <input
+                    required
+                    type={f.type}
+                    placeholder={f.placeholder}
+                    value={(form as any)[f.key]}
+                    onChange={(e) =>
+                      setForm((p) => ({ ...p, [f.key]: e.target.value }))
+                    }
+                    className="w-full px-3.5 py-2.5 rounded-lg text-sm transition-all focus:outline-none focus:ring-2"
+                    style={{
+                      backgroundColor: "#F8FAFC",
+                      border: "1px solid #E2E8F0",
+                      color: "#0F172A",
+                    }}
+                  />
+                </div>
+              ))}
+
+              <div className="flex items-center justify-end gap-3 pt-2">
+                <button
+                  type="button"
+                  onClick={() => setModalOpen(false)}
+                  disabled={submitting}
+                  className="px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors hover:bg-slate-100 disabled:opacity-50"
+                  style={{ color: "#64748B" }}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all hover:-translate-y-0.5 disabled:opacity-70 disabled:translate-y-0"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #0D9488 0%, #5EEAD4 100%)",
+                    color: "#0F172A",
+                    boxShadow:
+                      "0 12px 28px -10px rgba(13,148,136,0.55), 0 0 0 1px rgba(94,234,212,0.3) inset",
+                  }}
+                >
+                  {submitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Preparing…
+                    </>
+                  ) : (
+                    <>
+                      <Download className="w-4 h-4" />
+                      Download PDF
+                    </>
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </Layout>
   );
 };
