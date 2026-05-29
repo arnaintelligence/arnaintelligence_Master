@@ -62,21 +62,13 @@ const CaseStudyDetail = () => {
         }
       ).catch(() => null);
 
-      // Generate PDF of the case study page
-      const html2pdf = (await import("html2pdf.js")).default;
-      const element = pageRef.current;
-      if (element) {
-        await html2pdf()
-          .set({
-            margin: 10,
-            filename: "ARNA-AI-Meeting-Knowledge-System-Workflow.pdf",
-            image: { type: "jpeg", quality: 0.95 },
-            html2canvas: { scale: 2, useCORS: true, backgroundColor: "#F8FAFC" },
-            jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-          } as any)
-          .from(element)
-          .save();
-      }
+      // Trigger download of the pre-built workflow PDF
+      const link = document.createElement("a");
+      link.href = "/full-workflow.pdf";
+      link.download = "ARNA-AI-Meeting-Knowledge-System-Workflow.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
       toast.success("Thank you. Your workflow guide is downloading.");
       setForm({ name: "", organization: "", email: "" });
