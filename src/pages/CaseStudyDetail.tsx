@@ -360,7 +360,7 @@ const CaseStudyDetail = () => {
                 The Challenge
               </div>
               <h2
-                className="mt-8 text-3xl sm:text-4xl lg:text-[42px] font-bold leading-[1.2] tracking-tight"
+                className="mt-8 text-3xl sm:text-4xl lg:text-[42px] font-bold leading-[1.25] sm:leading-[1.28] tracking-[-0.015em] max-w-[20ch] [text-wrap:balance]"
                 style={{ color: "#0F172A" }}
               >
                 Why Traditional Meeting Intelligence{" "}
@@ -376,7 +376,7 @@ const CaseStudyDetail = () => {
                 </span>
               </h2>
               <p
-                className="mt-8 text-base sm:text-[17px] leading-[1.8] max-w-xl"
+                className="mt-6 text-base sm:text-[17px] leading-[1.85] tracking-[-0.005em] max-w-[58ch] [text-wrap:pretty]"
                 style={{ color: "#64748B" }}
               >
                 As meetings increase, transcripts become fragmented, expensive,
@@ -498,7 +498,7 @@ const CaseStudyDetail = () => {
               The Solution
             </div>
             <h2
-              className="mt-8 text-3xl sm:text-4xl lg:text-[42px] font-bold leading-[1.2] tracking-tight"
+              className="mt-8 text-3xl sm:text-4xl lg:text-[42px] font-bold leading-[1.25] sm:leading-[1.28] tracking-[-0.015em] [text-wrap:balance]"
               style={{ color: "#0F172A" }}
             >
               A Unified Meeting{" "}
@@ -514,7 +514,7 @@ const CaseStudyDetail = () => {
               </span>
             </h2>
             <p
-              className="mt-8 text-base sm:text-[17px] leading-[1.8]"
+              className="mt-6 text-base sm:text-[17px] leading-[1.85] tracking-[-0.005em] max-w-[58ch] mx-auto [text-wrap:pretty]"
               style={{ color: "#64748B" }}
             >
               Capture, organise, analyse, and retrieve meeting intelligence from
@@ -663,7 +663,7 @@ const CaseStudyDetail = () => {
               Live Demo
             </div>
             <h2
-              className="mt-8 text-3xl sm:text-4xl lg:text-[42px] font-bold leading-[1.2] tracking-tight"
+              className="mt-8 text-3xl sm:text-4xl lg:text-[42px] font-bold leading-[1.25] sm:leading-[1.28] tracking-[-0.015em] [text-wrap:balance]"
               style={{ color: "#0F172A" }}
             >
               Meeting Intelligence{" "}
@@ -679,7 +679,7 @@ const CaseStudyDetail = () => {
               </span>
             </h2>
             <p
-              className="mt-8 text-base sm:text-[17px] leading-[1.8]"
+              className="mt-6 text-base sm:text-[17px] leading-[1.85] tracking-[-0.005em] max-w-[58ch] mx-auto [text-wrap:pretty]"
               style={{ color: "#64748B" }}
             >
               See how users can retrieve meeting decisions, action items,
