@@ -81,12 +81,14 @@ const CaseStudyDetail = () => {
               </div>
 
               <h1
-                className="mt-8 text-3xl sm:text-4xl lg:text-[52px] font-bold leading-[1.15] tracking-tight max-w-[16ch]"
+                className="mt-8 text-3xl sm:text-4xl lg:text-[50px] font-bold leading-[1.18] sm:leading-[1.22] tracking-[-0.015em] max-w-[20ch] [text-wrap:balance]"
                 style={{ color: "#0F172A" }}
               >
                 Building an AI Meeting
-                <br className="hidden sm:block" />{" "}
+                <br className="hidden sm:block" />
                 Knowledge System{" "}
+                <span className="whitespace-nowrap">Without</span>
+                <br className="hidden sm:block" />
                 <span
                   style={{
                     background:
@@ -96,12 +98,12 @@ const CaseStudyDetail = () => {
                     backgroundClip: "text",
                   }}
                 >
-                  Without<br className="hidden sm:block" /> Another Subscription
+                  Another Subscription
                 </span>
               </h1>
 
               <p
-                className="mt-8 text-base sm:text-[17px] leading-[1.8] max-w-xl"
+                className="mt-8 text-base sm:text-[17px] leading-[1.85] tracking-[-0.005em] max-w-[58ch] [text-wrap:pretty]"
                 style={{ color: "#64748B" }}
               >
                 Inside the workflow ARNA Intelligence built to transform raw
