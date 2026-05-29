@@ -333,7 +333,7 @@ const CaseStudyDetail = () => {
       {/* ============================================================
           SECTION 1 — THE CHALLENGE
          ============================================================ */}
-      <section className="relative py-20 lg:py-28" style={{ backgroundColor: "#F8FAFC" }}>
+      <section className="relative py-28 lg:py-40" style={{ backgroundColor: "#F8FAFC" }}>
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-60"
@@ -343,7 +343,7 @@ const CaseStudyDetail = () => {
           }}
         />
         <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-12 gap-14 lg:gap-20 items-start">
             {/* LEFT — narrative */}
             <div className="lg:col-span-6">
               <div
@@ -358,7 +358,7 @@ const CaseStudyDetail = () => {
                 The Challenge
               </div>
               <h2
-                className="mt-6 text-3xl sm:text-4xl lg:text-[42px] font-bold leading-[1.2] tracking-tight"
+                className="mt-8 text-3xl sm:text-4xl lg:text-[42px] font-bold leading-[1.2] tracking-tight"
                 style={{ color: "#0F172A" }}
               >
                 Why Traditional Meeting Intelligence{" "}
@@ -374,14 +374,14 @@ const CaseStudyDetail = () => {
                 </span>
               </h2>
               <p
-                className="mt-6 text-base sm:text-[17px] leading-[1.75] max-w-xl"
+                className="mt-8 text-base sm:text-[17px] leading-[1.8] max-w-xl"
                 style={{ color: "#64748B" }}
               >
                 As meetings increase, transcripts become fragmented, expensive,
                 difficult to search, and disconnected from business workflows.
               </p>
 
-              <div className="mt-8 grid grid-cols-2 gap-4 max-w-md">
+              <div className="mt-10 grid grid-cols-2 gap-5 max-w-md">
                 {[
                   { value: "60%", label: "Knowledge lost post-meeting" },
                   { value: "5x", label: "Tools needed to stitch context" },
@@ -472,7 +472,7 @@ const CaseStudyDetail = () => {
       {/* ============================================================
           SECTION 2 — THE SOLUTION
          ============================================================ */}
-      <section className="relative py-20 lg:py-28" style={{ backgroundColor: "#F8FAFC" }}>
+      <section className="relative py-28 lg:py-40" style={{ backgroundColor: "#F8FAFC" }}>
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
@@ -496,7 +496,7 @@ const CaseStudyDetail = () => {
               The Solution
             </div>
             <h2
-              className="mt-6 text-3xl sm:text-4xl lg:text-[42px] font-bold leading-[1.2] tracking-tight"
+              className="mt-8 text-3xl sm:text-4xl lg:text-[42px] font-bold leading-[1.2] tracking-tight"
               style={{ color: "#0F172A" }}
             >
               A Unified Meeting{" "}
@@ -512,7 +512,7 @@ const CaseStudyDetail = () => {
               </span>
             </h2>
             <p
-              className="mt-5 text-base sm:text-[17px] leading-[1.75]"
+              className="mt-8 text-base sm:text-[17px] leading-[1.8]"
               style={{ color: "#64748B" }}
             >
               Capture, organise, analyse, and retrieve meeting intelligence from
@@ -521,7 +521,7 @@ const CaseStudyDetail = () => {
           </div>
 
           {/* 4 steps */}
-          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 n: "01",
