@@ -17,12 +17,81 @@ import {
   MessageSquare,
   ListChecks,
   FileSearch,
+  Download,
+  X,
+  Loader2,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState, useRef } from "react";
+import { toast } from "sonner";
 
 const CaseStudyDetail = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [form, setForm] = useState({ name: "", organization: "", email: "" });
+  const pageRef = useRef<HTMLDivElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.name.trim() || !form.organization.trim() || !form.email.trim()) {
+      toast.error("Please fill in all required fields.");
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      toast.error("Please enter a valid work email.");
+      return;
+    }
+    setSubmitting(true);
+    try {
+      // Notify via FormSubmit (no backend, no DB)
+      await fetch(
+        "https://formsubmit.co/ajax/info_arnaintelligence@alis-global.com",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            _subject: "New Workflow Download Request",
+            _template: "table",
+            _captcha: "false",
+            Name: form.name,
+            Organization: form.organization,
+            Email: form.email,
+            Message: `A visitor downloaded the AI Meeting Knowledge System workflow.\n\nName: ${form.name}\nOrganization: ${form.organization}\nEmail: ${form.email}`,
+          }),
+        }
+      ).catch(() => null);
+
+      // Generate PDF of the case study page
+      const html2pdf = (await import("html2pdf.js")).default;
+      const element = pageRef.current;
+      if (element) {
+        await html2pdf()
+          .set({
+            margin: 10,
+            filename: "ARNA-AI-Meeting-Knowledge-System-Workflow.pdf",
+            image: { type: "jpeg", quality: 0.95 },
+            html2canvas: { scale: 2, useCORS: true, backgroundColor: "#F8FAFC" },
+            jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+            pagebreak: { mode: ["avoid-all", "css", "legacy"] },
+          })
+          .from(element)
+          .save();
+      }
+
+      toast.success("Thank you. Your workflow guide is downloading.");
+      setForm({ name: "", organization: "", email: "" });
+      setModalOpen(false);
+    } catch (err) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <Layout>
+      <div ref={pageRef}>
       <section
         className="relative overflow-hidden pt-16 pb-20 lg:pt-20 lg:pb-28"
         style={{ backgroundColor: "#F8FAFC" }}
