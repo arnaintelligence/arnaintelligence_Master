@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/sections/CTASection";
+import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, Clock, Tag, Sparkles, FileText } from "lucide-react";
 
 const Insights = () => {
@@ -176,27 +177,18 @@ const Insights = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                  <button
-                    className="group/btn inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-8px_rgba(94,234,212,0.55)]"
+                  <Link
+                    to="/insights/ai-meeting-knowledge-system"
+                    className="group/btn inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-sm cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-8px_rgba(94,234,212,0.55)]"
                     style={{
                       background: "linear-gradient(135deg, #0D9488 0%, #5EEAD4 100%)",
                       color: "#0F172A",
                       boxShadow: "0 8px 20px -8px rgba(13,148,136,0.5)",
                     }}
                   >
-                    Explore More
+                    Read More
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5" />
-                  </button>
-                  <button
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-sm backdrop-blur-md transition-all duration-300 hover:bg-white/10"
-                    style={{
-                      color: "#F8FAFC",
-                      border: "1px solid rgba(248,250,252,0.3)",
-                      background: "rgba(255,255,255,0.04)",
-                    }}
-                  >
-                    View All Insights
-                  </button>
+                  </Link>
                 </div>
               </div>
             </article>
