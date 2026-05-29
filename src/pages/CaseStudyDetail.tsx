@@ -145,20 +145,6 @@ const CaseStudyDetail = () => {
                 </span>
               </div>
 
-              {/* Trusted workflow components */}
-              <div className="mt-12 pt-8 border-t border-[#E2E8F0]/80 max-w-xl">
-                <p
-                  className="text-[11px] font-semibold tracking-[0.18em] uppercase mb-3"
-                  style={{ color: "#94A3B8" }}
-                >
-                  Trusted Workflow Components
-                </p>
-                <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>
-                  Whisper AI <span className="text-[#CBD5E1]">•</span> Automation Layer{" "}
-                  <span className="text-[#CBD5E1]">•</span> NLP Processing{" "}
-                  <span className="text-[#CBD5E1]">•</span> Search Indexing
-                </p>
-              </div>
             </div>
 
             {/* RIGHT — Abstract AI workflow visual */}
