@@ -62,13 +62,27 @@ const CaseStudyDetail = () => {
         }
       ).catch(() => null);
 
-      // Trigger download of the pre-built workflow PDF
-      const link = document.createElement("a");
-      link.href = "/full-workflow.pdf";
-      link.download = "ARNA-AI-Meeting-Knowledge-System-Workflow.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // Force-download the pre-built PDF as a blob so the browser
+      // never navigates to the asset URL (which can show a sign-in page).
+      const filename = "ARNA-Meeting-Intelligence-Implementation-Guide.pdf";
+      try {
+        const res = await fetch("/full-workflow.pdf", { cache: "no-store" });
+        if (!res.ok) throw new Error("Download failed");
+        const blob = await res.blob();
+        const blobUrl = URL.createObjectURL(
+          new Blob([blob], { type: "application/pdf" })
+        );
+        const link = document.createElement("a");
+        link.href = blobUrl;
+        link.download = filename;
+        link.rel = "noopener";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+      } catch {
+        toast.error("Could not start download. Please try again.");
+      }
 
       toast.success("Thank you. Your workflow guide is downloading.");
       setForm({ name: "", organization: "", email: "" });
