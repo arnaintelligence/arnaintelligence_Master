@@ -24,7 +24,7 @@ const CaseStudyDetail = () => {
   return (
     <Layout>
       <section
-        className="relative overflow-hidden pt-20 pb-28 lg:pt-28 lg:pb-40"
+        className="relative overflow-hidden pt-16 pb-20 lg:pt-20 lg:pb-28"
         style={{ backgroundColor: "#F8FAFC" }}
       >
         {/* Background radial glows */}
@@ -145,20 +145,6 @@ const CaseStudyDetail = () => {
                 </span>
               </div>
 
-              {/* Trusted workflow components */}
-              <div className="mt-12 pt-8 border-t border-[#E2E8F0]/80 max-w-xl">
-                <p
-                  className="text-[11px] font-semibold tracking-[0.18em] uppercase mb-3"
-                  style={{ color: "#94A3B8" }}
-                >
-                  Trusted Workflow Components
-                </p>
-                <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>
-                  Whisper AI <span className="text-[#CBD5E1]">•</span> Automation Layer{" "}
-                  <span className="text-[#CBD5E1]">•</span> NLP Processing{" "}
-                  <span className="text-[#CBD5E1]">•</span> Search Indexing
-                </p>
-              </div>
             </div>
 
             {/* RIGHT — Abstract AI workflow visual */}
@@ -335,7 +321,7 @@ const CaseStudyDetail = () => {
       {/* ============================================================
           SECTION 1 — THE CHALLENGE
          ============================================================ */}
-      <section className="relative py-28 lg:py-40" style={{ backgroundColor: "#F8FAFC" }}>
+      <section className="relative py-20 lg:py-28" style={{ backgroundColor: "#F8FAFC" }}>
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-60"
@@ -474,7 +460,7 @@ const CaseStudyDetail = () => {
       {/* ============================================================
           SECTION 2 — THE SOLUTION
          ============================================================ */}
-      <section className="relative py-28 lg:py-40" style={{ backgroundColor: "#F8FAFC" }}>
+      <section className="relative py-20 lg:py-28" style={{ backgroundColor: "#F8FAFC" }}>
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
@@ -622,7 +608,7 @@ const CaseStudyDetail = () => {
           SECTION 3 — LIVE DEMO
          ============================================================ */}
       <section
-        className="relative py-28 lg:py-40 overflow-hidden"
+        className="relative py-20 lg:py-28 overflow-hidden"
         style={{ backgroundColor: "#F8FAFC" }}
       >
         {/* Background accents */}
