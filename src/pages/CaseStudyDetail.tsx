@@ -24,6 +24,7 @@ import {
 import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const CaseStudyDetail = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -44,23 +45,34 @@ const CaseStudyDetail = () => {
     }
     setSubmitting(true);
     try {
-      // Notify via FormSubmit (no backend, no DB)
-      await fetch(
-        "https://formsubmit.co/ajax/info_arnaintelligence@alis-global.com",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({
-            _subject: "New Workflow Download Request",
-            _template: "table",
-            _captcha: "false",
-            Name: form.name,
-            Organization: form.organization,
-            Email: form.email,
-            Message: `A visitor downloaded the AI Meeting Knowledge System workflow.\n\nName: ${form.name}\nOrganization: ${form.organization}\nEmail: ${form.email}`,
-          }),
+      // Send notification email via Lovable Emails (errors are logged, never block the download)
+      const downloadedAt = new Date().toISOString();
+      const idempotencyKey = `workflow-download-${crypto.randomUUID()}`;
+      try {
+        const { data, error } = await supabase.functions.invoke(
+          "send-transactional-email",
+          {
+            body: {
+              templateName: "workflow-download-notification",
+              recipientEmail: "info_arnaintelligence@alis-global.com",
+              idempotencyKey,
+              templateData: {
+                fullName: form.name,
+                organization: form.organization,
+                workEmail: form.email,
+                downloadedAt,
+              },
+            },
+          }
+        );
+        if (error) {
+          console.error("[workflow-download] notification email failed", error);
+        } else {
+          console.log("[workflow-download] notification email enqueued", data);
         }
-      ).catch(() => null);
+      } catch (notifyErr) {
+        console.error("[workflow-download] notification email threw", notifyErr);
+      }
 
       // Force-download the pre-built PDF as a blob so the browser
       // never navigates to the asset URL (which can show a sign-in page).
