@@ -178,7 +178,9 @@ const Insights = () => {
 
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   <Link
-                    to="/insights/ai-meeting-knowledge-system"
+                    to="/insights/case-study-01"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group/btn inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-sm cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-8px_rgba(94,234,212,0.55)]"
                     style={{
                       background: "linear-gradient(135deg, #0D9488 0%, #5EEAD4 100%)",
