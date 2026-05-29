@@ -846,6 +846,7 @@ const CaseStudyDetail = () => {
             <div className="mt-16 flex justify-center">
               <button
                 type="button"
+                onClick={() => setModalOpen(true)}
                 className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5"
                 style={{
                   background:
@@ -855,13 +856,133 @@ const CaseStudyDetail = () => {
                     "0 16px 36px -12px rgba(13,148,136,0.6), 0 0 0 1px rgba(94,234,212,0.3) inset",
                 }}
               >
-                Explore the Full Process
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <Download className="w-4 h-4" />
+                Download Complete Workflow
               </button>
             </div>
           </div>
         </div>
       </section>
+      </div>
+
+      {modalOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-in fade-in duration-200"
+          style={{ backgroundColor: "rgba(15,23,42,0.55)", backdropFilter: "blur(6px)" }}
+          onClick={() => !submitting && setModalOpen(false)}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-md rounded-2xl bg-white p-7 sm:p-8 animate-in zoom-in-95 duration-200"
+            style={{
+              boxShadow:
+                "0 30px 80px -20px rgba(15,23,42,0.35), 0 0 0 1px rgba(15,23,42,0.06)",
+            }}
+          >
+            <button
+              type="button"
+              onClick={() => !submitting && setModalOpen(false)}
+              className="absolute top-4 right-4 p-1.5 rounded-lg transition-colors hover:bg-slate-100"
+              aria-label="Close"
+            >
+              <X className="w-4 h-4" style={{ color: "#64748B" }} />
+            </button>
+
+            <div
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-semibold tracking-wider uppercase mb-4"
+              style={{
+                background: "rgba(13,148,136,0.08)",
+                color: "#0D9488",
+                border: "1px solid rgba(13,148,136,0.2)",
+              }}
+            >
+              <Download className="w-3 h-3" />
+              Workflow Guide
+            </div>
+
+            <h3
+              className="text-2xl font-bold tracking-tight"
+              style={{ color: "#0F172A" }}
+            >
+              Download the Complete Workflow
+            </h3>
+            <p
+              className="mt-3 text-sm leading-relaxed"
+              style={{ color: "#64748B" }}
+            >
+              Access the complete AI Meeting Knowledge System case study, including the challenge, solution, workflow architecture, implementation approach, and live demonstration details.
+            </p>
+
+            <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+              {[
+                { key: "name", label: "Full Name", type: "text", placeholder: "Jane Doe" },
+                { key: "organization", label: "Organization Name", type: "text", placeholder: "Acme Inc." },
+                { key: "email", label: "Work Email", type: "email", placeholder: "you@company.com" },
+              ].map((f) => (
+                <div key={f.key}>
+                  <label
+                    className="block text-xs font-semibold mb-1.5"
+                    style={{ color: "#0F172A" }}
+                  >
+                    {f.label} <span style={{ color: "#0D9488" }}>*</span>
+                  </label>
+                  <input
+                    required
+                    type={f.type}
+                    placeholder={f.placeholder}
+                    value={(form as any)[f.key]}
+                    onChange={(e) =>
+                      setForm((p) => ({ ...p, [f.key]: e.target.value }))
+                    }
+                    className="w-full px-3.5 py-2.5 rounded-lg text-sm transition-all focus:outline-none focus:ring-2"
+                    style={{
+                      backgroundColor: "#F8FAFC",
+                      border: "1px solid #E2E8F0",
+                      color: "#0F172A",
+                    }}
+                  />
+                </div>
+              ))}
+
+              <div className="flex items-center justify-end gap-3 pt-2">
+                <button
+                  type="button"
+                  onClick={() => setModalOpen(false)}
+                  disabled={submitting}
+                  className="px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors hover:bg-slate-100 disabled:opacity-50"
+                  style={{ color: "#64748B" }}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all hover:-translate-y-0.5 disabled:opacity-70 disabled:translate-y-0"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #0D9488 0%, #5EEAD4 100%)",
+                    color: "#0F172A",
+                    boxShadow:
+                      "0 12px 28px -10px rgba(13,148,136,0.55), 0 0 0 1px rgba(94,234,212,0.3) inset",
+                  }}
+                >
+                  {submitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Preparing…
+                    </>
+                  ) : (
+                    <>
+                      <Download className="w-4 h-4" />
+                      Download PDF
+                    </>
+                  )}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </Layout>
   );
 };
