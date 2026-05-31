@@ -226,9 +226,6 @@ const CaseStudyDetail = () => {
                   Explore the Process
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </button>
-                <span className="text-xs sm:text-sm" style={{ color: "#64748B" }}>
-                  Full workflow • AI pipeline • Architecture • Automation logic
-                </span>
               </div>
 
             </div>
@@ -236,7 +233,7 @@ const CaseStudyDetail = () => {
             {/* RIGHT — Abstract AI workflow visual */}
             <div className="lg:col-span-5 animate-fade-in animation-delay-200">
               <div
-                className="relative aspect-[5/6] sm:aspect-[4/5] lg:aspect-[5/6] rounded-[28px] overflow-hidden cs-float"
+                className="relative aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] rounded-[28px] overflow-hidden cs-float"
                 style={{
                   background:
                     "linear-gradient(140deg, #0F172A 0%, #143246 50%, #137a72 110%)",
@@ -306,59 +303,59 @@ const CaseStudyDetail = () => {
                   />
                 </svg>
 
-                {/* Floating glass cards */}
+                {/* Floating glass cards — equal size, balanced positioning */}
                 <div
-                  className="absolute top-[12%] left-[8%] px-3 py-2.5 rounded-xl backdrop-blur-md flex items-center gap-2 animate-fade-in"
+                  className="absolute top-[6%] left-[5%] px-3.5 py-2.5 rounded-xl backdrop-blur-md flex items-center gap-2 animate-fade-in"
                   style={{
-                    background: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.15)",
+                    background: "rgba(255,255,255,0.10)",
+                    border: "1px solid rgba(255,255,255,0.18)",
                     boxShadow: "0 8px 24px -8px rgba(0,0,0,0.4)",
                   }}
                 >
                   <Mic className="w-4 h-4" style={{ color: "#5EEAD4" }} />
-                  <span className="text-[11px] font-medium text-white/90">
+                  <span className="text-[12px] font-semibold text-white whitespace-nowrap">
                     Transcription
                   </span>
                 </div>
 
                 <div
-                  className="absolute top-[38%] right-[8%] px-3 py-2.5 rounded-xl backdrop-blur-md flex items-center gap-2 animate-fade-in animation-delay-100"
+                  className="absolute top-[34%] right-[5%] px-3.5 py-2.5 rounded-xl backdrop-blur-md flex items-center gap-2 animate-fade-in animation-delay-100"
                   style={{
-                    background: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.15)",
+                    background: "rgba(255,255,255,0.10)",
+                    border: "1px solid rgba(255,255,255,0.18)",
                     boxShadow: "0 8px 24px -8px rgba(0,0,0,0.4)",
                   }}
                 >
                   <Workflow className="w-4 h-4" style={{ color: "#5EEAD4" }} />
-                  <span className="text-[11px] font-medium text-white/90">
+                  <span className="text-[12px] font-semibold text-white whitespace-nowrap">
                     Automation
                   </span>
                 </div>
 
                 <div
-                  className="absolute top-[68%] left-[10%] px-3 py-2.5 rounded-xl backdrop-blur-md flex items-center gap-2 animate-fade-in animation-delay-200"
+                  className="absolute top-[64%] left-[5%] px-3.5 py-2.5 rounded-xl backdrop-blur-md flex items-center gap-2 animate-fade-in animation-delay-200"
                   style={{
-                    background: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.15)",
+                    background: "rgba(255,255,255,0.10)",
+                    border: "1px solid rgba(255,255,255,0.18)",
                     boxShadow: "0 8px 24px -8px rgba(0,0,0,0.4)",
                   }}
                 >
                   <Sparkles className="w-4 h-4" style={{ color: "#FBBF24" }} />
-                  <span className="text-[11px] font-medium text-white/90">
+                  <span className="text-[12px] font-semibold text-white whitespace-nowrap">
                     AI Analysis
                   </span>
                 </div>
 
                 <div
-                  className="absolute bottom-[8%] right-[8%] px-3 py-2.5 rounded-xl backdrop-blur-md flex items-center gap-2 animate-fade-in animation-delay-300"
+                  className="absolute bottom-[5%] right-[5%] px-3.5 py-2.5 rounded-xl backdrop-blur-md flex items-center gap-2 animate-fade-in animation-delay-300"
                   style={{
-                    background: "rgba(255,255,255,0.08)",
-                    border: "1px solid rgba(255,255,255,0.15)",
+                    background: "rgba(255,255,255,0.10)",
+                    border: "1px solid rgba(255,255,255,0.18)",
                     boxShadow: "0 8px 24px -8px rgba(0,0,0,0.4)",
                   }}
                 >
                   <Search className="w-4 h-4" style={{ color: "#5EEAD4" }} />
-                  <span className="text-[11px] font-medium text-white/90">
+                  <span className="text-[12px] font-semibold text-white whitespace-nowrap">
                     Searchable Knowledge
                   </span>
                 </div>
@@ -438,7 +435,7 @@ const CaseStudyDetail = () => {
                 Why Traditional Meeting Intelligence{" "}
                 <span
                   style={{
-                    background: "linear-gradient(135deg, #EF4444 0%, #F59E0B 100%)",
+                    background: "linear-gradient(135deg, #0D9488 0%, #5B6CFF 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -518,13 +515,13 @@ const CaseStudyDetail = () => {
                       className="group flex items-start gap-3 p-3.5 rounded-xl border border-transparent hover:border-[#E2E8F0] hover:bg-[#F8FAFC] transition-all"
                     >
                       <div
-                        className="shrink-0 w-9 h-9 rounded-lg flex items-center justify-center"
+                        className="shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
                         style={{
                           background: "rgba(239,68,68,0.08)",
                           color: "#DC2626",
                         }}
                       >
-                        <p.icon className="w-4 h-4" />
+                        <p.icon className="w-5 h-5" />
                       </div>
                       <div className="min-w-0">
                         <div className="text-sm font-semibold leading-snug tracking-[-0.01em]" style={{ color: "#0F172A" }}>
