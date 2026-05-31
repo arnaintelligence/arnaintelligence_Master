@@ -25,6 +25,7 @@ import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import caseStudyHero from "@/assets/case-study-hero.jpg";
 
 const CaseStudyDetail = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -110,7 +111,7 @@ const CaseStudyDetail = () => {
     <Layout>
       <div ref={pageRef}>
       <section
-        className="relative overflow-hidden pt-16 pb-20 lg:pt-20 lg:pb-28"
+        className="relative overflow-hidden pt-12 pb-12 lg:pt-16 lg:pb-16"
         style={{ backgroundColor: "#F8FAFC" }}
       >
         {/* Background radial glows */}
@@ -150,7 +151,7 @@ const CaseStudyDetail = () => {
             <span style={{ color: "#0F172A" }}>Case Study 01</span>
           </nav>
 
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* LEFT — Editorial content */}
             <div className="lg:col-span-7 animate-fade-in">
               {/* Top label */}
@@ -167,7 +168,7 @@ const CaseStudyDetail = () => {
               </div>
 
               <h1
-                className="mt-8 text-3xl sm:text-4xl lg:text-[50px] font-bold leading-[1.18] sm:leading-[1.22] tracking-[-0.015em] max-w-[20ch] [text-wrap:balance]"
+                className="mt-6 text-3xl sm:text-4xl lg:text-[48px] font-bold leading-[1.18] sm:leading-[1.22] tracking-[-0.015em] max-w-[20ch] [text-wrap:balance]"
                 style={{ color: "#0F172A" }}
               >
                 Building an AI Meeting
@@ -189,7 +190,7 @@ const CaseStudyDetail = () => {
               </h1>
 
               <p
-                className="mt-8 text-base sm:text-[17px] leading-[1.85] tracking-[-0.005em] max-w-[58ch] [text-wrap:pretty]"
+                className="mt-6 text-base sm:text-[17px] leading-[1.75] tracking-[-0.005em] max-w-[58ch] [text-wrap:pretty]"
                 style={{ color: "#64748B" }}
               >
                 Inside the workflow ARNA Intelligence built to transform raw
@@ -200,7 +201,7 @@ const CaseStudyDetail = () => {
 
               {/* Highlight tag */}
               <div
-                className="mt-6 inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-sm font-medium"
+                className="mt-5 inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-sm font-medium"
                 style={{
                   background: "rgba(94,234,212,0.12)",
                   color: "#0D9488",
@@ -210,24 +211,6 @@ const CaseStudyDetail = () => {
                 <Check className="w-4 h-4" />
                 No Additional Software Cost
               </div>
-
-              {/* CTA */}
-              <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-4">
-                <button
-                  type="button"
-                  className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-10px_rgba(13,148,136,0.55)]"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #0D9488 0%, #5EEAD4 100%)",
-                    color: "#0F172A",
-                    boxShadow: "0 10px 24px -10px rgba(13,148,136,0.55)",
-                  }}
-                >
-                  Explore the Process
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </button>
-              </div>
-
             </div>
 
             {/* RIGHT — Abstract AI workflow visual */}
@@ -241,160 +224,81 @@ const CaseStudyDetail = () => {
                     "0 50px 100px -40px rgba(15,23,42,0.55), 0 20px 40px -20px rgba(13,148,136,0.30)",
                 }}
               >
-                {/* Glow */}
+                {/* Hero illustration */}
+                <img
+                  src={caseStudyHero}
+                  alt="AI meeting intelligence illustration"
+                  width={1024}
+                  height={1024}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                {/* Depth overlay for legibility */}
                 <div
                   aria-hidden
-                  className="absolute -top-20 -right-16 w-72 h-72 rounded-full blur-3xl opacity-50 cs-glow-a"
+                  className="absolute inset-0"
                   style={{
                     background:
-                      "radial-gradient(circle, rgba(94,234,212,0.6) 0%, transparent 70%)",
+                      "linear-gradient(180deg, rgba(15,23,42,0.25) 0%, rgba(15,23,42,0.05) 40%, rgba(15,23,42,0.45) 100%)",
                   }}
                 />
-                <div
-                  aria-hidden
-                  className="absolute -bottom-24 -left-16 w-72 h-72 rounded-full blur-3xl opacity-40 cs-glow-b"
-                  style={{
-                    background:
-                      "radial-gradient(circle, rgba(91,108,255,0.6) 0%, transparent 70%)",
-                  }}
-                />
-                {/* Grid */}
-                <div
-                  aria-hidden
-                  className="absolute inset-0 opacity-25"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
-                    backgroundSize: "32px 32px",
-                  }}
-                />
-
-                {/* SVG connectors */}
-                <svg
-                  className="absolute inset-0 w-full h-full"
-                  viewBox="0 0 400 480"
-                  fill="none"
-                  preserveAspectRatio="none"
-                  aria-hidden
-                >
-                  <defs>
-                    <linearGradient id="lineTeal" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#5EEAD4" stopOpacity="0.9" />
-                      <stop offset="100%" stopColor="#5B6CFF" stopOpacity="0.7" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    d="M70 90 C 150 90, 180 200, 320 200"
-                    stroke="url(#lineTeal)"
-                    strokeWidth="1.2"
-                    strokeDasharray="4 4"
-                  />
-                  <path
-                    d="M320 200 C 230 240, 200 310, 90 350"
-                    stroke="url(#lineTeal)"
-                    strokeWidth="1.2"
-                    strokeDasharray="4 4"
-                  />
-                  <path
-                    d="M90 350 C 180 380, 240 400, 320 420"
-                    stroke="url(#lineTeal)"
-                    strokeWidth="1.2"
-                    strokeDasharray="4 4"
-                  />
-                </svg>
 
                 {/* Floating glass cards — equal size, balanced positioning */}
                 <div
-                  className="absolute top-[6%] left-[5%] px-3.5 py-2.5 rounded-xl backdrop-blur-md flex items-center gap-2 animate-fade-in"
+                  className="absolute top-[5%] left-[5%] px-4 py-3 rounded-xl backdrop-blur-md flex items-center gap-2.5 animate-fade-in"
                   style={{
-                    background: "rgba(255,255,255,0.10)",
-                    border: "1px solid rgba(255,255,255,0.18)",
-                    boxShadow: "0 8px 24px -8px rgba(0,0,0,0.4)",
+                    background: "rgba(15,23,42,0.55)",
+                    border: "1px solid rgba(94,234,212,0.30)",
+                    boxShadow: "0 12px 28px -8px rgba(0,0,0,0.5)",
                   }}
                 >
-                  <Mic className="w-4 h-4" style={{ color: "#5EEAD4" }} />
-                  <span className="text-[12px] font-semibold text-white whitespace-nowrap">
+                  <Mic className="w-[18px] h-[18px]" style={{ color: "#5EEAD4" }} />
+                  <span className="text-[13px] font-semibold text-white whitespace-nowrap tracking-tight">
                     Transcription
                   </span>
                 </div>
 
                 <div
-                  className="absolute top-[34%] right-[5%] px-3.5 py-2.5 rounded-xl backdrop-blur-md flex items-center gap-2 animate-fade-in animation-delay-100"
+                  className="absolute top-[33%] right-[5%] px-4 py-3 rounded-xl backdrop-blur-md flex items-center gap-2.5 animate-fade-in animation-delay-100"
                   style={{
-                    background: "rgba(255,255,255,0.10)",
-                    border: "1px solid rgba(255,255,255,0.18)",
-                    boxShadow: "0 8px 24px -8px rgba(0,0,0,0.4)",
+                    background: "rgba(15,23,42,0.55)",
+                    border: "1px solid rgba(94,234,212,0.30)",
+                    boxShadow: "0 12px 28px -8px rgba(0,0,0,0.5)",
                   }}
                 >
-                  <Workflow className="w-4 h-4" style={{ color: "#5EEAD4" }} />
-                  <span className="text-[12px] font-semibold text-white whitespace-nowrap">
+                  <Workflow className="w-[18px] h-[18px]" style={{ color: "#5EEAD4" }} />
+                  <span className="text-[13px] font-semibold text-white whitespace-nowrap tracking-tight">
                     Automation
                   </span>
                 </div>
 
                 <div
-                  className="absolute top-[64%] left-[5%] px-3.5 py-2.5 rounded-xl backdrop-blur-md flex items-center gap-2 animate-fade-in animation-delay-200"
+                  className="absolute top-[63%] left-[5%] px-4 py-3 rounded-xl backdrop-blur-md flex items-center gap-2.5 animate-fade-in animation-delay-200"
                   style={{
-                    background: "rgba(255,255,255,0.10)",
-                    border: "1px solid rgba(255,255,255,0.18)",
-                    boxShadow: "0 8px 24px -8px rgba(0,0,0,0.4)",
+                    background: "rgba(15,23,42,0.55)",
+                    border: "1px solid rgba(251,191,36,0.35)",
+                    boxShadow: "0 12px 28px -8px rgba(0,0,0,0.5)",
                   }}
                 >
-                  <Sparkles className="w-4 h-4" style={{ color: "#FBBF24" }} />
-                  <span className="text-[12px] font-semibold text-white whitespace-nowrap">
+                  <Sparkles className="w-[18px] h-[18px]" style={{ color: "#FBBF24" }} />
+                  <span className="text-[13px] font-semibold text-white whitespace-nowrap tracking-tight">
                     AI Analysis
                   </span>
                 </div>
 
                 <div
-                  className="absolute bottom-[5%] right-[5%] px-3.5 py-2.5 rounded-xl backdrop-blur-md flex items-center gap-2 animate-fade-in animation-delay-300"
+                  className="absolute bottom-[5%] right-[5%] px-4 py-3 rounded-xl backdrop-blur-md flex items-center gap-2.5 animate-fade-in animation-delay-300"
                   style={{
-                    background: "rgba(255,255,255,0.10)",
-                    border: "1px solid rgba(255,255,255,0.18)",
-                    boxShadow: "0 8px 24px -8px rgba(0,0,0,0.4)",
+                    background: "rgba(15,23,42,0.55)",
+                    border: "1px solid rgba(94,234,212,0.30)",
+                    boxShadow: "0 12px 28px -8px rgba(0,0,0,0.5)",
                   }}
                 >
-                  <Search className="w-4 h-4" style={{ color: "#5EEAD4" }} />
-                  <span className="text-[12px] font-semibold text-white whitespace-nowrap">
+                  <Search className="w-[18px] h-[18px]" style={{ color: "#5EEAD4" }} />
+                  <span className="text-[13px] font-semibold text-white whitespace-nowrap tracking-tight">
                     Searchable Knowledge
                   </span>
                 </div>
 
-                {/* Center document/transcript preview */}
-                <div
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[58%] rounded-2xl p-4 backdrop-blur-xl"
-                  style={{
-                    background: "rgba(255,255,255,0.10)",
-                    border: "1px solid rgba(255,255,255,0.18)",
-                    boxShadow: "0 20px 40px -20px rgba(0,0,0,0.5)",
-                  }}
-                >
-                  <div className="flex items-center gap-2 mb-3">
-                    <FileText className="w-3.5 h-3.5" style={{ color: "#5EEAD4" }} />
-                    <span className="text-[10px] uppercase tracking-wider font-semibold text-white/80">
-                      Transcript.md
-                    </span>
-                  </div>
-                  <div className="space-y-1.5">
-                    <div className="h-1.5 rounded-full bg-white/30 w-full" />
-                    <div className="h-1.5 rounded-full bg-white/20 w-[88%]" />
-                    <div className="h-1.5 rounded-full bg-white/25 w-[72%]" />
-                    <div className="h-1.5 rounded-full bg-white/15 w-[94%]" />
-                    <div className="h-1.5 rounded-full bg-white/20 w-[60%]" />
-                  </div>
-                  <div
-                    className="mt-3 inline-flex items-center gap-1.5 px-2 py-1 rounded-md"
-                    style={{
-                      background: "rgba(94,234,212,0.15)",
-                      border: "1px solid rgba(94,234,212,0.3)",
-                    }}
-                  >
-                    <Database className="w-3 h-3" style={{ color: "#5EEAD4" }} />
-                    <span className="text-[9px] font-semibold tracking-wide text-white/90 uppercase">
-                      Indexed
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
