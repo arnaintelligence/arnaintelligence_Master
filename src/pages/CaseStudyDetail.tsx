@@ -659,13 +659,13 @@ const CaseStudyDetail = () => {
           </div>
 
           {/* Video container */}
-          <div className="mt-12 max-w-5xl mx-auto">
+          <div className="mt-12 max-w-6xl mx-auto px-2 sm:px-4">
             <div
-              className="relative aspect-video rounded-[20px] overflow-hidden backdrop-blur-md"
+              className="relative rounded-[20px] overflow-hidden backdrop-blur-md"
               style={{
                 background:
                   "linear-gradient(140deg, #0B1428 0%, #143246 60%, #0D9488 140%)",
-                border: "1px solid rgba(255,255,255,0.15)",
+                border: "1px solid rgba(13,148,136,0.35)",
                 boxShadow:
                   "0 50px 100px -40px rgba(15,23,42,0.35), 0 20px 40px -20px rgba(13,148,136,0.25)",
               }}
@@ -684,12 +684,13 @@ const CaseStudyDetail = () => {
                   padding: "1px",
                 }}
               />
-              {/* Demo video */}
+              {/* Demo video — natural aspect ratio, full content visible */}
               <video
-                className="absolute inset-0 w-full h-full object-cover"
+                className="relative block w-full h-auto max-h-[80vh] object-contain bg-[#0B1428]"
                 controls
                 playsInline
                 preload="metadata"
+                controlsList="nodownload"
                 src="/arna-meeting-demo.mp4"
               />
             </div>
