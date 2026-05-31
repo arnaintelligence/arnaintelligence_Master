@@ -762,11 +762,11 @@ const CaseStudyDetail = () => {
           {/* Video container */}
           <div className="mt-20 max-w-5xl mx-auto">
             <div
-              className="relative aspect-video rounded-3xl overflow-hidden"
+              className="relative aspect-video rounded-[20px] overflow-hidden backdrop-blur-md"
               style={{
                 background:
                   "linear-gradient(140deg, #0B1428 0%, #143246 60%, #0D9488 140%)",
-                border: "1px solid rgba(94,234,212,0.25)",
+                border: "1px solid rgba(255,255,255,0.15)",
                 boxShadow:
                   "0 50px 100px -40px rgba(15,23,42,0.35), 0 20px 40px -20px rgba(13,148,136,0.25)",
               }}
@@ -774,7 +774,7 @@ const CaseStudyDetail = () => {
               {/* glow ring */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute -inset-px rounded-3xl"
+                className="pointer-events-none absolute -inset-px rounded-[20px] z-10"
                 style={{
                   background:
                     "linear-gradient(135deg, rgba(94,234,212,0.35), rgba(91,108,255,0.25))",
@@ -785,48 +785,14 @@ const CaseStudyDetail = () => {
                   padding: "1px",
                 }}
               />
-              {/* grid */}
-              <div
-                aria-hidden
-                className="absolute inset-0 opacity-20"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
-                  backgroundSize: "32px 32px",
-                }}
+              {/* Demo video */}
+              <video
+                className="absolute inset-0 w-full h-full object-cover"
+                controls
+                playsInline
+                preload="metadata"
+                src="/arna-meeting-demo.mp4"
               />
-              {/* play button */}
-              <button
-                type="button"
-                className="group absolute inset-0 flex items-center justify-center"
-                aria-label="Play demo"
-              >
-                <span
-                  className="absolute w-28 h-28 rounded-full opacity-40 group-hover:opacity-60 transition-opacity"
-                  style={{
-                    background:
-                      "radial-gradient(circle, rgba(94,234,212,0.5) 0%, transparent 70%)",
-                  }}
-                />
-                <span
-                  className="relative w-20 h-20 rounded-full flex items-center justify-center backdrop-blur-md transition-transform group-hover:scale-105"
-                  style={{
-                    background: "rgba(255,255,255,0.12)",
-                    border: "1px solid rgba(94,234,212,0.5)",
-                    boxShadow: "0 20px 40px -10px rgba(13,148,136,0.5)",
-                  }}
-                >
-                  <PlayCircle className="w-10 h-10 text-white" />
-                </span>
-              </button>
-              {/* bottom meta bar */}
-              <div className="absolute bottom-0 inset-x-0 p-4 flex items-center justify-between text-white/80 text-xs">
-                <span className="inline-flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#5EEAD4] animate-pulse" />
-                  Demo • Meeting Knowledge System
-                </span>
-                <span className="hidden sm:inline">02:14</span>
-              </div>
             </div>
 
             {/* Feature checklist */}
