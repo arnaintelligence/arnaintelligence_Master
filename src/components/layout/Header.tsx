@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import arnaLogo from "@/assets/arna-logo.png";
+import { useTheme } from "@/hooks/use-theme";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -31,6 +32,7 @@ const navLinks = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   const isActive = (href: string) => location.pathname === href;
 
@@ -100,16 +102,36 @@ export function Header() {
                 )}
               </NavigationMenuList>
             </NavigationMenu>
+            <button
+              type="button"
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              onClick={toggleTheme}
+              data-no-invert
+              className="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-md text-secondary-foreground hover:bg-secondary-foreground/10 transition-colors"
+            >
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            className="lg:hidden rounded-md p-2 text-secondary-foreground hover:bg-secondary-foreground/10"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Mobile actions */}
+          <div className="flex items-center gap-1 lg:hidden">
+            <button
+              type="button"
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              onClick={toggleTheme}
+              data-no-invert
+              className="rounded-md p-2 text-secondary-foreground hover:bg-secondary-foreground/10"
+            >
+              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </button>
+            <button
+              type="button"
+              className="rounded-md p-2 text-secondary-foreground hover:bg-secondary-foreground/10"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
