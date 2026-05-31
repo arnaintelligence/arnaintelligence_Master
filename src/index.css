@@ -149,6 +149,36 @@ Brand Colors:
   }
 }
 
+/* =========================================================
+   Dark Mode (additive only — preserves layout & typography)
+   Uses CSS color inversion + hue rotation so every existing
+   hex/HSL color flips to a dark-mode equivalent without any
+   component changes. Media is restored to its original look.
+   ========================================================= */
+@layer base {
+  html {
+    transition: filter 0.35s ease;
+  }
+  html.dark {
+    background: #0F172A;
+    filter: invert(1) hue-rotate(180deg);
+  }
+  /* Re-invert raster/video/iframe content so images stay correct */
+  html.dark img,
+  html.dark video,
+  html.dark iframe,
+  html.dark picture,
+  html.dark canvas,
+  html.dark [data-no-invert],
+  html.dark [style*="background-image"] {
+    filter: invert(1) hue-rotate(180deg);
+  }
+  /* Smooth visual transition for surfaces */
+  html.dark body {
+    background: #0F172A;
+  }
+}
+
 /* Animations */
 @layer utilities {
   .animate-fade-in {
