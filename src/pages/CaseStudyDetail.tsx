@@ -1,12 +1,10 @@
 import { Layout } from "@/components/layout/Layout";
 import {
-  ArrowRight,
   Check,
   FileText,
   Sparkles,
   Workflow,
   Search,
-  Database,
   Mic,
   AlertTriangle,
   DollarSign,
