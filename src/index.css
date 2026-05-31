@@ -150,33 +150,107 @@ Brand Colors:
 }
 
 /* =========================================================
-   Dark Mode (additive only — preserves layout & typography)
-   Uses CSS color inversion + hue rotation so every existing
-   hex/HSL color flips to a dark-mode equivalent without any
-   component changes. Media is restored to its original look.
+   Dark Mode — Intentional ARNA navy palette
+   No color inversion. Token-driven, with targeted overrides
+   for hardcoded hex values used across components so every
+   surface lands on Deep Navy (#0F172A) with proper depth.
    ========================================================= */
 @layer base {
-  html {
-    transition: filter 0.35s ease;
-  }
-  html.dark {
-    background: #0F172A;
-    filter: invert(1) hue-rotate(180deg);
-  }
-  /* Re-invert raster/video/iframe content so images stay correct */
-  html.dark img,
-  html.dark video,
-  html.dark iframe,
-  html.dark picture,
-  html.dark canvas,
-  html.dark [data-no-invert],
-  html.dark [style*="background-image"] {
-    filter: invert(1) hue-rotate(180deg);
-  }
-  /* Smooth visual transition for surfaces */
-  html.dark body {
-    background: #0F172A;
-  }
+  html { transition: background-color 0.3s ease, color 0.3s ease; }
+  html.dark { color-scheme: dark; background:#0B1220; }
+  html.dark body { background:#0B1220; color:#F8FAFC; }
+
+  /* ---- Surface remap for hardcoded Tailwind classes ---- */
+  html.dark .bg-white,
+  html.dark .bg-slate-50,
+  html.dark .bg-slate-100,
+  html.dark .bg-gray-50,
+  html.dark .bg-gray-100 { background-color:#0F172A !important; }
+
+  /* Arbitrary value backgrounds — light surfaces -> navy */
+  html.dark [class*="bg-[#ffffff]"],
+  html.dark [class*="bg-[#FFFFFF]"],
+  html.dark [class*="bg-[#f8fafc]"],
+  html.dark [class*="bg-[#F8FAFC]"],
+  html.dark [class*="bg-[#f1f5f9]"],
+  html.dark [class*="bg-[#fafbfc]"],
+  html.dark [class*="bg-[#e5e7eb]"],
+  html.dark [class*="bg-[#E2E8F0]"] { background-color:#0F172A !important; }
+
+  /* Light card / muted backgrounds -> slightly lifted navy */
+  html.dark [class*="bg-[#ccfbf1]"],
+  html.dark [class*="bg-[#dbeafe]"],
+  html.dark [class*="bg-[#fee2e2]"],
+  html.dark [class*="bg-[#fef3c7]"] { background-color:#162033 !important; }
+
+  /* Already-dark hex backgrounds — normalize to canonical navies */
+  html.dark [class*="bg-[#0F172A]"],
+  html.dark [class*="bg-[#0f172a]"],
+  html.dark [class*="bg-[#0B1428]"],
+  html.dark [class*="bg-[#0B1120]"],
+  html.dark [class*="bg-[#0F2027]"],
+  html.dark [class*="bg-[#123047]"],
+  html.dark [class*="bg-[#143246]"] { background-color:#0B1220 !important; }
+
+  /* ---- Text remap ---- */
+  html.dark [class*="text-[#0F172A]"],
+  html.dark [class*="text-[#0f172a]"],
+  html.dark [class*="text-[#143246]"],
+  html.dark [class*="text-[#123047]"],
+  html.dark [class*="text-[#0B1428]"],
+  html.dark [class*="text-[#0B1120]"] { color:#F8FAFC !important; }
+
+  html.dark .text-slate-900,
+  html.dark .text-gray-900,
+  html.dark .text-black { color:#F8FAFC !important; }
+
+  /* Teal stays the brand highlight, but lift slightly for AA */
+  html.dark [class*="text-[#0D9488]"],
+  html.dark [class*="text-[#0f766e]"],
+  html.dark [class*="text-[#0F766E]"],
+  html.dark [class*="text-[#137a72]"],
+  html.dark [class*="text-[#176B63]"] { color:#5EEAD4 !important; }
+
+  /* Slate body -> keep readable */
+  html.dark [class*="text-[#64748b]"],
+  html.dark [class*="text-[#64748B]"],
+  html.dark [class*="text-[#475569]"],
+  html.dark [class*="text-[#94A3B8]"] { color:#94A3B8 !important; }
+
+  /* ---- Borders ---- */
+  html.dark [class*="border-[#e5e7eb]"],
+  html.dark [class*="border-[#E2E8F0]"],
+  html.dark [class*="border-[#f1f5f9]"],
+  html.dark [class*="border-[#F8FAFC]"],
+  html.dark .border-slate-200,
+  html.dark .border-slate-100,
+  html.dark .border-gray-200,
+  html.dark .border-gray-100 { border-color:rgba(148,163,184,0.18) !important; }
+
+  /* ---- Gradient stops: replace light off-whites with navy ---- */
+  html.dark [class*="from-[#ffffff]"],
+  html.dark [class*="from-[#FFFFFF]"],
+  html.dark [class*="from-[#f8fafc]"],
+  html.dark [class*="from-[#F8FAFC]"],
+  html.dark [class*="from-white"] { --tw-gradient-from:#0F172A var(--tw-gradient-from-position) !important; --tw-gradient-to:rgb(15 23 42 / 0) var(--tw-gradient-to-position); --tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to) !important; }
+  html.dark [class*="to-[#ffffff]"],
+  html.dark [class*="to-[#FFFFFF]"],
+  html.dark [class*="to-[#f8fafc]"],
+  html.dark [class*="to-[#F8FAFC]"],
+  html.dark [class*="to-white"] { --tw-gradient-to:#0F172A var(--tw-gradient-to-position) !important; }
+  html.dark [class*="via-[#ffffff]"],
+  html.dark [class*="via-[#f8fafc]"],
+  html.dark [class*="via-white"] { --tw-gradient-via:#0F172A var(--tw-gradient-via-position) !important; }
+
+  /* Accent (blue-violet) for primary highlights where amber was used */
+  html.dark [class*="text-[#F59E0B]"],
+  html.dark [class*="text-[#FBBF24]"],
+  html.dark [class*="text-[#D97706]"] { color:#5B6CFF !important; }
+
+  /* Inline-styled white/off-white backgrounds */
+  html.dark [style*="background-color: rgb(255, 255, 255)"],
+  html.dark [style*="background-color:#ffffff"],
+  html.dark [style*="background:#ffffff"] { background-color:#0F172A !important; }
 }
 
 /* Animations */
