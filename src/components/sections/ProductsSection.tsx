@@ -9,7 +9,7 @@ const products = [
     name: "Globiculum",
     description: "Curriculum alignment and learning intelligence platform",
     comingSoon: false,
-    href: "/products#globiculum",
+    href: "/globiculum-preview",
     cardId: "globiculum",
   },
   {
@@ -17,7 +17,7 @@ const products = [
     name: "AI Learning Assistants",
     description: "Tailored to roles, programs, and systems",
     comingSoon: false,
-    href: "/products#ai-assistants",
+    href: "https://discover-design-map.lovable.app/",
     cardId: "ai-assistants",
   },
   {
