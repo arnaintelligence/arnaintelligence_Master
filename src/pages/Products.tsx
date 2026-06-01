@@ -1,8 +1,21 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { ProductsSection } from "@/components/sections/ProductsSection";
 import { CTASection } from "@/components/sections/CTASection";
 
 const Products = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [location]);
   return (
     <Layout>
       <section className="py-20 lg:py-28 bg-secondary">
