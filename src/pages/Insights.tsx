@@ -148,15 +148,16 @@ const Insights = () => {
                   className="text-2xl sm:text-3xl lg:text-[34px] font-semibold leading-[1.2] tracking-tight max-w-3xl"
                   style={{ color: "#F8FAFC" }}
                 >
-                  How We Built an AI Meeting Intelligence System Without Paying for Another Subscription
+                  Building a Meeting Knowledge Hub Without Another Subscription
                 </h2>
 
                 <p
                   className="text-sm sm:text-base lg:text-[15px] leading-relaxed max-w-2xl"
                   style={{ color: "rgba(248,250,252,0.78)" }}
                 >
-                  A practical breakdown of how intelligent transcription, workflow automation, and AI analysis were
-                  combined into a searchable meeting intelligence pipeline.
+                  Inside the workflow of Arna Intelligence built to transform raw meetings into structured, searchable
+                  knowledge hub using automation, transcription, and AI analysis without adding another software
+                  subscription.
                 </p>
 
                 <div
