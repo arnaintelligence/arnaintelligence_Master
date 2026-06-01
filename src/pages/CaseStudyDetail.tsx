@@ -493,6 +493,22 @@ const CaseStudyDetail = () => {
               >
                 Capture, organise, analyse, and retrieve meeting intelligence from one streamlined system.
               </p>
+
+              {/* Value pill */}
+              <div className="mt-6 flex justify-center">
+                <div
+                  className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-semibold"
+                  style={{
+                    background: "rgba(94,234,212,0.15)",
+                    color: "#0F172A",
+                    border: "1px solid #0D9488",
+                    boxShadow: "0 0 20px -4px rgba(13,148,136,0.25)",
+                  }}
+                >
+                  <Check className="w-4 h-4" style={{ color: "#0D9488" }} />
+                  Scales from 10 to 1,000+ meetings with no additional software subscription cost.
+                </div>
+              </div>
             </div>
 
             {/* 4 steps */}
@@ -712,7 +728,7 @@ const CaseStudyDetail = () => {
               </div>
 
               {/* CTA */}
-              <div className="mt-10 flex justify-center">
+              <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
                 <button
                   type="button"
                   onClick={() => setModalOpen(true)}
@@ -726,6 +742,24 @@ const CaseStudyDetail = () => {
                   <Download className="w-4 h-4" />
                   Download Complete Workflow
                 </button>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5 border"
+                  style={{
+                    color: "#0D9488",
+                    borderColor: "#0D9488",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = "#0D9488";
+                    e.currentTarget.style.color = "#FFFFFF";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                    e.currentTarget.style.color = "#0D9488";
+                  }}
+                >
+                  Contact Us
+                </Link>
               </div>
             </div>
           </div>
