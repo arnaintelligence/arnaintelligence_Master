@@ -14,6 +14,7 @@ const Index = () => {
       <OverviewSection />
       <CrossIntelligenceSection />
       <OperationalModelSection />
+      <ProductsSection compact />
       <ICPSection />
       <CTASection />
     </Layout>
