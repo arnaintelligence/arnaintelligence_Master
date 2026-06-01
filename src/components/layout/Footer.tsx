@@ -13,8 +13,8 @@ const footerLinks = {
     { name: "Contact", href: "/contact" },
   ],
   products: [
-    { name: "Globiculum", href: "/products#globiculum" },
-    { name: "AI Learning Assistants", href: "/products#ai-assistants" },
+    { name: "Globiculum", href: "/globiculum-preview" },
+    { name: "AI Learning Assistants", href: "https://discover-design-map.lovable.app/" },
     { name: "Workflow Engines & Dashboards", href: null, comingSoon: true },
   ],
 };
