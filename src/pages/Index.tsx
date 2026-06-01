@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { OverviewSection } from "@/components/sections/OverviewSection";
 import { CrossIntelligenceSection } from "@/components/sections/CrossIntelligenceSection";
 import { OperationalModelSection } from "@/components/sections/OperationalModelSection";
+import { ProductsSection } from "@/components/sections/ProductsSection";
 import { ICPSection } from "@/components/sections/ICPSection";
 import { CTASection } from "@/components/sections/CTASection";
 
