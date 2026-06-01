@@ -78,16 +78,27 @@ export function Footer() {
               {footerLinks.products.map((link) => (
                 <li key={link.name}>
                   {link.href ? (
-                    <Link
-                      to={link.href}
-                      className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-colors"
-                    >
-                      {link.name}
-                    </Link>
+                    link.href.startsWith("http") ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-colors"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    )
                   ) : (
                     <span className="text-sm opacity-40 cursor-not-allowed inline-flex items-center gap-2">
                       {link.name}
-                      <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-primary/10 text-primary">
+                      <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-amber-100 text-amber-700">
                         Coming Soon
                       </span>
                     </span>
