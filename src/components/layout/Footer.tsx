@@ -23,9 +23,9 @@ export function Footer() {
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Link to="/" className="inline-block">
               <img
                 src={arnaLogo}
@@ -33,32 +33,13 @@ export function Footer() {
                 className="h-10 md:h-12 w-auto object-contain"
               />
             </Link>
-            <p className="mt-3 text-sm opacity-80 max-w-sm leading-relaxed">
+            <p className="mt-3 text-sm opacity-80 max-w-xs leading-relaxed">
               Grounded in learning science. Accelerated by AI systems. Humanized through
-              experience design. Creating connected learning ecosystems that deliver
-              measurable business outcomes.
+              experience design.
             </p>
-            <p className="mt-4 text-sm font-medium text-primary">
+            <p className="mt-3 text-sm font-medium text-primary">
               Where Learning Meets Intelligence.
             </p>
-            <div className="mt-6">
-              <h4 className="text-xs font-semibold uppercase tracking-wider opacity-50 mb-2">
-                Contact
-              </h4>
-              <a
-                href="mailto:info_arnaintelligence@alis-global.com"
-                className="text-sm opacity-90 hover:opacity-100 hover:text-primary transition-colors"
-              >
-                info_arnaintelligence@alis-global.com
-              </a>
-              <div className="mt-3 text-sm opacity-60 leading-relaxed">
-                <p className="font-medium opacity-80">Registered Address:</p>
-                <p>Plot No: 802 &amp; 803,</p>
-                <p>Ayyappa Society,</p>
-                <p>Madhapur,</p>
-                <p>Hyderabad – 500081</p>
-              </div>
-            </div>
           </div>
 
           {/* Services Links */}
@@ -136,6 +117,28 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-wider mb-3 opacity-60">
+              Contact
+            </h3>
+            <a
+              href="mailto:info_arnaintelligence@alis-global.com"
+              className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-colors block mb-3"
+            >
+              info_arnaintelligence@alis-global.com
+            </a>
+            <div className="text-sm opacity-60 leading-relaxed">
+              <p className="font-medium opacity-80 text-xs uppercase tracking-wider mb-1">
+                Registered Address
+              </p>
+              <p>Plot No: 802 &amp; 803,</p>
+              <p>Ayyappa Society,</p>
+              <p>Madhapur,</p>
+              <p>Hyderabad – 500081</p>
+            </div>
           </div>
         </div>
 
