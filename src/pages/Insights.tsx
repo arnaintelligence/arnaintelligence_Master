@@ -155,8 +155,8 @@ const Insights = () => {
                   className="text-sm sm:text-base lg:text-[15px] leading-relaxed max-w-2xl"
                   style={{ color: "rgba(248,250,252,0.78)" }}
                 >
-                  Inside the workflow of Arna Intelligence built to transform raw meetings into structured, searchable
-                  knowledge hub using automation, transcription, and AI analysis without adding another software
+                  Inside Arna Intelligence workflow, we built a system that transforms raw meetings into a structured,
+                  searchable knowledge hub — using transcription and AI analysis, without adding another tool
                   subscription.
                 </p>
 
