@@ -18,6 +18,7 @@ import {
   Download,
   X,
   Loader2,
+  Calendar,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
@@ -727,12 +728,13 @@ const CaseStudyDetail = () => {
               </div>
 
               {/* Feature checklist */}
-              <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
                 {[
                   { icon: FileSearch, label: "Search previous meetings" },
                   { icon: ListChecks, label: "Retrieve action items" },
                   { icon: FileText, label: "Generate summaries" },
                   { icon: MessageSquare, label: "Ask questions in natural language" },
+                  { icon: Calendar, label: "Schedule follow-up meetings" },
                 ].map((f) => (
                   <div
                     key={f.label}
