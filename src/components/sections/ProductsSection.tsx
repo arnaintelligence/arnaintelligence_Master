@@ -111,12 +111,7 @@ export function ProductsSection({ compact = false }: ProductsSectionProps) {
             }
 
             return (
-              <Link
-                key={product.name}
-                id={product.cardId}
-                to={product.href!}
-                className={cardClassName}
-              >
+              <Link key={product.name} id={product.cardId} to={product.href!} className={cardClassName}>
                 <div className="space-y-4">
                   <div className="w-16 h-16 rounded-2xl bg-[#0D9488]/10 flex items-center justify-center mx-auto transition-all duration-300 group-hover:bg-white/15 group-hover:shadow-[0_0_24px_rgba(94,234,212,0.45)]">
                     <product.icon className="w-8 h-8 text-[#0D9488] group-hover:text-white transition-colors duration-300" />
