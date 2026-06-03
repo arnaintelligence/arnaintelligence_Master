@@ -1,4 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
+import { PlayCircle } from "lucide-react";
+import { useRef, useState } from "react";
 import {
   Check,
   FileText,
@@ -712,20 +714,14 @@ const CaseStudyDetail = () => {
                       className="absolute inset-0 flex items-center justify-center z-20"
                     >
                       <div
-                        className="absolute w-32 h-32 rounded-full animate-pulse"
-                        style={{
-                          background: "rgba(94,234,212,0.18)",
-                        }}
-                      />
-
-                      <div
                         className="w-24 h-24 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300"
                         style={{
-                          background: "linear-gradient(135deg, #0D9488 0%, #5B6CFF 100%)",
-                          boxShadow: "0 0 40px rgba(94,234,212,0.45), 0 0 80px rgba(91,108,255,0.25)",
+                          background: "rgba(15,23,42,0.78)",
+                          backdropFilter: "blur(8px)",
+                          boxShadow: "0 10px 30px rgba(15,23,42,0.25)",
                         }}
                       >
-                        <PlayCircle className="w-12 h-12 text-white" fill="white" />
+                        <PlayCircle className="w-14 h-14 text-white" fill="white" />
                       </div>
                     </button>
                   )}
