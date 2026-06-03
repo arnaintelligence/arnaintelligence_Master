@@ -105,7 +105,7 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-white">Address</h3>
 
-            <div className="text-base text-white leading-8">
+            <div className="text-base text-white leading-6">
               <p>Plot No: 802 &amp; 803,</p>
               <p>Ayyappa Society,</p>
               <p>Madhapur,</p>
