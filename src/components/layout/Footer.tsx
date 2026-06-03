@@ -27,26 +27,17 @@ export function Footer() {
           {/* Brand Column */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link to="/" className="inline-block">
-              <img
-                src={arnaLogo}
-                alt="Arna Intelligence"
-                className="h-10 md:h-12 w-auto object-contain"
-              />
+              <img src={arnaLogo} alt="Arna Intelligence" className="h-10 md:h-12 w-auto object-contain" />
             </Link>
             <p className="mt-3 text-sm opacity-80 max-w-xs leading-relaxed">
-              Grounded in learning science. Accelerated by AI systems. Humanized through
-              experience design.
+              Grounded in learning science. Accelerated by AI systems. Humanized through experience design.
             </p>
-            <p className="mt-3 text-sm font-medium text-primary">
-              Where Learning Meets Intelligence.
-            </p>
+            <p className="mt-3 text-sm font-medium text-primary">Where Learning Meets Intelligence.</p>
           </div>
 
           {/* Services Links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider mb-3 opacity-60">
-              Services
-            </h3>
+            <h3 className="text-xs font-semibold uppercase tracking-wider mb-3 opacity-60">Services</h3>
             <ul className="space-y-2.5">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
@@ -63,9 +54,7 @@ export function Footer() {
 
           {/* Products Links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider mb-3 opacity-60">
-              Products
-            </h3>
+            <h3 className="text-xs font-semibold uppercase tracking-wider mb-3 opacity-60">Products</h3>
             <ul className="space-y-2.5">
               {footerLinks.products.map((link) => (
                 <li key={link.name}>
@@ -90,9 +79,7 @@ export function Footer() {
                   ) : (
                     <span className="text-sm opacity-40 cursor-not-allowed block">
                       {link.name}
-                      <span className="block text-xs text-amber-600 mt-0.5">
-                        Coming Soon
-                      </span>
+                      <span className="block text-xs text-amber-600 mt-0.5">Coming Soon</span>
                     </span>
                   )}
                 </li>
@@ -102,9 +89,7 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider mb-3 opacity-60">
-              Company
-            </h3>
+            <h3 className="text-xs font-semibold uppercase tracking-wider mb-3 opacity-60">Company</h3>
             <ul className="space-y-2.5">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -121,24 +106,19 @@ export function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider mb-3 opacity-60">
-              Contact
-            </h3>
+            <h3 className="text-xs font-semibold uppercase tracking-wider mb-3 opacity-60">Address</h3>
+            <div className="text-sm opacity-60 leading-relaxed">
+              <p>Plot No: 802 &amp; 803,</p>
+              <p>Ayyappa Society,</p>
+              <p>Madhapur,</p>
+              <p>Hyderabad – 500081</p>
+            </div>
             <a
               href="mailto:info_arnaintelligence@alis-global.com"
               className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-colors block mb-3"
             >
               info_arnaintelligence@alis-global.com
             </a>
-            <div className="text-sm opacity-60 leading-relaxed">
-              <p className="font-medium opacity-80 text-xs uppercase tracking-wider mb-1">
-                Registered Address
-              </p>
-              <p>Plot No: 802 &amp; 803,</p>
-              <p>Ayyappa Society,</p>
-              <p>Madhapur,</p>
-              <p>Hyderabad – 500081</p>
-            </div>
           </div>
         </div>
 
