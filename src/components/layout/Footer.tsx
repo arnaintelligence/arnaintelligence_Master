@@ -151,7 +151,6 @@ export function Footer() {
       <p>Ayyappa Society,</p>
       <p>Madhapur,</p>
       <p>Hyderabad – 500081</p>
-    </p>
       </div>
     </div>
   </footer>
