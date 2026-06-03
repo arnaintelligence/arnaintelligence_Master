@@ -37,13 +37,13 @@ export function Footer() {
 
           {/* Services Links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider mb-3 opacity-60">Services</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 opacity-80">Services</h3>
             <ul className="space-y-2.5">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-colors"
+                    className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -54,7 +54,7 @@ export function Footer() {
 
           {/* Products Links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider mb-3 opacity-60">Products</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 opacity-80">Products</h3>
             <ul className="space-y-2.5">
               {footerLinks.products.map((link) => (
                 <li key={link.name}>
@@ -64,7 +64,7 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-colors"
+                        className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-colors"
                       >
                         {link.name}
                       </a>
@@ -89,13 +89,13 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider mb-3 opacity-60">Company</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 opacity-80">Company</h3>
             <ul className="space-y-2.5">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-colors"
+                    className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -106,8 +106,8 @@ export function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider mb-3 opacity-60">Address</h3>
-            <div className="text-sm opacity-60 leading-relaxed">
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 opacity-80">Address</h3>
+            <div className="text-sm opacity-80 leading-relaxed">
               <p>Plot No: 802 &amp; 803,</p>
               <p>Ayyappa Society,</p>
               <p>Madhapur,</p>
