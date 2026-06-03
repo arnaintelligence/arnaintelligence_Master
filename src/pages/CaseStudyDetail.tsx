@@ -1,4 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
+import { PlayCircle } from "lucide-react";
+import { useRef, useState } from "react";
 import {
   Check,
   FileText,
@@ -99,7 +101,13 @@ const CaseStudyDetail = () => {
       setSubmitting(false);
     }
   };
+const [isPlaying, setIsPlaying] = useState(false);
+const videoRef = useRef<HTMLVideoElement>(null);
 
+const handlePlay = () => {
+  videoRef.current?.play();
+  setIsPlaying(true);
+};
   return (
     <Layout>
       <div ref={pageRef}>
@@ -686,13 +694,24 @@ const CaseStudyDetail = () => {
                 />
                 {/* Demo video — natural aspect ratio, full content visible */}
                 <video
-                  className="relative block w-full h-auto max-h-[80vh] object-contain bg-[#0B1428]"
-                  controls
-                  playsInline
-                  preload="metadata"
-                  controlsList="nodownload"
-                  src="/arna-meeting-demo.mp4"
-                />
+               <video
+    ref={videoRef}
+    className="relative block w-full h-auto max-h-[80vh] object-contain bg-[#0B1428]"
+    controls
+    playsInline
+    preload="metadata"
+    controlsList="nodownload"
+    src="/arna-meeting-demo.mp4"
+    onPlay={() => setIsPlaying(true)}
+    onPause={() => setIsPlaying(false)}
+  />
+
+  {!isPlaying && (
+    <button
+      type="button"
+      onClick={handlePlay}
+      className="absolute inset-0 flex items-center justify-center z-20"
+    >
               </div>
 
               {/* Feature checklist */}
