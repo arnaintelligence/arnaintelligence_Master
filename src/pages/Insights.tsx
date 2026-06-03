@@ -1,8 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { CTASection } from "@/components/sections/CTASection";
-import { Lightbulb, ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Calendar, Clock, Tag, Sparkles, FileText } from "lucide-react";
 
 const Insights = () => {
   return (
@@ -11,44 +10,189 @@ const Insights = () => {
       <section className="py-20 lg:py-28 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">
-              Thought Leadership
-            </span>
+            <span className="text-sm font-medium text-primary uppercase tracking-wider">Thought Leadership</span>
             <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight">
               Insights
             </h1>
             <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-secondary-foreground/70 leading-relaxed">
-              Perspectives on the future of learning, AI in L&D, and building 
-              intelligent learning ecosystems.
+              Perspectives on the future of learning, AI in L&D, and building intelligent learning ecosystems.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Coming Soon */}
-      <section className="py-20 lg:py-28 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-              <Clock className="w-10 h-10 text-primary" />
+      {/* Featured Case Study */}
+      <section className="relative py-16 lg:py-24 overflow-hidden" style={{ backgroundColor: "#F8FAFC" }}>
+        {/* Background radial glow */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background: "radial-gradient(ellipse 60% 50% at 50% 40%, rgba(13,148,136,0.10) 0%, transparent 70%)",
+          }}
+        />
+        {/* Dotted mesh sides */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 left-0 w-40 opacity-40"
+          style={{
+            backgroundImage: "radial-gradient(circle, rgba(13,148,136,0.18) 1px, transparent 1px)",
+            backgroundSize: "16px 16px",
+            maskImage: "linear-gradient(to right, black, transparent)",
+            WebkitMaskImage: "linear-gradient(to right, black, transparent)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 right-0 w-40 opacity-40"
+          style={{
+            backgroundImage: "radial-gradient(circle, rgba(13,148,136,0.18) 1px, transparent 1px)",
+            backgroundSize: "16px 16px",
+            maskImage: "linear-gradient(to left, black, transparent)",
+            WebkitMaskImage: "linear-gradient(to left, black, transparent)",
+          }}
+        />
+
+        <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative mx-auto max-w-[1200px] flex items-center justify-center gap-6 lg:gap-10">
+            {/* Side label (desktop) */}
+            <div className="hidden lg:flex relative shrink-0 flex-col items-center animate-fade-in">
+              <div
+                className="relative flex flex-col items-center gap-2 px-5 py-5 rounded-[20px]"
+                style={{
+                  background: "#FFFFFF",
+                  border: "1px solid rgba(13,148,136,0.35)",
+                  boxShadow: "0 12px 28px -12px rgba(13,148,136,0.25), 0 2px 6px rgba(15,23,42,0.05)",
+                }}
+              >
+                <div
+                  className="flex items-center justify-center w-10 h-10 rounded-lg"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(13,148,136,0.10), rgba(94,234,212,0.15))",
+                    border: "1px solid rgba(13,148,136,0.25)",
+                  }}
+                >
+                  <FileText className="w-4 h-4" style={{ color: "#0D9488" }} />
+                </div>
+                <span className="text-[10px] font-semibold tracking-[0.16em] uppercase" style={{ color: "#0D9488" }}>
+                  Case Study
+                </span>
+                <span className="text-lg font-semibold leading-none" style={{ color: "#0F172A" }}>
+                  01
+                </span>
+              </div>
+              {/* Connector: dashed line + glowing node */}
+              <div aria-hidden className="absolute top-1/2 left-full w-10 h-3 -translate-y-1/2 pointer-events-none">
+                <div
+                  className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-px"
+                  style={{
+                    backgroundImage: "linear-gradient(to right, rgba(94,234,212,0.85) 50%, transparent 50%)",
+                    backgroundSize: "6px 1px",
+                    backgroundRepeat: "repeat-x",
+                  }}
+                />
+                <span
+                  className="absolute top-1/2 right-0 -translate-y-1/2 w-2 h-2 rounded-full"
+                  style={{
+                    background: "#5EEAD4",
+                    boxShadow: "0 0 10px rgba(94,234,212,1)",
+                  }}
+                />
+              </div>
             </div>
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Coming Soon
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Our team is crafting valuable insights on AI-powered learning, 
-              instructional design trends, and LearnTech innovations. 
-              Subscribe to be notified when we publish.
-            </p>
-            <div className="relative flex flex-col sm:flex-row gap-4 justify-center opacity-40 pointer-events-none select-none">
-              <Button size="lg" className="group" disabled>
-                Subscribe for Updates
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-              <Button variant="outline" size="lg" disabled>
-                Learn About ALIS Engine
-              </Button>
-            </div>
+
+            {/* Featured Card */}
+            <article
+              className="group relative overflow-hidden rounded-[28px] flex-1 max-w-[1000px] animate-fade-in transition-all duration-500 hover:-translate-y-1"
+              style={{
+                background: "linear-gradient(135deg, #123047 0%, #176B63 55%, #7ED7D1 100%)",
+                boxShadow: "0 30px 60px -30px rgba(18,48,71,0.35), 0 12px 24px -12px rgba(13,148,136,0.25)",
+              }}
+            >
+              {/* Glass overlay */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  background: "linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 50%)",
+                }}
+              />
+              {/* Soft glow */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -top-24 -right-20 w-80 h-80 rounded-full blur-3xl opacity-40"
+                style={{
+                  background: "radial-gradient(circle, rgba(126,215,209,0.6) 0%, transparent 70%)",
+                }}
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 rounded-[28px] ring-1 ring-white/15 transition-all duration-500 group-hover:ring-white/30"
+              />
+
+              <div className="relative p-8 sm:p-10 lg:p-12 space-y-6">
+                {/* Top badge */}
+                <div
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold tracking-[0.14em] uppercase backdrop-blur-md"
+                  style={{
+                    background: "rgba(245,158,11,0.15)",
+                    color: "#FBBF24",
+                    border: "1px solid rgba(245,158,11,0.35)",
+                  }}
+                >
+                  <Sparkles className="w-3 h-3" />
+                  Featured Insight
+                </div>
+
+                <h2
+                  className="text-2xl sm:text-3xl lg:text-[34px] font-semibold leading-[1.2] tracking-tight max-w-3xl"
+                  style={{ color: "#F8FAFC" }}
+                >
+                  Building a Meeting Knowledge Hub Without Another Subscription
+                </h2>
+
+                <p
+                  className="text-sm sm:text-base lg:text-[15px] leading-relaxed max-w-2xl"
+                  style={{ color: "rgba(248,250,252,0.78)" }}
+                >
+                  Inside Arna Intelligence workflow, we built a system that transforms raw meetings into a structured,
+                  searchable knowledge hub — using transcription and AI analysis, without adding another tool
+                  subscription.
+                </p>
+
+                <div
+                  className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm"
+                  style={{ color: "rgba(248,250,252,0.7)" }}
+                >
+                  <span className="inline-flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5" style={{ color: "#7ED7D1" }} />
+                    May 2026
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5" style={{ color: "#7ED7D1" }} />5 min read
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <Tag className="w-3.5 h-3.5" style={{ color: "#FBBF24" }} />
+                    AI Operating System
+                  </span>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                  <Link
+                    to="/insights/case-study-01"
+                    className="group/btn inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-medium text-sm cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-8px_rgba(94,234,212,0.55)]"
+                    style={{
+                      background: "linear-gradient(135deg, #0D9488 0%, #5EEAD4 100%)",
+                      color: "#0F172A",
+                      boxShadow: "0 8px 20px -8px rgba(13,148,136,0.5)",
+                    }}
+                  >
+                    Read More
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5" />
+                  </Link>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>

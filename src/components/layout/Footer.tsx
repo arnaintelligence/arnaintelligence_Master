@@ -9,48 +9,43 @@ const footerLinks = {
   ],
   company: [
     { name: "Framework", href: "/intelligence-engine" },
-    { name: "Products", href: "/products" },
     { name: "Insights", href: "/insights" },
     { name: "Contact", href: "/contact" },
+  ],
+  products: [
+    { name: "Globiculum", href: "/globiculum-preview", newTab: true },
+    { name: "AI Learning Assistants", href: "https://discover-design-map.lovable.app/" },
+    { name: "Workflow Engines & Dashboards", href: null, comingSoon: true },
   ],
 };
 
 export function Footer() {
   return (
     <footer className="bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto px-8 lg:px-12 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[320px_220px_220px_220px_280px] justify-between gap-y-10">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
+          <div className="max-w-[280px]">
             <Link to="/" className="inline-block">
-              <img 
-                src={arnaLogo} 
-                alt="Arna Intelligence" 
-                className="h-10 md:h-12 w-auto object-contain"
-              />
+              <img src={arnaLogo} alt="Arna Intelligence" className="h-10 md:h-12 w-auto object-contain" />
             </Link>
-            <p className="mt-4 text-sm opacity-80 max-w-md">
-              Grounded in learning science. Accelerated by AI systems. Humanized through 
-              experience design. Proven through analytics. Creating connected learning 
-              ecosystems that deliver measurable business outcomes.
+
+            <p className="mt-4 text-sm text-white/90 leading-6 max-w-[260px]">
+              Grounded in learning science. Accelerated by AI systems. Humanized through experience design. Creating
+              connected learning ecosystems that deliver measurable business outcomes.
             </p>
-            <p className="mt-6 text-sm font-medium text-primary">
-              Where Learning Meets Intelligence.
-            </p>
+
+            <p className="mt-5 text-sm font-medium text-primary">Where Learning Meets Intelligence.</p>
           </div>
 
-          {/* Services Links */}
+          {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">
-              Services
-            </h3>
-            <ul className="space-y-3">
+            <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-white">Services</h3>
+
+            <ul className="space-y-4">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-colors"
-                  >
+                  <Link to={link.href} className="text-sm text-white hover:text-primary transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -58,30 +53,76 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company Links */}
+          {/* Products */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">
-              Company
-            </h3>
-            <ul className="space-y-3">
+            <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-white">Products</h3>
+
+            <ul className="space-y-4">
+              {footerLinks.products.map((link) => (
+                <li key={link.name}>
+                  {link.href ? (
+                    link.href.startsWith("http") || link.newTab ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-white hover:text-primary transition-colors"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link to={link.href} className="text-sm text-white hover:text-primary transition-colors">
+                        {link.name}
+                      </Link>
+                    )
+                  ) : (
+                    <div>
+                      <span className="text-sm text-white/70 block">{link.name}</span>
+                      <span className="text-sm text-amber-500">Coming Soon</span>
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-white">Company</h3>
+
+            <ul className="space-y-4">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-sm opacity-80 hover:opacity-100 hover:text-primary transition-colors"
-                  >
+                  <Link to={link.href} className="text-sm text-white hover:text-primary transition-colors">
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Address */}
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-white">Address</h3>
+
+            <div className="text-sm text-white leading-7">
+              <p>Plot No: 802 &amp; 803,</p>
+              <p>Ayyappa Society,</p>
+              <p>Madhapur,</p>
+              <p>Hyderabad – 500081</p>
+            </div>
+            <a
+              href="mailto:info_arnaintelligence@alis-global.com"
+              className="text-sm text-white hover:text-primary transition-colors block mb-4 break-words"
+            >
+              info_arnaintelligence@alis-global.com
+            </a>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-secondary-foreground/10">
-          <p className="text-sm opacity-60 text-center">
-            © 2026 Arnas Learning Intelligence Studio Pvt. Ltd. All rights reserved.
+        <div className="mt-10 pt-6 border-t border-secondary-foreground/10">
+          <p className="text-sm text-white/70 text-center">
+            &copy; 2026 Arnas Learning Intelligence Studio Pvt. Ltd. All rights reserved.
           </p>
         </div>
       </div>

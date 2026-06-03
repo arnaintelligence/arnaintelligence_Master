@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { BackToTop } from "./components/BackToTop";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import LearningIntelligence from "./pages/services/LearningIntelligence";
@@ -13,9 +14,11 @@ import IntelligenceEngine from "./pages/IntelligenceEngine";
 import Products from "./pages/Products";
 import GlobiculumPreview from "./pages/GlobiculumPreview";
 import Insights from "./pages/Insights";
+import CaseStudyDetail from "./pages/CaseStudyDetail";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import Unsubscribe from "./pages/Unsubscribe";
 
 
 const queryClient = new QueryClient();
@@ -27,6 +30,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <BackToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
@@ -37,8 +41,11 @@ const App = () => (
           <Route path="/products" element={<Products />} />
           <Route path="/globiculum-preview" element={<GlobiculumPreview />} />
           <Route path="/insights" element={<Insights />} />
+          <Route path="/insights/case-study-01" element={<CaseStudyDetail />} />
+          <Route path="/insights/ai-meeting-knowledge-system" element={<CaseStudyDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/unsubscribe" element={<Unsubscribe />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
