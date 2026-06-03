@@ -105,13 +105,6 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-white">Address</h3>
 
-            <a
-              href="mailto:info_arnaintelligence@alis-global.com"
-              className="text-base text-white hover:text-primary transition-colors block mb-6"
-            >
-              info_arnaintelligence@alis-global.com
-            </a>
-
             <div className="text-base text-white leading-8">
               <p className="font-semibold text-sm uppercase tracking-wider mb-3">Registered Address</p>
 
@@ -120,6 +113,12 @@ export function Footer() {
               <p>Madhapur,</p>
               <p>Hyderabad – 500081</p>
             </div>
+            <a
+              href="mailto:info_arnaintelligence@alis-global.com"
+              className="text-base text-white hover:text-primary transition-colors block mb-6"
+            >
+              info_arnaintelligence@alis-global.com
+            </a>
           </div>
         </div>
 
