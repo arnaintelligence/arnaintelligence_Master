@@ -1,6 +1,4 @@
 import { Layout } from "@/components/layout/Layout";
-import { PlayCircle } from "lucide-react";
-import { useRef, useState } from "react";
 import {
   Check,
   FileText,
