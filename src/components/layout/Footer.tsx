@@ -35,7 +35,7 @@ export function Footer() {
               connected learning ecosystems that deliver measurable business outcomes.
             </p>
 
-            <p className="mt-5 text-base font-medium text-primary">Where Learning Meets Intelligence.</p>
+            <p className="mt-5 text-sm font-medium text-primary">Where Learning Meets Intelligence.</p>
           </div>
 
           {/* Services */}
@@ -66,18 +66,18 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-base text-white hover:text-primary transition-colors"
+                        className="text-sm text-white hover:text-primary transition-colors"
                       >
                         {link.name}
                       </a>
                     ) : (
-                      <Link to={link.href} className="text-base text-white hover:text-primary transition-colors">
+                      <Link to={link.href} className="text-sm text-white hover:text-primary transition-colors">
                         {link.name}
                       </Link>
                     )
                   ) : (
                     <div>
-                      <span className="text-base text-white/70 block">{link.name}</span>
+                      <span className="text-sm text-white/70 block">{link.name}</span>
                       <span className="text-sm text-amber-500">Coming Soon</span>
                     </div>
                   )}
@@ -93,7 +93,7 @@ export function Footer() {
             <ul className="space-y-4">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-base text-white hover:text-primary transition-colors">
+                  <Link to={link.href} className="text-sm text-white hover:text-primary transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -105,7 +105,7 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-white">Address</h3>
 
-            <div className="text-base text-white leading-6">
+            <div className="text-sm text-white leading-7">
               <p>Plot No: 802 &amp; 803,</p>
               <p>Ayyappa Society,</p>
               <p>Madhapur,</p>
@@ -113,7 +113,7 @@ export function Footer() {
             </div>
             <a
               href="mailto:info_arnaintelligence@alis-global.com"
-              className="text-base text-white hover:text-primary transition-colors block mb-4 break-words"
+              className="text-sm text-white hover:text-primary transition-colors block mb-4 break-words"
             >
               info_arnaintelligence@alis-global.com
             </a>
