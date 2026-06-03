@@ -22,7 +22,7 @@ const footerLinks = {
 export function Footer() {
   return (
     <footer className="bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+      <div className="max-w-7xl mx-auto px-8 lg:px-12 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[320px_220px_220px_220px_280px] justify-between gap-y-10">
           {/* Brand Column */}
           <div className="max-w-[280px]">
