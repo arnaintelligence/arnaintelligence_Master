@@ -23,7 +23,7 @@ export function Footer() {
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr_1.2fr] gap-16 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr_1.6fr] gap-x-16 items-start">
           {/* Brand Column */}
           <div className="max-w-[280px]">
             <Link to="/" className="inline-block">
@@ -113,7 +113,7 @@ export function Footer() {
             </div>
             <a
               href="mailto:info_arnaintelligence@alis-global.com"
-              className="text-base text-white hover:text-primary transition-colors block mb-4 break-all"
+              className="text-base text-white hover:text-primary transition-colors block mb-4 break-words"
             >
               info_arnaintelligence@alis-global.com
             </a>
