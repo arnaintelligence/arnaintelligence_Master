@@ -11,6 +11,7 @@ const products = [
     comingSoon: false,
     href: "/globiculum-preview",
     cardId: "globiculum",
+    newTab: true,
   },
   {
     icon: Bot,
@@ -78,7 +79,7 @@ export function ProductsSection({ compact = false }: ProductsSectionProps) {
               );
             }
 
-            const isExternal = product.href?.startsWith("http");
+            const isExternal = product.href?.startsWith("http") || product.newTab;
             const cardClassName =
               "group relative block p-8 rounded-2xl bg-[#F8FAFC] border border-border text-center cursor-pointer transition-all duration-300 ease-out hover:bg-gradient-to-br hover:from-[#0D9488] hover:to-[#2DD4BF] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_12px_30px_rgba(13,148,136,0.25)] hover:border-[#5EEAD4]/60 overflow-hidden scroll-mt-20";
 
