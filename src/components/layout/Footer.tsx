@@ -30,7 +30,7 @@ export function Footer() {
               <img src={arnaLogo} alt="Arna Intelligence" className="h-10 md:h-12 w-auto object-contain" />
             </Link>
 
-            <p className="mt-4 text-base text-white leading-8">
+            <p className="mt-4 text-sm text-white/90 leading-6 max-w-[260px]">
               Grounded in learning science. Accelerated by AI systems. Humanized through experience design. Creating
               connected learning ecosystems that deliver measurable business outcomes.
             </p>
@@ -106,8 +106,6 @@ export function Footer() {
             <h3 className="text-sm font-bold uppercase tracking-wider mb-5 text-white">Address</h3>
 
             <div className="text-base text-white leading-8">
-              <p className="font-semibold text-sm uppercase tracking-wider mb-3">Registered Address</p>
-
               <p>Plot No: 802 &amp; 803,</p>
               <p>Ayyappa Society,</p>
               <p>Madhapur,</p>
