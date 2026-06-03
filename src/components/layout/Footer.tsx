@@ -13,7 +13,7 @@ const footerLinks = {
     { name: "Contact", href: "/contact" },
   ],
   products: [
-    { name: "Globiculum", href: "/globiculum-preview" },
+    { name: "Globiculum", href: "/globiculum-preview", newTab: true },
     { name: "AI Learning Assistants", href: "https://discover-design-map.lovable.app/" },
     { name: "Workflow Engines & Dashboards", href: null, comingSoon: true },
   ],
@@ -61,7 +61,7 @@ export function Footer() {
               {footerLinks.products.map((link) => (
                 <li key={link.name}>
                   {link.href ? (
-                    link.href.startsWith("http") ? (
+                    link.href.startsWith("http") || link.newTab ? (
                       <a
                         href={link.href}
                         target="_blank"
