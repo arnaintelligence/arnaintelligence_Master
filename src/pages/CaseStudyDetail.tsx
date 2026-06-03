@@ -101,13 +101,13 @@ const CaseStudyDetail = () => {
       setSubmitting(false);
     }
   };
-const [isPlaying, setIsPlaying] = useState(false);
-const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-const handlePlay = () => {
-  videoRef.current?.play();
-  setIsPlaying(true);
-};
+  const handlePlay = () => {
+    videoRef.current?.play();
+    setIsPlaying(true);
+  };
   return (
     <Layout>
       <div ref={pageRef}>
@@ -693,25 +693,45 @@ const handlePlay = () => {
                   }}
                 />
                 {/* Demo video — natural aspect ratio, full content visible */}
-                <video
-               <video
-    ref={videoRef}
-    className="relative block w-full h-auto max-h-[80vh] object-contain bg-[#0B1428]"
-    controls
-    playsInline
-    preload="metadata"
-    controlsList="nodownload"
-    src="/arna-meeting-demo.mp4"
-    onPlay={() => setIsPlaying(true)}
-    onPause={() => setIsPlaying(false)}
-  />
+                {/* Demo video */}
+                <div className="relative">
+                  <video
+                    ref={videoRef}
+                    className="relative block w-full h-auto max-h-[80vh] object-contain bg-[#0B1428]"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    controlsList="nodownload"
+                    src="/arna-meeting-demo.mp4"
+                    onPlay={() => setIsPlaying(true)}
+                    onPause={() => setIsPlaying(false)}
+                  />
 
-  {!isPlaying && (
-    <button
-      type="button"
-      onClick={handlePlay}
-      className="absolute inset-0 flex items-center justify-center z-20"
-    >
+                  {!isPlaying && (
+                    <button
+                      type="button"
+                      onClick={handlePlay}
+                      className="absolute inset-0 flex items-center justify-center z-20"
+                    >
+                      <div
+                        className="absolute w-32 h-32 rounded-full animate-pulse"
+                        style={{
+                          background: "rgba(94,234,212,0.18)",
+                        }}
+                      />
+
+                      <div
+                        className="w-24 h-24 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300"
+                        style={{
+                          background: "linear-gradient(135deg, #0D9488 0%, #5B6CFF 100%)",
+                          boxShadow: "0 0 40px rgba(94,234,212,0.45), 0 0 80px rgba(91,108,255,0.25)",
+                        }}
+                      >
+                        <PlayCircle className="w-12 h-12 text-white" fill="white" />
+                      </div>
+                    </button>
+                  )}
+                </div>
               </div>
 
               {/* Feature checklist */}
