@@ -10,11 +10,11 @@ const Insights = () => {
       <section className="py-20 lg:py-28 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">Thought Leadership</span>
-            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight">
+            <span className="text-2xl font-medium gradient-text-brand uppercase tracking-wider">Thought Leadership</span>
+            <h1 className="mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground leading-tight">
               Insights
             </h1>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-secondary-foreground/70 leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-secondary-foreground/80 leading-relaxed">
               Perspectives on the future of learning, AI in L&D, and building intelligent learning ecosystems.
             </p>
           </div>
@@ -148,7 +148,7 @@ const Insights = () => {
                   className="text-2xl sm:text-3xl lg:text-[34px] font-semibold leading-[1.2] tracking-tight max-w-3xl"
                   style={{ color: "#F8FAFC" }}
                 >
-                  Building a Meeting Knowledge Hub Without Another Subscription
+                  Build a Meeting Knowledge Hub Without Another Subscription
                 </h2>
 
                 <p
@@ -197,7 +197,9 @@ const Insights = () => {
         </div>
       </section>
 
-      <CTASection />
+      <div className="lg:translate-x-24">
+        <CTASection />
+      </div>
     </Layout>
   );
 };

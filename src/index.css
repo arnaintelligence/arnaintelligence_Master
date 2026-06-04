@@ -80,7 +80,20 @@ Brand Colors:
 
     --tracking-normal: 0em;
     --spacing: 0.25rem;
+    
   }
+  .gradient-text-brand {
+   background: linear-gradient(
+    135deg,
+    #0D9488 0%,
+    #14B8A6 45%,
+    #5B6CFF 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
 
   .dark {
     --background: 222 47% 11%;

@@ -33,7 +33,7 @@ export function CrossIntelligenceSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
-          <span className="text-4xl sm:text-5xl font-bold text-primary">
+          <span className="text-4xl sm:text-5xl font-bold gradient-text-brand">
             Our USP
           </span>
           <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-foreground">
@@ -59,21 +59,21 @@ export function CrossIntelligenceSection() {
             <div className="flex items-center justify-center my-4">
               <div className="relative flex items-center gap-4">
                 {/* Left arrow into center */}
-                <div className="hidden sm:flex items-center gap-1 text-primary/30">
+                <div className="hidden sm:flex items-center gap-1 gradient-text-brand/30">
                   <div className="w-16 h-px bg-primary/20" />
                   <ArrowRight className="w-4 h-4" />
                 </div>
 
                 <div className="flex items-center gap-3 px-6 py-3 rounded-full border-2 border-primary/20 bg-primary/5">
                   <Zap className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-bold tracking-wide text-primary uppercase">
+                  <span className="text-sm font-bold tracking-wide gradient-text-brand uppercase">
                     Continuous Optimization Loop
                   </span>
                   <Zap className="w-5 h-5 text-primary" />
                 </div>
 
                 {/* Right arrow out of center */}
-                <div className="hidden sm:flex items-center gap-1 text-primary/30">
+                <div className="hidden sm:flex items-center gap-1 gradient-text-brand/30">
                   <ArrowRight className="w-4 h-4" />
                   <div className="w-16 h-px bg-primary/20" />
                 </div>
@@ -110,7 +110,7 @@ export function CrossIntelligenceSection() {
               <ArrowRight className="w-3.5 h-3.5" />
               <span className="text-xs uppercase tracking-widest font-medium">Analytics</span>
               <ArrowRight className="w-3.5 h-3.5" />
-              <span className="text-xs uppercase tracking-widest font-medium text-primary/60">↻ Repeat</span>
+              <span className="text-xs uppercase tracking-widest font-medium gradient-text-brand/60">↻ Repeat</span>
             </div>
           </div>
         </div>
@@ -125,7 +125,7 @@ export function CrossIntelligenceSection() {
           <div className="flex justify-center mt-8">
             <div className="flex items-center gap-3 px-5 py-2.5 rounded-full border border-primary/20 bg-primary/5">
               <Zap className="w-4 h-4 text-primary" />
-              <span className="text-xs font-bold tracking-wide text-primary uppercase">
+              <span className="text-xs font-bold tracking-wide gradient-text-brand uppercase">
                 Continuous Optimization Loop
               </span>
             </div>
@@ -147,7 +147,7 @@ export function CrossIntelligenceSection() {
           <div className="flex justify-center mt-6">
             <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5">
               <Zap className="w-4 h-4 text-primary" />
-              <span className="text-xs font-bold tracking-wide text-primary uppercase">
+              <span className="text-xs font-bold tracking-wide gradient-text-brand uppercase">
                 Continuous Loop
               </span>
             </div>
@@ -168,7 +168,7 @@ function StageCard({ stage, index }: { stage: typeof stages[number]; index: numb
             <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
               <stage.icon className="w-6 h-6 text-primary" />
             </div>
-            <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center">
+            <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary gradient-text-brand-foreground text-[10px] font-bold flex items-center justify-center">
               {stage.step}
             </span>
           </div>

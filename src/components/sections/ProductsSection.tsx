@@ -40,7 +40,7 @@ export function ProductsSection({ compact = false }: ProductsSectionProps) {
     <section className={cn("bg-background", compact ? "py-16 lg:py-20" : "py-20 lg:py-28")}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="text-4xl sm:text-5xl font-bold text-primary">Our Flagship Products</span>
+          <span className="text-4xl sm:text-5xl font-bold gradient-text-brand">Our Flagship Products</span>
           <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-foreground">
             Powerful Tools | Infinite Possibilities
           </h2>
@@ -115,7 +115,7 @@ export function ProductsSection({ compact = false }: ProductsSectionProps) {
               <Link key={product.name} id={product.cardId} to={product.href!} className={cardClassName}>
                 <div className="space-y-4">
                   <div className="w-16 h-16 rounded-2xl bg-[#0D9488]/10 flex items-center justify-center mx-auto transition-all duration-300 group-hover:bg-white/15 group-hover:shadow-[0_0_24px_rgba(94,234,212,0.45)]">
-                    <product.icon className="w-8 h-8 text-[#0D9488] group-hover:text-white transition-colors duration-300" />
+                    <product.icon className="w-8 h-8 text-[#0D9488] group-hover:text-white transition-colors duration-300 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-[#0f172a] group-hover:text-white transition-colors duration-300">
                     {product.name}

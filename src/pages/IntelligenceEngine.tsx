@@ -61,14 +61,23 @@ const IntelligenceEngine = () => {
       <section className="py-20 lg:py-28 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-sm font-medium text-primary uppercase tracking-wider mb-6 block">
-              Our Framework
+            <span
+              className="text-2xl font-medium uppercase tracking-[0.15em] mb-4 block"
+              style={{
+                background: "linear-gradient(90deg, #14B8A6 0%, #5B6CFF 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                display: "inline-block",
+              }}
+            >
+              OUR FRAMEWORK
             </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-4 sm:mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground leading-tight mb-4 sm:mb-6">
               The Learning Intelligence Model
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-secondary-foreground/70">
-              We organize our work into four layers, connected by a Cross-Intelligence 
+            <p className="text-base sm:text-lg text-secondary-foreground/80">
+              We organize our work into four layers, connected by a Cross-Intelligence
               Engine that turns individual projects into a coherent learning ecosystem.
             </p>
           </div>
@@ -86,7 +95,7 @@ const IntelligenceEngine = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-card-foreground mb-1">{layer.title}</h3>
-                    <p className="text-primary text-sm font-medium mb-3">{layer.subtitle}</p>
+                    <p className="gradient-text-brand text-sm font-medium mb-3">{layer.subtitle}</p>
                     <p className="text-muted-foreground mb-4">{layer.description}</p>
                     <ul className="space-y-2">
                       {layer.capabilities.map((cap) => (

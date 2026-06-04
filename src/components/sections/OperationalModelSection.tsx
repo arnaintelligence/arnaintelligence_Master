@@ -54,7 +54,7 @@ export function OperationalModelSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="text-4xl sm:text-5xl font-bold text-primary">
+          <span className="text-4xl sm:text-5xl font-bold gradient-text-brand">
             How We Work
           </span>
           <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-foreground">
@@ -79,7 +79,7 @@ export function OperationalModelSection() {
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <model.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-2xl font-bold text-primary mb-1">
+                  <div className="text-2xl font-bold gradient-text-brand mb-1">
                     {model.acronym}
                   </div>
                   <h3 className="text-sm font-semibold text-foreground mb-2">
@@ -91,7 +91,7 @@ export function OperationalModelSection() {
 
                   <button
                     onClick={() => setExpandedIndex(isExpanded ? null : index)}
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:text-primary/80 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium gradient-text-brand hover:gradient-text-brand/80 transition-colors"
                   >
                     {isExpanded ? "Hide" : "View"} capabilities
                     <ChevronDown className={cn(

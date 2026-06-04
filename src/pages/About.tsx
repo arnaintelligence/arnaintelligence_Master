@@ -56,7 +56,18 @@ export default function About() {
       {/* Hero */}
       <section className="bg-secondary text-secondary-foreground py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-          <span className="text-sm font-medium text-primary uppercase tracking-wider mb-4 block">About Us</span>
+          <span
+            className="text-2xl font-medium uppercase tracking-[0.15em] mb-4 block"
+            style={{
+              background: "linear-gradient(90deg, #14B8A6 0%, #5B6CFF 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              display: "inline-block",
+            }}
+          >
+            ABOUT US
+          </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"> Arna Intelligence</h1>
           <p className="text-base sm:text-lg text-secondary-foreground/80">
             The principles, partnerships and people behind our work.
@@ -96,9 +107,15 @@ export default function About() {
                 key={idx}
                 className="group flex flex-row items-center bg-[#F8FAFC] border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
-                {/* LEFT: Vertical Letter Strip */}
-                <div className="w-[70px] flex-shrink-0 self-stretch flex items-center justify-center bg-gradient-to-b from-teal-600 to-teal-400 rounded-l-xl">
-                  <span className="text-white text-2xl font-bold tracking-tight">{p.letter}</span>
+                <div
+                  className="w-[70px] flex-shrink-0 self-stretch flex items-center justify-center rounded-l-xl"
+                  style={{
+                    background: "linear-gradient(135deg, #0D9488 0%, #5B6CFF 100%)",
+                  }}
+                >
+                  <span className="text-white text-2xl font-bold tracking-tight">
+                    {p.letter}
+                  </span>
                 </div>
 
                 {/* CENTER: Content */}
@@ -111,7 +128,7 @@ export default function About() {
 
                 {/* RIGHT: Circular Icon */}
                 <div className="flex-shrink-0 pr-4 sm:pr-5 flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 gradient-text-brand flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                     <p.icon className="w-5 h-5" />
                   </div>
                 </div>
@@ -144,7 +161,7 @@ export default function About() {
 
           {/* Partner Spotlight */}
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-center text-sm font-semibold uppercase tracking-wider text-primary mb-8">
+            <h3 className="text-center text-sm font-semibold uppercase tracking-wider gradient-text-brand mb-8">
               Partner Spotlight
             </h3>
 

@@ -19,6 +19,7 @@ import {
   X,
   Loader2,
   Calendar,
+  Play
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
@@ -165,7 +166,7 @@ const CaseStudyDetail = () => {
                   className="mt-6 text-3xl sm:text-4xl lg:text-[48px] font-bold leading-[1.18] sm:leading-[1.22] tracking-[-0.015em] max-w-[20ch] [text-wrap:balance]"
                   style={{ color: "#0F172A" }}
                 >
-                  Building a Meeting
+                  Build a Meeting
                   <br className="hidden sm:block" />
                   Knowledge Hub <span className="whitespace-nowrap">Without</span>
                   <br className="hidden sm:block" />
@@ -435,12 +436,12 @@ const CaseStudyDetail = () => {
                         </div>
                         <div className="min-w-0">
                           <div
-                            className="text-sm font-semibold leading-snug tracking-[-0.01em]"
+                            className="text-md font-semibold leading-snug tracking-[-0.01em]"
                             style={{ color: "#0F172A" }}
                           >
                             {p.title}
                           </div>
-                          <div className="text-xs mt-1.5 leading-[1.7]" style={{ color: "#64748B" }}>
+                          <div className="text-sm mt-1.5 leading-[1.7]" style={{ color: "#64748B" }}>
                             {p.desc}
                           </div>
                         </div>
@@ -696,7 +697,8 @@ const CaseStudyDetail = () => {
                 <div className="relative">
                   <video
                     ref={videoRef}
-                    className="relative block w-full h-auto max-h-[80vh] object-contain bg-[#0B1428]"
+                    className={`relative block w-full h-auto max-h-[80vh] object-contain bg-[#0B1428] transition-all duration-500 ${!isPlaying ? "blur-sm brightness-75" : ""
+                      }`}
                     controls
                     playsInline
                     preload="metadata"
@@ -710,17 +712,13 @@ const CaseStudyDetail = () => {
                     <button
                       type="button"
                       onClick={handlePlay}
-                      className="absolute inset-0 flex items-center justify-center z-20"
+                      className="absolute inset-0 flex items-center justify-center z-20 bg-black/10"
                     >
-                      <div
-                        className="w-24 h-24 rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300"
-                        style={{
-                          background: "rgba(15,23,42,0.78)",
-                          backdropFilter: "blur(8px)",
-                          boxShadow: "0 10px 30px rgba(15,23,42,0.25)",
-                        }}
-                      >
-                        <PlayCircle className="w-14 h-14 text-white" fill="white" />
+                      <div className="w-24 h-24 rounded-full bg-black/80 flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300">
+                        <Play
+                          className="w-12 h-12 text-white ml-1"
+                          fill="white"
+                        />
                       </div>
                     </button>
                   )}

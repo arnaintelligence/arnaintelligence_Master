@@ -66,7 +66,7 @@ export function OverviewSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="text-4xl sm:text-5xl font-bold text-primary">
+          <span className="text-4xl sm:text-5xl font-bold gradient-text-brand">
             Our Framework
           </span>
           <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-foreground">
@@ -87,7 +87,7 @@ export function OverviewSection() {
                 className={cn(
                   "flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300",
                   i === activeIndex
-                    ? "bg-primary text-primary-foreground shadow-sm"
+                    ? "bg-primary gradient-text-brand-foreground shadow-sm"
                     : "text-muted-foreground hover:text-foreground hover:bg-background"
                 )}
               >
@@ -112,7 +112,7 @@ export function OverviewSection() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-foreground">{active.title}</h3>
-                  <p className="text-sm font-medium text-primary">{active.subtitle}</p>
+                  <p className="text-sm font-medium gradient-text-brand">{active.subtitle}</p>
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed">
@@ -146,7 +146,7 @@ export function OverviewSection() {
                     className="flex items-start gap-3 text-sm text-foreground group cursor-default"
                   >
                     <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
-                    <span className="group-hover:text-primary transition-colors">{cap}</span>
+                    <span className="group-hover:gradient-text-brand transition-colors">{cap}</span>
                   </li>
                 ))}
               </ul>

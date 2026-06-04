@@ -80,14 +80,14 @@ const Contact = () => {
       <section className="py-20 lg:py-28 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">
+            <span className="text-2xl font-medium gradient-text-brand uppercase tracking-wider">
               Get in Touch
             </span>
-            <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight">
+            <h1 className="mt-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground leading-tight">
               Let's Build Something Intelligent
             </h1>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-secondary-foreground/70 leading-relaxed">
-              Ready to transform your learning ecosystem? We'd love to hear about 
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-secondary-foreground/80 leading-relaxed">
+              Ready to transform your learning ecosystem? We'd love to hear about
               your challenges and explore how Arna Intelligence can help.
             </p>
           </div>

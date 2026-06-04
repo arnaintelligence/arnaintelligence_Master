@@ -29,7 +29,7 @@ export function ICPSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
-            <span className="text-4xl sm:text-5xl font-bold text-primary">
+            <span className="text-4xl sm:text-5xl font-bold gradient-text-brand">
               Outcomes
             </span>
             <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-foreground">
@@ -41,13 +41,19 @@ export function ICPSection() {
             {outcomes.map((outcome) => (
               <div
                 key={outcome.title}
-                className="group p-5 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-md transition-all text-center"
+                className="group p-6 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-md transition-all text-center"
               >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                  <outcome.icon className="w-5 h-5 text-primary" />
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                  <outcome.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-sm font-semibold mb-1 text-foreground">{outcome.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{outcome.description}</p>
+
+                <h3 className="text-lg font-bold text-foreground mb-3">
+                  {outcome.title}
+                </h3>
+
+                <p className="text-base text-muted-foreground leading-6">
+                  {outcome.description}
+                </p>
               </div>
             ))}
           </div>

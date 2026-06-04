@@ -36,12 +36,12 @@ export function HeroSection() {
           {/* Main Heading */}
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-secondary-foreground leading-tight tracking-wide mb-6 sm:mb-8 animate-fade-in animation-delay-100">
             We Build Learning{" "}
-            <span className="text-primary">Intelligently</span>
+            <span className="gradient-text-brand">Intelligently</span>
           </h1>
 
           {/* Description */}
           <p className="text-base sm:text-lg text-secondary-foreground/80 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in animation-delay-200 px-2 sm:px-0">
-            Grounded in learning science. Accelerated by AI. Humanized through 
+            Grounded in learning science. Accelerated by AI. Humanized through
             design. Proven through analytics.
           </p>
 
