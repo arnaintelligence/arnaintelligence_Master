@@ -163,12 +163,24 @@ const CaseStudyDetail = () => {
                 </div>
 
                 <h1
-                  className="mt-6 text-3xl sm:text-4xl lg:text-[48px] font-bold leading-[1.18] sm:leading-[1.22] tracking-[-0.015em] max-w-[20ch] [text-wrap:balance]"
+                  className="
+    mt-6
+    text-3xl
+    sm:text-4xl
+    lg:text-[48px]
+    font-bold
+    leading-[1.15]
+    sm:leading-[1.22]
+    tracking-[-0.015em]
+    max-w-full
+    sm:max-w-[20ch]
+  "
                   style={{ color: "#0F172A" }}
                 >
-                  Build a Meeting
+                  Build a Meeting{" "}
                   <br className="hidden sm:block" />
-                  Knowledge Hub <span className="whitespace-nowrap">Without</span>
+                  Knowledge Hub{" "}
+                  <span className="whitespace-nowrap">Without{" "}</span>
                   <br className="hidden sm:block" />
                   <span
                     style={{
@@ -181,7 +193,6 @@ const CaseStudyDetail = () => {
                     Another Subscription
                   </span>
                 </h1>
-
                 <p
                   className="mt-6 text-base sm:text-[17px] leading-[1.75] tracking-[-0.005em] max-w-[58ch] [text-wrap:pretty]"
                   style={{ color: "#64748B" }}
