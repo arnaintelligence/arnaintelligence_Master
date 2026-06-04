@@ -203,7 +203,25 @@ const CaseStudyDetail = () => {
                   <Check className="w-4 h-4" />
                   No Additional Software Cost
                 </div>
+                {/* Download Workflow Button */}
+                <div className="mt-6">
+                  <button
+                    type="button"
+                    onClick={() => setModalOpen(true)}
+                    className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5"
+                    style={{
+                      background: "linear-gradient(135deg, #0D9488 0%, #5EEAD4 100%)",
+                      color: "#0F172A",
+                      boxShadow:
+                        "0 16px 36px -12px rgba(13,148,136,0.6), 0 0 0 1px rgba(94,234,212,0.3) inset",
+                    }}
+                  >
+                    <Download className="w-4 h-4" />
+                    Download Complete Workflow
+                  </button>
+                </div>
               </div>
+
 
               {/* RIGHT — Abstract AI workflow visual */}
               <div className="lg:col-span-5 animate-fade-in animation-delay-200">
@@ -293,6 +311,7 @@ const CaseStudyDetail = () => {
             </div>
           </div>
         </section>
+
 
         {/* ============================================================
           SECTION 1 — THE CHALLENGE
