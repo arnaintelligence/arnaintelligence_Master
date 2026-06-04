@@ -79,10 +79,10 @@ export function OperationalModelSection() {
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                     <model.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-2xl font-bold gradient-text-brand mb-1">
+                  <div className="text-lg font-bold gradient-text-brand mb-1">
                     {model.acronym}
                   </div>
-                  <h3 className="text-sm font-semibold text-foreground mb-2">
+                  <h3 className="text-md font-semibold text-foreground mb-2">
                     {model.name}
                   </h3>
                   <p className="text-sm text-muted-foreground mb-4">

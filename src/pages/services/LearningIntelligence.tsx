@@ -39,7 +39,7 @@ const LearningIntelligence = () => {
             <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
               <Layers className="w-8 h-8 text-primary" />
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-relaxed mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground leading-relaxed mb-4">
               Learning Intelligence as
               <span className="block mt-3">a Service (LIaaS)</span>
             </h1>
