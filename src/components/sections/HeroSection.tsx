@@ -27,24 +27,31 @@ export function HeroSection() {
       {/* Content */}
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="max-w-3xl mx-auto text-center">
+
           {/* Company Name */}
-          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground leading-relaxed tracking-wide mb-4 sm:mb-6 animate-fade-in">
-            Arnas Learning Intelligence
-            <span className="block mt-4">Studio</span>
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-foreground tracking-wide mb-4 sm:mb-6 animate-fade-in">
+            <span className="block leading-tight">
+              Arnas Learning Intelligence
+            </span>
+
+            <span className="block text-center leading-tight mt-1 sm:mt-3">
+              Studio
+            </span>
           </p>
 
           {/* Main Heading */}
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-secondary-foreground leading-tight tracking-wide mb-6 sm:mb-8 animate-fade-in animation-delay-100">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-secondary-foreground leading-[1.25] sm:leading-tight tracking-wide mb-5 sm:mb-8 animate-fade-in animation-delay-100">
             We Build Learning{" "}
-            <span className="gradient-text-brand">Intelligently</span>
+            <span className="gradient-text-brand">
+              Intelligently
+            </span>
           </h1>
 
           {/* Description */}
-          <p className="text-base sm:text-lg text-secondary-foreground/80 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in animation-delay-200 px-2 sm:px-0">
+          <p className="text-base sm:text-lg text-secondary-foreground/80 max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10 animate-fade-in animation-delay-200 px-2 sm:px-0">
             Grounded in learning science. Accelerated by AI. Humanized through
             design. Proven through analytics.
           </p>
-
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-300">
             <Button asChild size="lg" className="group">

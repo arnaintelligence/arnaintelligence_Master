@@ -49,13 +49,12 @@ export function CTASection() {
               LET'S BUILD
             </div>
 
-            {/* Heading */}
-            <h2 className="max-w-3xl mx-auto text-3xl md:text-3xl lg:text-3xl font-bold leading-[1.05] tracking-[-0.03em] text-[#0F172A]">
+            <h2 className="max-w-3xl mx-auto text-3xl md:text-3xl lg:text-3xl font-bold leading-[1.20] tracking-[-0.03em] text-[#0F172A]">
               Ready to Build
               <br />
-              Learning{" "}
-              <span className="gradient-text-brand">
-                Intelligently?
+              Learning
+              <span className="block sm:inline gradient-text-brand">
+                Intelligently
               </span>
             </h2>
 
@@ -65,21 +64,23 @@ export function CTASection() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
+            <div className="mt-9">
               <Button
                 asChild
-                className="h-14 px-8 rounded-full bg-[#FBBF24] hover:bg-[#F59E0B] text-[#0F172A] font-semibold text-base shadow-lg"
+                size="lg"
+                className="group h-12 px-7 rounded-xl font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5"
+                style={{
+                  background: "#F59E0B",
+                  color: "#0F172A",
+                  boxShadow: "0 12px 28px -10px rgba(251,191,36,0.45)",
+                }}
               >
                 <Link to="/contact">
                   Start the Conversation
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-
-
             </div>
-
-
           </div>
         </div>
       </div>

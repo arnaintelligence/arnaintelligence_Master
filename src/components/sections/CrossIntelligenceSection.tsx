@@ -168,7 +168,7 @@ function StageCard({ stage, index }: { stage: typeof stages[number]; index: numb
             <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
               <stage.icon className="w-6 h-6 text-primary" />
             </div>
-            <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary gradient-text-brand-foreground text-[10px] font-bold flex items-center justify-center">
+            <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary text-white text-[10px] font-bold flex items-center justify-center">
               {stage.step}
             </span>
           </div>
