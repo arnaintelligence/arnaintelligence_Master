@@ -52,7 +52,7 @@ export function CTASection() {
             <h2 className="max-w-3xl mx-auto text-3xl md:text-3xl lg:text-3xl font-bold leading-[1.20] tracking-[-0.03em] text-[#0F172A]">
               Ready to Build
               <br />
-              Learning
+              Learning{" "}
               <span className="block sm:inline gradient-text-brand">
                 Intelligently
               </span>
